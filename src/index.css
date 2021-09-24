@@ -5,4 +5,6 @@
 }
 main{
   min-height: 100vh;
+  background: url('./img/desktop-bg.jpg') center;
+  background-size: cover;
 }
