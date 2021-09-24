@@ -5,7 +5,10 @@ import Taskbar from './components/taskbar/Taskbar'
 function App() {
   return (
     <main>
-      <ContextMenu />
+      <div className=''>
+        <ContextMenu />
+      </div>
+      
       <Taskbar />
     </main>
   );
