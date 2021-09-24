@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url('./cursors/Purple-beauty.cur'), auto;
 }
 body{
   font-family: 'Open Sans Condensed', sans-serif;
