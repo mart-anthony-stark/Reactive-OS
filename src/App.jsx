@@ -4,17 +4,20 @@ import Taskbar from './components/taskbar/Taskbar'
 import Start from './components/start/Start'
 import Console from './components/console/Console'
 
+
+
 function App() {
   const [start, toggleStart] = useState(false)
+  const [tasks, setTasks] = useState([])
 
   return (
     <main>
       <div className='desktop'>
         <ContextMenu toggleStart={toggleStart}/>
-        <Start start={start} toggleStart={toggleStart}/>
+        <Start start={start} toggleStart={toggleStart} setTasks={setTasks} tasks={tasks} />
 
         {/** APPS */}
-        <Console />
+        {tasks.includes('console') && <Console setTasks={setTasks}/>}
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>
     </main>

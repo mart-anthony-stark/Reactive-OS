@@ -7,10 +7,12 @@
   bottom: 0;
   display: flex;
   align-items: center;
-  padding: 5px;
+  /* padding: 5px; */
+  justify-content: center;
   padding-bottom: 0;
 }
 .start-btn{
+  color: rgb(234, 0, 255);
   cursor: pointer;
   font-size: 50px;
 }

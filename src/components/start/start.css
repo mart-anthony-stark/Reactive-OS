@@ -13,8 +13,11 @@
   transition: .3s linear;
   border-radius: 50px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
   padding: 25px;
+  user-select: none;
 }
 .start-menu.open{
   transform: scale(1) translate(-50%,-50%);
@@ -29,4 +32,11 @@
   position: absolute;
   right: 20px;
   top: 20px;
+}
+.apps{
+  font-size: 60px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
 }
