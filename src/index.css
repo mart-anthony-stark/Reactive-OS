@@ -15,4 +15,5 @@ main{
 }
 .desktop{
   height: calc(100vh - 67px);
+  padding: 20px;
 }
