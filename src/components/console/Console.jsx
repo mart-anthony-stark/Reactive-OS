@@ -7,7 +7,7 @@ import './console.css'
 
 const Console = ({setTasks}) => {
   const inputText = React.useRef();
-
+  const [input, setInput] = React.useState('')
   const [consoleOutput, onEnter] = UseOnEnter();
 
   React.useEffect(() => {
@@ -61,7 +61,12 @@ const Console = ({setTasks}) => {
           id='cmd-input'
           type="text"
           ref={inputText}
-          onKeyPress={({ target: { value }, key }) => onEnter(value, key)}
+          value={input}
+          onChange={(e)=>setInput(e.target.value)}
+          onKeyPress={({ target: { value }, key }) => {
+            onEnter(value, key)
+            if(key==='Enter')setInput('')
+          }}
         />
       </div>
     </section>
