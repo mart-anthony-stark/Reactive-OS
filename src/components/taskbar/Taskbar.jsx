@@ -2,10 +2,12 @@ import React from 'react'
 import './taskbar.css'
 import {CgMenuRound} from 'react-icons/cg'
 
-export default function Taskbar(){
+export default function Taskbar({start,toggleStart}){
   return(
-    <div className='taskbar'>
-      <div className='start-btn'>
+    <div className={start?'taskbar open':'taskbar'}>
+      <div className='start-btn' onClick={()=>{
+        toggleStart(true)
+      }}>
         <CgMenuRound />
       </div>
     </div>

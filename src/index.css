@@ -8,3 +8,7 @@ main{
   background: url('./img/desktop-bg.jpg') center;
   background-size: cover;
 }
+.desktop{
+  height: calc(100vh - 67px);
+  
+}

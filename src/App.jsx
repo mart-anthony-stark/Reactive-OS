@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ContextMenu from './components/context/ContextMenu'
 import Taskbar from './components/taskbar/Taskbar'
+import Start from './components/start/Start'
 
 function App() {
+  const [start, toggleStart] = useState(false)
+
   return (
     <main>
-      <div className=''>
+      <div className='desktop'>
         <ContextMenu />
+        <Start/>
       </div>
-      
-      <Taskbar />
+      <Taskbar start={start} toggleStart={toggleStart}/>
     </main>
   );
 }
