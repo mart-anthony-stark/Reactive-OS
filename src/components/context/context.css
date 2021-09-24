@@ -8,6 +8,7 @@
  transform: scale(0);
  transition: transform .3s ease;
  transform-origin: top left;
+  user-select: none;
 }
 .context-menu .item{
   padding: 5px 8px;
