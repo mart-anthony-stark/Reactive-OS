@@ -1,5 +1,32 @@
 .start-menu{
-  height: 100%;
+  position: fixed;
+  z-index: 10;
+  height: 80%;
+  max-width: 500px;
   width: 100%;
-  /* background: red; */
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255,0.4);
+  backdrop-filter: blur(25px);
+  transform: scale(0) translate(-50%,-300%);
+  transform-origin: left;
+  transition: .3s linear;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+.start-menu.open{
+  transform: scale(1) translate(-50%,-50%);
+}
+.start-menu .title{
+  font-size: 40px;
+}
+.start-menu .close{
+  color: white;
+  cursor: pointer;
+  font-size: 2.5em;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

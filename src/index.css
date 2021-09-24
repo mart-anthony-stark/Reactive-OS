@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 main{
   min-height: 100vh;
@@ -10,5 +14,4 @@ main{
 }
 .desktop{
   height: calc(100vh - 67px);
-  
 }

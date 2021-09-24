@@ -9,8 +9,8 @@ function App() {
   return (
     <main>
       <div className='desktop'>
-        <ContextMenu />
-        <Start/>
+        <ContextMenu toggleStart={toggleStart}/>
+        <Start start={start} toggleStart={toggleStart}/>
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>
     </main>

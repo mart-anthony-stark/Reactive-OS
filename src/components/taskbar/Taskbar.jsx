@@ -6,7 +6,7 @@ export default function Taskbar({start,toggleStart}){
   return(
     <div className={start?'taskbar open':'taskbar'}>
       <div className='start-btn' onClick={()=>{
-        toggleStart(true)
+        toggleStart((prev)=> !prev)
       }}>
         <CgMenuRound />
       </div>

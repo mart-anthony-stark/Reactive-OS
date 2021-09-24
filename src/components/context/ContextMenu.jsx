@@ -5,12 +5,15 @@ import {BsDisplay} from 'react-icons/bs'
 import {RiShutDownLine} from 'react-icons/ri'
 import './context.css'
 
-export default function ContextMenu(){
+export default function ContextMenu({toggleStart}){
 
   React.useEffect(()=>{
     window.addEventListener('contextmenu', handleContext)
     window.addEventListener('click', handleClose)
-    return ()=> window.removeEventListener('contextmenu', handleContext)
+    return ()=> {
+      window.removeEventListener('contextmenu', handleContext)
+      window.removeEventListener('click', handleClose)
+    }
   },[])
 
   function handleContext(e){
@@ -19,6 +22,7 @@ export default function ContextMenu(){
       menu.style.top = e.offsetY + 'px'
       menu.style.left= e.offsetX + 'px'
       menu.classList.add('open')
+      toggleStart(false)
   }
   function handleClose(e){
     document.querySelector('.context-menu').classList.remove('open')
