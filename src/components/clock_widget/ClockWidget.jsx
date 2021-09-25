@@ -21,7 +21,7 @@ export default function ClockWidget(){
     m = m<10 ? "0"+m : m
     s = s<10 ? "0"+s : s
 
-    setTime(`${h}:${m}:${s} ${ampm}`)
+    setTime(`${h}: ${m}: ${s} ${ampm}`)
     setDate(date.toString().split(' ').splice(0, 4).join(" "))
   }
   return(
