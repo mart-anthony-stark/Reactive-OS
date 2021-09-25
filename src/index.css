@@ -7,6 +7,7 @@
 body{
   cursor: url('./cursors/Normal Select.cur'), auto;
   font-family: 'Open Sans Condensed', sans-serif;
+  /* overflow: hidden; */
 }
 @font-face{
   font-family: digital;

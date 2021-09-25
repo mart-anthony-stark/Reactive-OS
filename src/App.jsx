@@ -4,7 +4,7 @@ import Taskbar from './components/taskbar/Taskbar'
 import Start from './components/start/Start'
 import Console from './components/console/Console'
 import ClockWidget from './components/clock_widget/ClockWidget'
-
+import CodeEditor from './components/code_editor/CodeEditor'
 
 function App() {
   const [start, toggleStart] = useState(false)
@@ -19,6 +19,7 @@ function App() {
         {/** APPS */}
         {tasks.includes('console') && <Console setTasks={setTasks}/>}
         <ClockWidget />
+        <CodeEditor />
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>
     </main>

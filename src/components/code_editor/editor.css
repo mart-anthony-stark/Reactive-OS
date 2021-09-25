@@ -1,0 +1,41 @@
+.code-editor{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  max-width: 800px;
+  width: 100vw;
+  height: 100%;
+}
+.top-pane{
+  background: rgb(31, 36, 56);
+}
+.pane{
+  height: 50%;
+  display: flex;
+  gap: 5px;
+}
+.editor-container{
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  background: rgb(51, 51, 51);
+}
+.CodeMirror{
+  max-height: 220px;
+  height: 100% !important;
+}
+.editor-title{
+  display: flex;
+  justify-content: space-between;
+  background: rgb(14, 13, 13);
+  color: white;
+  padding: .5rem .5rem .5rem 1rem;
+  border-radius: 5px 5px 0 0;
+}
+.code-mirror-wrapper{
+  flex-grow: 1;
+  border-radius: 0 0 5px 5px;
+}
