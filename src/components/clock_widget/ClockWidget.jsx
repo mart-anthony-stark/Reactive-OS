@@ -7,7 +7,36 @@ export default function ClockWidget(){
   useEffect(()=>{
     setInterval(getTime,1000)
     
+    const clock = document.querySelector('.digital-clock')
+    function onDrag({movementX, movementY}){
+
+      const style = window.getComputedStyle(clock)
+      let left = parseInt(style.left)
+      let top = parseInt(style.top)
+
+      clock.style.left = `${left + movementX}px`
+      clock.style.top = `${top + movementY}px`
+    }
+    
+    clock.addEventListener('mousedown', ()=>{
+      clock.addEventListener('mousemove', onDrag)
+    })
+
+    document.addEventListener('mouseup', ()=>{
+      clock.removeEventListener('mousemove',onDrag)
+    })
+
+    return ()=>{
+        clock.removeEventListener('mousedown', ()=>{
+          clock.addEventListener('mousemove', onDrag)
+        })
+
+      document.removeEventListener('mouseup', ()=>{
+        clock.removeEventListener('mousemove',onDrag)
+      })
+    }
   },[])
+
 
   const getTime = () => {
     const date = new Date()
