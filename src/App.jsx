@@ -3,7 +3,7 @@ import ContextMenu from './components/context/ContextMenu'
 import Taskbar from './components/taskbar/Taskbar'
 import Start from './components/start/Start'
 import Console from './components/console/Console'
-
+import ClockWidget from './components/clock_widget/ClockWidget'
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
 
         {/** APPS */}
         {tasks.includes('console') && <Console setTasks={setTasks}/>}
+        <ClockWidget />
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>
     </main>

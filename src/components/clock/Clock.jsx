@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './clock.css'
 
 export default function Clock(){
-  const [time, setTime] = useState('3:15');
+  const [time, setTime] = useState('00:00:00 am');
 
   useEffect(()=>{
     setInterval(getTime, 1000)
@@ -22,7 +22,7 @@ export default function Clock(){
     m = m<10 ? "0"+ m : m
     s = s<10 ? "0"+ s : s
 
-    setTime(`${h}:${m}::${s} ${ampm}`)
+    setTime(`${h}:${m} ${ampm}`)
   }
   return (
     <div className='clock'>

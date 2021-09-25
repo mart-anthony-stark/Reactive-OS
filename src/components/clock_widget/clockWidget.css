@@ -1,0 +1,18 @@
+.digital-clock{
+  font-family: digital;
+  font-size: 60px;
+  color: red;
+  background: black;
+  padding: 15px 20px;
+  display: block;
+  text-align: center;
+  max-width: 350px;
+  border-radius: 10px;
+}
+.digital-clock .inner{
+  user-select: none;
+}
+.digital-clock .inner span{
+  display: block;
+  font-size: 25px;
+}

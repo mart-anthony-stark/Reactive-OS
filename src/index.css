@@ -8,6 +8,10 @@ body{
   cursor: url('./cursors/Normal Select.cur'), auto;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+@font-face{
+  font-family: digital;
+  src: url(./fonts/digital-7.ttf);
+}
 main{
   min-height: 100vh;
   background: url('./img/desktop-bg.jpg') center;
