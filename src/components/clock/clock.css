@@ -1,0 +1,8 @@
+.clock{
+  font-size: 2em;
+  font-weight: 900;
+  user-select: none;
+  cursor: url('../../cursors/Purple-beauty.cur'), auto;
+  position: absolute;
+  right: 10px;
+}

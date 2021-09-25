@@ -3,9 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: url('./cursors/Purple-beauty.cur'), auto;
 }
 body{
+  cursor: url('./cursors/Normal Select.cur'), auto;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 main{
@@ -16,4 +16,7 @@ main{
 .desktop{
   height: calc(100vh - 67px);
   padding: 20px;
+}
+.click-btn{
+  cursor: url('./cursors/Link Select.cur'), auto;
 }
