@@ -39,3 +39,13 @@
   flex-wrap: wrap;
   width: 100%;
 }
+.apps .application{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.apps p.app-name{
+  font-weight: bolder;
+  font-size: 18px;
+}

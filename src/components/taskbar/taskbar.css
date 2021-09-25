@@ -12,9 +12,9 @@
   padding-bottom: 0;
 }
 .start-btn{
-  color: rgb(90, 29, 95);
+  color: rgb(0, 0, 0);
   font-size: 50px;
 }
 .start-btn:hover{
-  color: rgb(234, 0, 255);
+  color: rgb(255, 255, 255);
 }

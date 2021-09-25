@@ -49,7 +49,7 @@ const Console = ({setTasks}) => {
         document.querySelector('#cmd-input').focus()
       }}>
       <div className='toolbar'>
-        UwU Command Line
+        Sheen CLI
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'console'))}>
           <AiFillCloseCircle/>
         </div>

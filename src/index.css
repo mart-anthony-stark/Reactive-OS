@@ -20,3 +20,6 @@ main{
 .click-btn{
   cursor: url('./cursors/Link Select.cur'), auto;
 }
+p{
+  font-size: 1em;
+}
