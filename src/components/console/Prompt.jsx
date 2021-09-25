@@ -1,5 +1,5 @@
 import React from "react";
 
-const Prompt = () => <span>UwU :> </span>;
+const Prompt = () => <span>RootDirectory :> </span>;
 
 export default Prompt;
