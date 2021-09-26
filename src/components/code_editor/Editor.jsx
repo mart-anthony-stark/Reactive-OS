@@ -1,22 +1,29 @@
 import React from 'react'
 import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/material.css'
+import 'codemirror/theme/material-palenight.css'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
 import {Controlled as ControlledEditor} from 'react-codemirror2'
+import {ImShrink2} from 'react-icons/im'
+import {GiExpand} from 'react-icons/gi'
+import {IconContext} from 'react-icons/'
 
 export default function Editor({displayName, language, onChange, value}){
-
+  const [open, setOpen] = React.useState(true)
   function handleChange(editor, data, value){
     onChange(value)
   }
 
   return(
-    <div className='editor-container'>
+    <div className={`editor-container ${!open && 'collapsed'}`}>
       <div className='editor-title'>
         {displayName}
-        <button>O/C</button>
+        <div onClick={()=> setOpen(!open)}>
+          <IconContext.Provider value={{className: 'click-btn expand'}}>
+            {open ? <ImShrink2/> : <GiExpand/>}
+          </IconContext.Provider>
+        </div>
       </div>
       <ControlledEditor 
         onBeforeChange={handleChange}
@@ -27,7 +34,7 @@ export default function Editor({displayName, language, onChange, value}){
           lint: true,
           mode: language,
           lineNumbers: true,
-          theme: 'material'
+          theme: 'material-palenight'
         }}
       />
     </div>

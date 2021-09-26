@@ -9,6 +9,7 @@
   transform: translateX(-50%);
 }
 .code-editor-header{
+  border-radius: 5px 5px 0 0;
   user-select: none;
   background: white;
   display: flex;
@@ -34,7 +35,7 @@
   display: flex;
   flex-direction: column;
   padding: .5rem;
-  background: rgb(51, 51, 51);
+  background: rgb(29, 47, 68);
 }
 .CodeMirror{
   max-height: 220px;
@@ -55,4 +56,10 @@
 .preview{
   background: rgba(255,255,255,0.4);
   backdrop-filter: blur(25px);
+}
+.expand:hover{
+  color: rgb(184, 184, 184);
+}
+.editor-container.collapsed{
+  flex-grow: 0;
 }
