@@ -1,11 +1,24 @@
 .code-editor{
-  position: relative;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
   z-index: 2;
   max-width: 800px;
   width: 100vw;
-  height: 100%;
+  height: 80%;
+  transform: translateX(-50%);
+}
+.code-editor-header{
+  user-select: none;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.code-editor-header span{
+  font-weight: bolder;
+  font-size: 18px;
 }
 .top-pane{
   background: rgb(31, 36, 56);

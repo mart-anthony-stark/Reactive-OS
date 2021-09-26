@@ -8,7 +8,7 @@ import CodeEditor from './components/code_editor/CodeEditor'
 
 function App() {
   const [start, toggleStart] = useState(false)
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(['codeeditor'])
 
   return (
     <main>
@@ -18,8 +18,8 @@ function App() {
 
         {/** APPS */}
         {tasks.includes('console') && <Console setTasks={setTasks}/>}
+        {tasks.includes('codeeditor') && <CodeEditor setTasks={setTasks}/>}
         <ClockWidget />
-        <CodeEditor />
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>
     </main>

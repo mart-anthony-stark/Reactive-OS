@@ -28,3 +28,8 @@ main{
 p{
   font-size: 1em;
 }
+.close-btn{
+  font-size: 1.2em;
+  color: rgb(206, 34, 34);
+  cursor: url('./cursors/Link Select.cur'), auto;
+}
