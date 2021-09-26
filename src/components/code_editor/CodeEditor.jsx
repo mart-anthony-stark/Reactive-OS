@@ -40,6 +40,15 @@ export default function CodeEditor({setTasks}){
   const [html, setHtml] = React.useState('')
   const [css, setCss] = React.useState('')
   const [javascript, setJavascript] = React.useState('')
+
+  const srcDoc = `
+    <html>
+      <body>${html}</body>
+      <style>${css}</style>
+      <script>${javascript}</script>
+    </html>
+  `
+
   return(
     <div className='code-editor'>
       <div className='code-editor-header'>
@@ -54,8 +63,8 @@ export default function CodeEditor({setTasks}){
         <Editor displayName='JavaScript' language='javascript' onChange={setJavascript} value={javascript} />
 
       </div>
-      <div className='pane'>
-        <iframe title='output' sandbox='allow-scripts' frameBorder='0' width='100%' height='100%' />
+      <div className='pane preview'>
+        <iframe srcDoc={srcDoc} title='output' sandbox='allow-scripts allow-modals' frameBorder='0' width='100%' height='100%' />
       </div>
     </div>
   )
