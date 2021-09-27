@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './start.css'
 import {AiFillCloseCircle} from 'react-icons/ai'
-import {FcCommandLine} from 'react-icons/fc'
+import {FcCommandLine, FcTodoList} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {IconContext} from 'react-icons'
 
@@ -32,6 +32,16 @@ export default function Start({start, toggleStart, setTasks, tasks}){
               <div><TiCodeOutline/></div>
             </IconContext.Provider>
             <p className='app-name'>Codear</p>
+          </div>
+
+          <div className="application" onDoubleClick={()=> {
+              setTasks(['todo',...tasks])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn" }}>
+              <div><FcTodoList/></div>
+            </IconContext.Provider>
+            <p className='app-name'>Todos</p>
           </div>
 
 

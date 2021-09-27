@@ -1,0 +1,80 @@
+.todo-app{
+  position: fixed;
+  z-index: 3;
+  background: rgb(131, 173, 159);
+  max-width: 300px;
+  width: 100%;
+  top: 50px;
+  left: 50%;
+  border-radius: 15px;
+  padding: 0 10px 10px 10px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.todo-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 15px 15px 0 0;
+  user-select: none;
+  box-shadow: 0 5px 5px rgba(0,0,0,.4);
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.list{
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+.new-task{
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.new-task input{
+  border: none;
+  background: rgb(221, 221, 221);
+  outline: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+.new-task button{
+  background: green;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: url('../../cursors/Link Select.cur');
+}
+.task{
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.466);
+  margin: 5px 0;
+  border-radius: 15px;
+  backdrop-filter: blur(25px);
+}
+.task .top{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.todo-app ::-webkit-scrollbar{
+  width: 2px;
+  background: rgb(123, 123, 139);
+}
+.todo-app ::-webkit-scrollbar-thumb{
+  width: 2px;
+  background: rgb(174, 0, 255);
+}
