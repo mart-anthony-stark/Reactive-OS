@@ -6,6 +6,7 @@ import Console from './components/console/Console'
 import ClockWidget from './components/clock_widget/ClockWidget'
 import CodeEditor from './components/code_editor/CodeEditor'
 import Todo from './components/todo/Todo'
+import Drumpads from './components/drumpads/Drumpads'
 
 function App() {
   const [start, toggleStart] = useState(false)
@@ -21,6 +22,7 @@ function App() {
         {tasks.includes('console') && <Console setTasks={setTasks}/>}
         {tasks.includes('codeeditor') && <CodeEditor setTasks={setTasks}/>}
         {tasks.includes('todo') && <Todo setTasks={setTasks}/>}
+        {tasks.includes('drumpads') && <Drumpads setTasks={setTasks}/>}
         <ClockWidget />
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>

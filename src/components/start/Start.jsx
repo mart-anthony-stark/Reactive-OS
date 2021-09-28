@@ -15,7 +15,7 @@ export default function Start({start, toggleStart, setTasks, tasks}){
         <div className='apps'>
 
           <div className="application" onDoubleClick={()=> {
-              setTasks(['console',...tasks])
+              setTasks([...tasks, 'console'])
               toggleStart(false)
             }}>
             <IconContext.Provider value={{className: "click-btn" }}>
@@ -25,7 +25,7 @@ export default function Start({start, toggleStart, setTasks, tasks}){
           </div>
 
           <div className="application" onDoubleClick={()=> {
-              setTasks(['codeeditor',...tasks])
+              setTasks([...tasks, 'codeeditor'])
               toggleStart(false)
             }}>
             <IconContext.Provider value={{className: "click-btn" }}>
@@ -35,7 +35,7 @@ export default function Start({start, toggleStart, setTasks, tasks}){
           </div>
 
           <div className="application" onDoubleClick={()=> {
-              setTasks(['todo',...tasks])
+              setTasks([...tasks,'todo'])
               toggleStart(false)
             }}>
             <IconContext.Provider value={{className: "click-btn" }}>
@@ -45,6 +45,15 @@ export default function Start({start, toggleStart, setTasks, tasks}){
           </div>
 
 
+          <div className="application" onDoubleClick={()=> {
+              setTasks([...tasks, 'drumpads'])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn" }}>
+              <div><FcTodoList/></div>
+            </IconContext.Provider>
+            <p className='app-name'>Todos</p>
+          </div>
           
         </div>
     </div>

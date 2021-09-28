@@ -1,0 +1,67 @@
+.drumpads{
+  position: fixed;
+  z-index: 4;
+  background: rgb(37, 37, 37);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+.drumpads-header{
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 8px;
+  user-select: none;
+}
+.drumpads .keys{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: 100px;
+  gap: 10px;
+  color: white;
+}
+.drumpads .keys .single-key{
+  cursor: url('../../cursors/Link Select.cur'), auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #323232;
+  border-radius: 15px;
+  user-select: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4),
+              inset 3px 3px 5px rgba(255, 255, 255, 0.4);
+}
+.drumpads .keys .single-key.playing{
+  box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.4),
+              inset 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+.controls .toggle{
+  margin-top: 50px;
+  position: relative;
+  cursor: url('../../cursors/Link Select.cur'), auto;
+  width: 80px;
+  height: 30px;
+  background: rgb(161, 161, 161);
+  border-radius: 25px;
+}
+.controls .toggle div{
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  right: calc(80px - 40%);
+  background: rgb(12, 109, 20);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  transition: .3s linear;
+}
+.controls .toggle.toggled div{
+  right: 0;
+}
