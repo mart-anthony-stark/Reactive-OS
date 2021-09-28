@@ -3,6 +3,7 @@ import './start.css'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {FcCommandLine, FcTodoList} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
+import {GiDrum} from 'react-icons/gi'
 import {IconContext} from 'react-icons'
 
 export default function Start({start, toggleStart, setTasks, tasks}){
@@ -50,9 +51,9 @@ export default function Start({start, toggleStart, setTasks, tasks}){
               toggleStart(false)
             }}>
             <IconContext.Provider value={{className: "click-btn" }}>
-              <div><FcTodoList/></div>
+              <div><GiDrum/></div>
             </IconContext.Provider>
-            <p className='app-name'>Todos</p>
+            <p className='app-name'>Drumpads</p>
           </div>
           
         </div>
