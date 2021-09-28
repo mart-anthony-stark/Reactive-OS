@@ -1,0 +1,13 @@
+.word-editor{
+  position: absolute;
+  z-index: 5;
+  width: 500px;
+  background: rgb(202, 202, 202);
+  padding: 15px;
+}
+.codex-editor{
+
+}
+.ce-toolbar__settings-btn{
+  color: rgb(0, 0, 0);
+}
