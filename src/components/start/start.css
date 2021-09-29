@@ -34,10 +34,12 @@
 }
 .apps{
   font-size: 60px;
-  display: flex;
+  display: grid;
   gap: 40px;
-  flex-wrap: wrap;
-  width: 100%;
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: 100px;
+  width: 85%;
+  margin: auto;
 }
 .apps .application{
   display: flex;

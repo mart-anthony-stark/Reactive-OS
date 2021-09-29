@@ -117,7 +117,7 @@ const bankTwo = [
 ];
 
 
-export default function Drumpads({setTasks}){
+export default function Drumpads({setTasks, tasks}){
   const [currentKeys, setKeys] = useState(bankOne)
   
   const app = useRef()
@@ -132,7 +132,7 @@ export default function Drumpads({setTasks}){
         app.current.removeEventListener('mousemove', onDrag)
       })
     }
-  },[currentKeys])
+  },[currentKeys, tasks])
 
   function onDrag({movementX, movementY}){
     let styles = window.getComputedStyle(app.current)

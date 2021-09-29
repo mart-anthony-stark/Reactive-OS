@@ -20,11 +20,11 @@ function App() {
         <Start start={start} toggleStart={toggleStart} setTasks={setTasks} tasks={tasks} />
 
         {/** APPS */}
-        {tasks.includes('console') && <Console setTasks={setTasks}/>}
-        {tasks.includes('codeeditor') && <CodeEditor setTasks={setTasks}/>}
-        {tasks.includes('todo') && <Todo setTasks={setTasks}/>}
-        {tasks.includes('drumpads') && <Drumpads setTasks={setTasks}/>}
-        <Editor />
+        {tasks.includes('console') && <Console setTasks={setTasks} tasks={tasks}/>}
+        {tasks.includes('codeeditor') && <CodeEditor setTasks={setTasks} tasks={tasks}/>}
+        {tasks.includes('todo') && <Todo setTasks={setTasks} tasks={tasks}/>}
+        {tasks.includes('drumpads') && <Drumpads setTasks={setTasks} tasks={tasks}/>}
+        {tasks.includes('editor') && <Editor setTasks={setTasks} tasks={tasks}/>}
         <ClockWidget />
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>

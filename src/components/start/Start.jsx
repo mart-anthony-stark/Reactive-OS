@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import './start.css'
 import {AiFillCloseCircle} from 'react-icons/ai'
+import {FaFileWord} from 'react-icons/fa'
 import {FcCommandLine, FcTodoList} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {GiDrum} from 'react-icons/gi'
@@ -54,6 +55,17 @@ export default function Start({start, toggleStart, setTasks, tasks}){
               <div><GiDrum/></div>
             </IconContext.Provider>
             <p className='app-name'>Drumpads</p>
+          </div>
+          
+          
+          <div className="application" onDoubleClick={()=> {
+              setTasks([...tasks, 'editor'])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn" }}>
+              <div><FaFileWord/></div>
+            </IconContext.Provider>
+            <p className='app-name'>Word Editor</p>
           </div>
           
         </div>

@@ -13,7 +13,7 @@ import Code from '@editorjs/code'
 import SimpleImage from '@editorjs/simple-image'
 import './editor.css'
 
-export default function Editor(){
+export default function Editor({setTasks, tasks}){
   const [data, setData] = useState('as')
   const app = useRef()
   const header = useRef()
@@ -27,7 +27,7 @@ export default function Editor(){
         header.current.removeEventListener('mousemove', onDrag)
       })
     }
-  }, [])
+  }, [tasks])
   function onDrag({movementX, movementY}){
     let styles = window.getComputedStyle(app.current)
     let left = parseInt(styles.left) + movementX
