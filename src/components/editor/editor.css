@@ -1,13 +1,40 @@
 .word-editor{
-  position: absolute;
+  position: relative;
   z-index: 5;
   width: 500px;
   background: rgb(202, 202, 202);
   padding: 15px;
+  border: 3px solid black;
 }
 .codex-editor{
-
+  margin-top: 15px;
 }
 .ce-toolbar__settings-btn{
   color: rgb(0, 0, 0);
+}
+.tools{
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  background: rgb(126, 126, 126);
+  padding: 5px;
+  color: white;
+}
+.tools span{
+  padding: 0 5px;
+}
+.tools span:hover{
+  background: black;
+  cursor: url('../../cursors/Link Select.cur'), auto;
+}
+.word-editor-header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 3px 5px;
 }
