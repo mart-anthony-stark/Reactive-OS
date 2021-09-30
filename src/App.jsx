@@ -10,14 +10,17 @@ import Drumpads from './components/drumpads/Drumpads'
 import Editor from './components/editor/Editor'
 import SearchEngine from './components/search/SearchEngine'
 import PowerOptions from './components/power_opts/PowerOptions'
+import PowerButton from './components/power_btn/PowerButton'
+
 
 function App() {
   const [start, toggleStart] = useState(false)
-  const [powerOption ,togglePowerOption] = useState(true)
+  const [powerOption ,togglePowerOption] = useState(false)
   const [tasks, setTasks] = useState([])
 
   return (
     <main>
+        <PowerButton togglePowerOption={togglePowerOption}/>
       <div className='desktop'>
         <ContextMenu toggleStart={toggleStart}/>
         <Start start={start} toggleStart={toggleStart} setTasks={setTasks} tasks={tasks} />
