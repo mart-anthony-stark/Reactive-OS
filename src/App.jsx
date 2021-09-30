@@ -8,9 +8,12 @@ import CodeEditor from './components/code_editor/CodeEditor'
 import Todo from './components/todo/Todo'
 import Drumpads from './components/drumpads/Drumpads'
 import Editor from './components/editor/Editor'
+import SearchEngine from './components/search/SearchEngine'
+import PowerOptions from './components/power_opts/PowerOptions'
 
 function App() {
   const [start, toggleStart] = useState(false)
+  const [powerOption ,togglePowerOption] = useState(true)
   const [tasks, setTasks] = useState([])
 
   return (
@@ -25,7 +28,10 @@ function App() {
         {tasks.includes('todo') && <Todo setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('drumpads') && <Drumpads setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('editor') && <Editor setTasks={setTasks} tasks={tasks}/>}
+        
         <ClockWidget />
+        
+        {powerOption && <PowerOptions togglePowerOption={togglePowerOption}/>}
       </div>
       <Taskbar start={start} toggleStart={toggleStart}/>
     </main>

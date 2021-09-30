@@ -1,0 +1,53 @@
+.power-options{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: rgb(255, 255, 255);
+  height: 300px;
+  width: 400px;
+  border-radius: 25px;
+  border: 2px solid black;
+  transform: translate(-50%, -50%);
+  z-index: 999999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  gap: 50px;
+  animation: fade-in .5s linear 1;
+}
+@keyframes fade-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.options{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.options .option{
+  font-size: 80px;
+  padding: 5px;
+  border-radius: 15px;
+}
+.single-option{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.options .option:hover{
+  background: rgba(0, 0, 0, 0.336)
+}
+.close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgb(199, 62, 62);
+  font-size: 2em;
+}
