@@ -1,5 +1,6 @@
 .weather-widget{
   background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(50px);
   padding: 10px;
   max-width: 300px;
   display: flex;
@@ -8,6 +9,7 @@
   flex-direction: column;
   border-radius: 20px;
   user-select: none;
+  font-size: 1.2em;
 }
 input{
   background: rgba(0, 0, 0, 0.425);
@@ -15,5 +17,8 @@ input{
   border-radius: 15px;
   padding: 10px;
   outline: none;
+  color: white;
+}
+input::placeholder{
   color: white;
 }
