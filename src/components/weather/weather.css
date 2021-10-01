@@ -1,0 +1,19 @@
+.weather-widget{
+  background: rgba(255,255,255,0.4);
+  padding: 10px;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  user-select: none;
+}
+input{
+  background: rgba(0, 0, 0, 0.425);
+  border:none;
+  border-radius: 15px;
+  padding: 10px;
+  outline: none;
+  color: white;
+}
