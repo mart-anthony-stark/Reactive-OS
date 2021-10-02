@@ -5,7 +5,7 @@ import {BsDisplay} from 'react-icons/bs'
 import {RiShutDownLine} from 'react-icons/ri'
 import './context.css'
 
-export default function ContextMenu({toggleStart}){
+export default function ContextMenu({toggleStart, togglePowerOption}){
 
   React.useEffect(()=>{
     window.addEventListener('contextmenu', handleContext)
@@ -50,7 +50,7 @@ export default function ContextMenu({toggleStart}){
       <div className='item'>
         <BsDisplay/><span>Personalize</span>
       </div>
-      <div className='item'>
+      <div className='item' onClick={()=> togglePowerOption(true)}>
         <RiShutDownLine/><span>Shutdown</span>
       </div>
     </div>

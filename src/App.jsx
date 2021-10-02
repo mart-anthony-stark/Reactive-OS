@@ -41,7 +41,7 @@ function App() {
     <main>
         <PowerButton togglePowerOption={togglePowerOption}/>
       <div className='desktop'>
-        <ContextMenu toggleStart={toggleStart}/>
+        <ContextMenu toggleStart={toggleStart} togglePowerOption={togglePowerOption}/>
         <Start start={start} toggleStart={toggleStart} setTasks={setTasks} tasks={tasks} />
 
         {/** APPS */}

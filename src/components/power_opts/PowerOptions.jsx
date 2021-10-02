@@ -8,6 +8,7 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 
 export default function PowerOptions({setTasks, togglePowerOption}){
   return(
+    <div className='overlay'>
     <div className='power-options'>
       <div className='close' onClick={()=>togglePowerOption(false)}>
         <IconContext.Provider value={{className: "click-btn" }}><AiFillCloseCircle/></IconContext.Provider>
@@ -35,6 +36,7 @@ export default function PowerOptions({setTasks, togglePowerOption}){
           </IconContext.Provider>
           SLEEP
         </div>
+      </div>
       </div>
     </div>
   )
