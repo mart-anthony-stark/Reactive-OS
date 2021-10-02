@@ -13,12 +13,30 @@ import PowerOptions from './components/power_opts/PowerOptions'
 import PowerButton from './components/power_btn/PowerButton'
 import Weather from './components/weather/Weather'
 
-
+let dataObj ={
+    main:{humidity:'',pressure:'', temp:''},
+    wind:{speed:''},
+    weather:[{description: '',main:'',icon:''}],
+    sys: {country:''}
+  }
 function App() {
   const [start, toggleStart] = useState(false)
   const [powerOption ,togglePowerOption] = useState(false)
   const [tasks, setTasks] = useState([])
+  const [weather, setWeather] = useState(dataObj)
 
+  useEffect(()=>{
+    getWeatherData()
+  }, [])
+  async function getWeatherData(){
+    const ip = await fetch('https://ipinfo.io/json?token=9ef2e38a32ae2f')
+    const ipData = await ip.json()
+
+    const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ipData.city}&units=metric&APPID=c3c4f72debc080219009dd186a5092cc`)
+    const weatherData = await weather.json()
+
+    setWeather(weatherData)
+  }
   return (
     <main>
         <PowerButton togglePowerOption={togglePowerOption}/>
@@ -32,14 +50,14 @@ function App() {
         {tasks.includes('todo') && <Todo setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('drumpads') && <Drumpads setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('editor') && <Editor setTasks={setTasks} tasks={tasks}/>}
-        <Weather />
+        {tasks.includes('weather') && <Weather weather={weather}/>}
 
         <ClockWidget />
 
         
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption}/>}
       </div>
-      <Taskbar start={start} toggleStart={toggleStart}/>
+      <Taskbar start={start} toggleStart={toggleStart} weather={weather} tasks={tasks} setTasks={setTasks}/>
     </main>
   );
 }

@@ -19,3 +19,28 @@
 .start-btn:hover{
   color: rgb(255, 255, 255);
 }
+.right{
+  display: flex;
+  position: absolute;
+  right: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.battery{
+  font-size: 2em;
+  color: green;
+}
+.weather{
+  position: relative;
+  cursor: url('../../cursors/Link Select.cur'), auto;
+}
+.weather h3{
+  position: absolute;
+  left: -15px;
+  bottom: 5px;
+  font-weight: bolder;
+}
+.weather img{
+  height: 50px;
+}

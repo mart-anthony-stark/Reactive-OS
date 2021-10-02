@@ -8,7 +8,7 @@ let dataObj ={
     sys: {country:''}
   }
 
-export default function Weather(){
+export default function Weather({weather}){
   const [data, setData] = React.useState(dataObj)
   const [search, setSearch] = React.useState('')
   const app = useRef()
