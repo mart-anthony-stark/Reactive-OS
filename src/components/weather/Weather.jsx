@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useRef} from 'react'
 import './weather.css'
 
 let dataObj ={
@@ -11,10 +11,20 @@ let dataObj ={
 export default function Weather(){
   const [data, setData] = React.useState(dataObj)
   const [search, setSearch] = React.useState('')
+  const app = useRef()
 
   React.useEffect(()=>{
     getData()
-  }, [])
+    window.addEventListener('mouseup', ()=>{
+      app.current.removeEventListener('mousemove', onDrag)
+    })
+
+    return ()=>{
+      window.removeEventListener('mouseup', ()=>{
+        app.current.removeEventListener('mousemove', onDrag)
+      })
+    }
+  }, [data])
 
   async function getData(){
     const ip = await fetch('https://ipinfo.io/json?token=9ef2e38a32ae2f')
@@ -24,13 +34,24 @@ export default function Weather(){
     const weatherData = await weather.json()
 
     setData(weatherData)
-    console.log(weatherData)
+  }
+  function onDrag({movementX, movementY}){
+    let style = window.getComputedStyle(app.current)
+    let left = parseInt(style.left)
+    let top = parseInt(style.top)
+
+    app.current.style.left = `${left+movementX}px`
+    app.current.style.top = `${top+movementY}px`
   }
   const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
 
   return(
-    <div className='weather-widget'>
-      <input type='text' placeholder='Search...' />
+    <div className='weather-widget' ref={app} onMouseDown={()=> app.current.addEventListener('mousemove', onDrag)}>
+      <input type='text' placeholder='Search...' onKeyDown={(e)=>{
+        if(e.code == 'Enter' || e.code == 'enter'){
+          console.log(search)
+        }
+      }} value={search} onChange={(e)=> setSearch(e.target.value)}/>
       <img src={iconUrl} />
       {data.weather[0].description}
       <h3>{data.main.temp} °C</h3>
