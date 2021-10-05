@@ -49,12 +49,12 @@
   left: 25px;
   font-size: 2em;
   display: flex;
-  gap: 15px;
+  /* gap: 15px; */
 }
 .task-grp{
   position: relative;
   display: flex;
-  gap: 15px;
+  margin-right: 15px;
 }
 .active-tasks .task{
   box-sizing: unset;

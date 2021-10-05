@@ -24,40 +24,51 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
         </div>
       }
 
+      {tasks.includes('codeeditor') &&
         <div className='task-grp'>
           <span>Codear</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
-                {tasks.includes('codeeditor') &&<div data-app='Codear'><TiCodeOutline/></div>}
+              <div data-app='Codear'><TiCodeOutline/></div>
           </IconContext.Provider>
         </div>
+      }
 
+
+      {tasks.includes('todo') && 
         <div className='task-grp'>
           <span>Todo App</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
-                {tasks.includes('todo') && <div data-app='Todo App'><FcTodoList/></div>}
+              <div data-app='Todo App'><FcTodoList/></div>
           </IconContext.Provider>
         </div>
+      }
 
+      {tasks.includes('drumpads') && 
         <div className='task-grp'>
           <span>Drumpads</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
-                {tasks.includes('drumpads') && <div data-app='Drumpads'><GiDrum/></div>}
+            <div data-app='Drumpads'><GiDrum/></div>
           </IconContext.Provider>
         </div>
+      }
 
+
+      {tasks.includes('editor') && 
         <div className='task-grp'>
           <span>Word Editor</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
-                {tasks.includes('editor') && <div data-app='Word Editor'><FaFileWord/></div>}
+            <div data-app='Word Editor'><FaFileWord/></div>
           </IconContext.Provider>
         </div>
-
+      }
+      {tasks.includes('browser') && 
         <div className='task-grp'>
           <span>Web Browser</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
-                {tasks.includes('browser') && <div data-app='Web Browser'><FcSearch/></div>}
+            <div data-app='Web Browser'><FcSearch/></div>
           </IconContext.Provider>
         </div>
+      }
 
       </div>
 
