@@ -44,3 +44,15 @@
 .weather img{
   height: 50px;
 }
+.active-tasks{
+  position: absolute;
+  left: 25px;
+  display: flex;
+  gap: 15px;
+  font-size: 2em;
+}
+.active-tasks .task{
+  box-sizing: unset;
+  padding: 5px 5px;
+  background: rgb(134, 134, 134);
+}

@@ -12,6 +12,8 @@ import SearchEngine from './components/search/SearchEngine'
 import PowerOptions from './components/power_opts/PowerOptions'
 import PowerButton from './components/power_btn/PowerButton'
 import Weather from './components/weather/Weather'
+// const Weather = React.lazy(() => import('./components/weather/Weather'));
+
 
 let dataObj ={
     main:{humidity:'',pressure:'', temp:''},
