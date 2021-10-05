@@ -47,12 +47,34 @@
 .active-tasks{
   position: absolute;
   left: 25px;
+  font-size: 2em;
   display: flex;
   gap: 15px;
-  font-size: 2em;
+}
+.task-grp{
+  position: relative;
+  display: flex;
+  gap: 15px;
 }
 .active-tasks .task{
   box-sizing: unset;
   padding: 5px 5px;
-  background: rgb(134, 134, 134);
+  background: rgb(199, 199, 199);
+}
+.active-tasks .task:hover{
+  background: rgb(255, 255, 255);
+}
+.active-tasks .task-grp span{
+  position: fixed;
+  top: -10px;
+  background: black;
+  color: white;
+  font-size: 15px;
+  z-index: 1;
+  padding: 2px 3px;
+  border-radius: 3px;
+  visibility: hidden;
+}
+.active-tasks .task-grp:hover span{
+  visibility: visible;
 }

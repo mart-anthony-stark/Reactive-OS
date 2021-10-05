@@ -13,13 +13,45 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
   return(
     <div className={start?'taskbar open':'taskbar'}>
       <div className='active-tasks'>
-        <IconContext.Provider value={{className: "click-btn task" }}>
+
+      {tasks.includes('console') && 
+        <div className='task-grp'>
+          <span>Command Line</span>
+          <IconContext.Provider value={{className: "click-btn task", dataApp:'Command Line' }}>
               <div><FcCommandLine/></div>
-              <div><TiCodeOutline/></div>
-              <div><FcTodoList/></div>
-              <div><GiDrum/></div>
-              <div><FaFileWord/></div>
-        </IconContext.Provider>
+          </IconContext.Provider>
+        </div>
+      }
+
+        <div className='task-grp'>
+          <span>Codear</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+                {tasks.includes('codeeditor') &&<div data-app='Codear'><TiCodeOutline/></div>}
+          </IconContext.Provider>
+        </div>
+
+        <div className='task-grp'>
+          <span>Todo App</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+                {tasks.includes('todo') && <div data-app='Todo App'><FcTodoList/></div>}
+          </IconContext.Provider>
+        </div>
+
+        <div className='task-grp'>
+          <span>Drumpads</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+                {tasks.includes('drumpads') && <div data-app='Drumpads'><GiDrum/></div>}
+          </IconContext.Provider>
+        </div>
+
+        <div className='task-grp'>
+          <span>Word Editor</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+                {tasks.includes('editor') && <div data-app='Word Editor'><FaFileWord/></div>}
+          </IconContext.Provider>
+        </div>
+
+
       </div>
 
       <div className='start-btn' onClick={()=>{
