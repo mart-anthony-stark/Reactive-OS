@@ -12,6 +12,8 @@ import SearchEngine from './components/search/SearchEngine'
 import PowerOptions from './components/power_opts/PowerOptions'
 import PowerButton from './components/power_btn/PowerButton'
 import Weather from './components/weather/Weather'
+import Browser from './components/browser/Browser'
+
 // const Weather = React.lazy(() => import('./components/weather/Weather'));
 
 
@@ -53,6 +55,7 @@ function App() {
         {tasks.includes('drumpads') && <Drumpads setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('editor') && <Editor setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('weather') && <Weather weather={weather}/>}
+        <Browser />
 
         <ClockWidget />
 

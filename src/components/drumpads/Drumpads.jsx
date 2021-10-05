@@ -144,7 +144,7 @@ export default function Drumpads({setTasks, tasks}){
   }
 
   return(
-    <div className='drumpads' ref={app} onMouseDown={()=>{
+    <div className='drumpads' style={{zIndex: tasks.indexOf('drumpads')+1}} ref={app} onMouseDown={()=>{
         app.current.addEventListener('mousemove', onDrag)
      }}>
       <div className='drumpads-header'>

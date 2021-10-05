@@ -3,7 +3,7 @@ import Editor from './Editor'
 import './editor.css'
 import {AiFillCloseCircle} from 'react-icons/ai'
 
-export default function CodeEditor({setTasks}){
+export default function CodeEditor({setTasks, tasks}){
   React.useEffect(()=>{
     const editor = document.querySelector('.code-editor')
     const header = document.querySelector('.code-editor-header')
@@ -50,7 +50,7 @@ export default function CodeEditor({setTasks}){
   `
 
   return(
-    <div className='code-editor'>
+    <div className='code-editor' style={{zIndex: tasks.indexOf('codeeditor')+1}}>
       <div className='code-editor-header'>
         <span>Codear</span>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'codeeditor'))}>

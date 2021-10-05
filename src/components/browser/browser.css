@@ -1,0 +1,48 @@
+.browser{
+  position: fixed;
+  z-index: 6;
+  max-width: 600px;
+  width: 100%;
+  height: 500px;
+  background: grey;
+  border-radius: 25px;
+}
+.search-engine{
+  margin-top: 30px;
+  height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@font-face{
+  font-family: 'google';
+  src: url('../../fonts/Product Sans Regular.ttf');
+}
+.search-engine h2{
+  font-family: google;
+  font-size: 5rem;
+  letter-spacing: 5px;
+}
+.search-engine input{
+  width: 60%;
+  margin-top: 15px;
+}
+.search-engine h2 span:first-child{
+  color: rgb(42, 42, 196);
+}
+.search-engine h2 span:nth-child(2){
+  color: rgb(192, 42, 42);
+}
+.search-engine h2 span:nth-child(3){
+  color: rgb(194, 194, 34);
+}
+.search-engine h2 span:nth-child(4){
+  color: rgb(43, 43, 177);
+}
+.search-engine h2 span:nth-child(5){
+  color: rgb(43, 175, 43);
+}
+.search-engine h2 span:nth-child(6){
+  color: rgb(185, 42, 42);
+}

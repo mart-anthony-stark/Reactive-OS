@@ -33,3 +33,17 @@ p{
   color: rgb(206, 34, 34);
   cursor: url('./cursors/Link Select.cur'), auto;
 }
+.app-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 15px 15px 0 0;
+  user-select: none;
+  box-shadow: 0 5px 5px rgba(0,0,0,.4);
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

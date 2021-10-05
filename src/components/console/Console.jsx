@@ -5,7 +5,7 @@ import MapConsoleOutput from "./MapConsoleOutput";
 import {AiFillCloseCircle} from 'react-icons/ai'
 import './console.css'
 
-const Console = ({setTasks}) => {
+const Console = ({setTasks, tasks}) => {
   const inputText = React.useRef();
   const [input, setInput] = React.useState('')
   const [consoleOutput, onEnter] = UseOnEnter();
@@ -45,7 +45,7 @@ const Console = ({setTasks}) => {
   }, []);
 
   return (
-    <section className="console" onClick={(e)=> {
+    <section className="console" style={{zIndex: tasks.indexOf('console')+1}} onClick={(e)=> {
         document.querySelector('#cmd-input').focus()
       }}>
       <div className='toolbar'>
