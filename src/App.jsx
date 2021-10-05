@@ -54,8 +54,8 @@ function App() {
         {tasks.includes('todo') && <Todo setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('drumpads') && <Drumpads setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('editor') && <Editor setTasks={setTasks} tasks={tasks}/>}
+        {tasks.includes('browser') && <Browser setTasks={setTasks} tasks={tasks} />}
         {tasks.includes('weather') && <Weather weather={weather}/>}
-        <Browser />
 
         <ClockWidget />
 

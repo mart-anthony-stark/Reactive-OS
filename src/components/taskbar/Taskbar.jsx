@@ -6,6 +6,7 @@ import {GiBattery100, GiDrum} from 'react-icons/gi'
 import {FcCommandLine, FcTodoList} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {FaFileWord} from 'react-icons/fa'
+import {FcSearch} from 'react-icons/fc'
 import {IconContext} from 'react-icons'
 
 export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
@@ -51,6 +52,12 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
           </IconContext.Provider>
         </div>
 
+        <div className='task-grp'>
+          <span>Web Browser</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+                {tasks.includes('browser') && <div data-app='Web Browser'><FcSearch/></div>}
+          </IconContext.Provider>
+        </div>
 
       </div>
 

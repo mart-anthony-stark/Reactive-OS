@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './start.css'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {FaFileWord} from 'react-icons/fa'
-import {FcCommandLine, FcTodoList} from 'react-icons/fc'
+import {FcCommandLine, FcTodoList,FcSearch} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {GiDrum} from 'react-icons/gi'
 import {IconContext} from 'react-icons'
@@ -68,6 +68,18 @@ export default function Start({start, toggleStart, setTasks, tasks}){
             <p className='app-name'>Word Editor</p>
           </div>
           
+
+          <div className="application" onDoubleClick={()=> {
+              setTasks([...tasks, 'browser'])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn" }}>
+              <div><FcSearch/></div>
+            </IconContext.Provider>
+            <p className='app-name'>Web Browser</p>
+          </div>
+
+
         </div>
     </div>
   )

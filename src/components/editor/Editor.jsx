@@ -18,12 +18,12 @@ export default function Editor({setTasks, tasks}){
   const app = useRef()
   const header = useRef()
   useEffect(()=>{
-    window.addEventListener('mouseup', ()=>{
+    document.addEventListener('mouseup', ()=>{
       header.current.removeEventListener('mousemove', onDrag)
     })
 
     return ()=>{
-      window.removeEventListener('mouseup', ()=>{
+      document.removeEventListener('mouseup', ()=>{
         header.current.removeEventListener('mousemove', onDrag)
       })
     }
@@ -37,7 +37,7 @@ export default function Editor({setTasks, tasks}){
     app.current.style.left = left+'px'
   }
   return(
-    <div className='word-editor' ref={app}>
+    <div className='word-editor' ref={app} style={{ zIndex: tasks.indexOf('editor')+1 }}>
       <div className='word-editor-header' ref={header} onMouseDown={()=>{ header.current.addEventListener('mousemove', onDrag) }}>
         <span>Word editor</span>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'editor'))}>

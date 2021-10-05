@@ -6,6 +6,9 @@
   height: 500px;
   background: grey;
   border-radius: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 .search-engine{
   margin-top: 30px;

@@ -1,11 +1,36 @@
-import React from 'react'
+import React, {useState, useEffect, useRef}  from 'react'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import './browser.css'
 
-export default function Browser(){
+export default function Browser({setTasks, tasks}){
+  const app = useRef()
+  const header = useRef()
+  useEffect(()=>{
+    document.addEventListener('mouseup', ()=>{
+      header.current.removeEventListener('mousemove', onDrag)
+    })
+
+    return ()=>{
+      document.removeEventListener('mouseup', ()=>{
+        header.current.removeEventListener('mousemove', onDrag)
+      })
+    }
+  }, [])
+
+  function onDrag({movementX, movementY}){
+    let styles = window.getComputedStyle(app.current)
+    let left = parseInt(styles.left)
+    let top = parseInt(styles.top)
+
+    app.current.style.top = `${top+movementY}px`
+    app.current.style.left = `${left+movementX}px`
+  }
+
   return(
-    <div className='browser'>
-      <div className='browser-header app-header'>
+    <div className='browser' ref={app} style={{ zIndex: tasks.indexOf('browser')+1 }}>
+      <div className='browser-header app-header' ref={header} onMouseDown={()=> { 
+        header.current.addEventListener('mousemove', onDrag)
+      }}>
         <span>Browser</span>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'browser'))}>
           <AiFillCloseCircle/>
