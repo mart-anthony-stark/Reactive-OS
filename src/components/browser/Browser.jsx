@@ -15,7 +15,7 @@ export default function Browser({setTasks, tasks}){
         header.current.removeEventListener('mousemove', onDrag)
       })
     }
-  }, [])
+  }, [tasks])
 
   function onDrag({movementX, movementY}){
     let styles = window.getComputedStyle(app.current)
