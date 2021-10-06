@@ -44,7 +44,7 @@ function App() {
   }
   return (
     <main>
-      <Login />
+      <Login weather={weather}/>
         <PowerButton togglePowerOption={togglePowerOption}/>
       <div className='desktop'>
         <ContextMenu toggleStart={toggleStart} togglePowerOption={togglePowerOption}/>

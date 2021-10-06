@@ -40,5 +40,27 @@
   color: #fff;
   cursor: url('../../cursors/Link Select.cur'), auto;
   outline: 2px solid #fff;
-  
+}
+.user-icon{
+  font-size: 4em;
+}
+.login-widget{
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  font-size: 2em;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+.login-time{
+  font-size: 1.5em;
+  border-right: 2px solid rgba(255,255,255,0.8);
+  padding: 5px;
+}
+.login-time p{
+  font-size: .5em;
 }
