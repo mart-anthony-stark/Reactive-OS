@@ -44,6 +44,10 @@
   outline: none;
   padding: 5px;
   border-radius: 4px;
+  color: #000;
+}
+.new-task input::placeholder{
+  color: #000;
 }
 .new-task button{
   background: green;

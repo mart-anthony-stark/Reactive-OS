@@ -9,7 +9,7 @@ function handleSubmit(e){
   e.preventDefault()
 }
   return(
-    <div className='user-login'>
+    <div className='user-login logged'>
       <form onSubmit={handleSubmit}>
         <div className='input-cont'>
           <input type='text' placeholder='Username' />

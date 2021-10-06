@@ -41,8 +41,10 @@ export default function Todo({setTasks, tasks}){
   }, [])
 
   function handleNewTask(){
-    setTodos([{task: newTask, date: Date().toLocaleString()}, ...todos])
-    setNewTask('')
+    if(newTask.length !== 0){
+      setTodos([{task: newTask, date: Date().toLocaleString()}, ...todos])
+      setNewTask('')
+    }
   }
   
 
@@ -55,7 +57,13 @@ export default function Todo({setTasks, tasks}){
         </div>
       </div>
       <div className='new-task'>
-        <input placeholder='Task' onChange={(e)=> setNewTask(e.target.value)} value={newTask} />
+        <input placeholder='New Task'
+          onChange={(e)=> setNewTask(e.target.value)}
+          value={newTask}
+          onKeyDown={e =>{
+            e.code=='Enter' && handleNewTask()
+          }}
+        />
         <button onClick={handleNewTask}>Add Todo</button>
       </div>
       <div className='list'>
