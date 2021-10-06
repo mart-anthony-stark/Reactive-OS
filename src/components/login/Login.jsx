@@ -15,8 +15,9 @@ const [date, setDate] = useState('')
 React.useEffect(()=>{getTime()}, [])
 function handleSubmit(e){
   e.preventDefault()
+  user.username !== 'martanthony' && setErr({username: 'Account not found', password: user.password})
+  user.password !== 'admin' && setErr({username: err.username, password: 'Your password is incorrect'})
   if(user.username == 'martanthony' && user.password == 'admin') setLog(true)
-  console.log(user)
 }
 const getTime = () => {
     const date = new Date()
@@ -62,6 +63,7 @@ const getTime = () => {
           onChange={e => setUser({username: user.username,password: e.target.value})}
           />
         </div>
+
         <p style={{color: 'red'}}>{err.password}</p>
         <button onClick={handleSubmit}>Login</button>
       </form>
