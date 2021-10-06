@@ -1,0 +1,44 @@
+.user-login{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./login-bg.jpg) center;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  transition: margin-top 1s linear, opacity 1.5s linear;
+}
+.logged{
+  margin-top: -100%;
+  opacity: 0;
+}
+.user-login form{
+
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(50px);
+  padding: 25px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  gap: 10px;
+}
+.user-login form input, .input-cont{
+  width: 100%;
+}
+.user-login form button{
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  /* border-radius: 25px; */
+  background: rgb(175, 29, 175);
+  border: none;
+  color: #fff;
+  cursor: url('../../cursors/Link Select.cur'), auto;
+  outline: 2px solid #fff;
+  
+}

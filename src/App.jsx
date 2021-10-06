@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Login from './components/login/Login'
 import ContextMenu from './components/context/ContextMenu'
 import Taskbar from './components/taskbar/Taskbar'
 import Start from './components/start/Start'
@@ -43,6 +44,7 @@ function App() {
   }
   return (
     <main>
+      <Login />
         <PowerButton togglePowerOption={togglePowerOption}/>
       <div className='desktop'>
         <ContextMenu toggleStart={toggleStart} togglePowerOption={togglePowerOption}/>

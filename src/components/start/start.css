@@ -1,6 +1,6 @@
 .start-menu{
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   height: 80%;
   max-width: 500px;
   width: 100%;

@@ -10,7 +10,7 @@
   /* padding: 5px; */
   justify-content: center;
   padding-bottom: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 .start-btn{
   color: rgb(0, 0, 0);
