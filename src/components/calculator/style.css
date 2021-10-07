@@ -10,6 +10,7 @@
   position: fixed;
   z-index: 8;
   padding-top: 40px;
+  user-select: none;
 }
 .calculator button{
   width: 100%;

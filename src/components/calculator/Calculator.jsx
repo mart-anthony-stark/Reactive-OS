@@ -5,6 +5,17 @@ import './style.css'
 export default function Calculator({tasks, setTasks}){
   const [res, setRes] = useState('')
   const calculator = useRef()
+  useEffect(()=>{
+    window.addEventListener('mouseup', ()=>{
+      calculator.current.removeEventListener('mousemove', onDrag)
+    })
+
+    return function(){
+      window.removeEventListener('mouseup', ()=>{
+        calculator.current.removeEventListener('mousemove', onDrag)
+      })
+    }
+  }, [res, tasks])
   function onDrag({movementX, movementY}){
     let styles = window.getComputedStyle(calculator.current)
     let left = parseInt(styles.left)
