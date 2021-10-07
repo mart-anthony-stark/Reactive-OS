@@ -5,7 +5,7 @@ import './style.css'
 export default function Calculator({tasks, setTasks}){
   const [res, setRes] = useState('')
   const calculator = useRef()
-  useEffect(()=>{
+  useEffect(function(){
     window.addEventListener('mouseup', ()=>{
       calculator.current.removeEventListener('mousemove', onDrag)
     })
@@ -15,7 +15,7 @@ export default function Calculator({tasks, setTasks}){
         calculator.current.removeEventListener('mousemove', onDrag)
       })
     }
-  }, [res, tasks])
+  }, [res])
   function onDrag({movementX, movementY}){
     let styles = window.getComputedStyle(calculator.current)
     let left = parseInt(styles.left)
@@ -64,10 +64,18 @@ export default function Calculator({tasks, setTasks}){
                 <td colspan="2"><button onClick={()=> setRes('')} style={{color: 'rgb(255, 102, 0)'}}>C</button></td>
             </tr>
             <tr>
-                <td><button className='green'> x<sup>2</sup> </button> </td>
-                <td><button className='green'> x<sup>3</sup> </button> </td>
-                <td><button className='green'> &radic; </button> </td>
-                <td><button className='green'> &#8731; </button> </td>
+                <td><button className='green' onClick={()=>{
+                  setRes(Math.pow(res,2))
+                }}> x<sup>2</sup> </button> </td>
+                <td><button className='green' onClick={()=>{
+                  setRes(Math.pow(res,3))
+                }}> x<sup>3</sup> </button> </td>
+                <td><button className='green' onClick={()=>{
+                  setRes(Math.pow(res, 1/2))
+                }}> &radic; </button> </td>
+                <td><button className='green' onClick={()=>{
+                  setRes(Math.pow(res, 1/3))
+                }}> &#8731; </button> </td>
             </tr>
             <tr>
               <td><button onClick={()=> handleNumber('7')}>7</button></td>
