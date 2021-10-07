@@ -3,7 +3,7 @@ import './taskbar.css'
 import Clock from '../clock/Clock'
 import {CgMenuRound} from 'react-icons/cg'
 import {GiBattery100, GiDrum} from 'react-icons/gi'
-import {FcCommandLine, FcTodoList} from 'react-icons/fc'
+import {FcCommandLine, FcTodoList, FcCalculator} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {FaFileWord} from 'react-icons/fa'
 import {FcSearch} from 'react-icons/fc'
@@ -66,6 +66,14 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
           <span>Web Browser</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
             <div data-app='Web Browser'><FcSearch/></div>
+          </IconContext.Provider>
+        </div>
+      }
+      {tasks.includes('calculator') && 
+        <div className='task-grp'>
+          <span>Web Browser</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+            <div data-app='Calculator'><FcCalculator/></div>
           </IconContext.Provider>
         </div>
       }

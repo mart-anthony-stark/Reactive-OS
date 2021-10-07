@@ -12,13 +12,11 @@ export default function Weather({weather}){
   const [data, setData] = React.useState(dataObj)
   const [search, setSearch] = React.useState('')
   const app = useRef()
-
   React.useEffect(()=>{
     getData()
     window.addEventListener('mouseup', ()=>{
       app.current.removeEventListener('mousemove', onDrag)
     })
-
     return ()=>{
       window.removeEventListener('mouseup', ()=>{
         app.current.removeEventListener('mousemove', onDrag)
@@ -47,9 +45,14 @@ export default function Weather({weather}){
 
   return(
     <div className='weather-widget' ref={app} onMouseDown={()=> app.current.addEventListener('mousemove', onDrag)}>
-      <input type='text' placeholder='Search...' onKeyDown={(e)=>{
+      <input type='text' placeholder='Search...' onKeyDown={async(e)=>{
         if(e.code == 'Enter' || e.code == 'enter'){
-          console.log(search)
+          const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${e.target.value}&units=metric&APPID=c3c4f72debc080219009dd186a5092cc`)
+          const res = await weather.json()
+          if(res.message !== 'city not found')
+            setData(res)
+
+          setSearch('')
         }
       }} value={search} onChange={(e)=> setSearch(e.target.value)}/>
       <img src={iconUrl} />
