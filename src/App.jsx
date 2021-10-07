@@ -28,7 +28,7 @@ let dataObj ={
 function App() {
   const [start, toggleStart] = useState(false)
   const [powerOption ,togglePowerOption] = useState(false)
-  const [tasks, setTasks] = useState(['calculator'])
+  const [tasks, setTasks] = useState([])
   const [weather, setWeather] = useState(dataObj)
 
   useEffect(()=>{

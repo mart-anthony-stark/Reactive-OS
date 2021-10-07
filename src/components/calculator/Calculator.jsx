@@ -1,15 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import './style.css'
 
 export default function Calculator({tasks, setTasks}){
   const [res, setRes] = useState('')
+  const calculator = useRef()
+  function onDrag({movementX, movementY}){
+    let styles = window.getComputedStyle(calculator.current)
+    let left = parseInt(styles.left)
+    let top = parseInt(styles.top)
 
+    calculator.current.style.top = `${top+movementY}px`
+    calculator.current.style.left = `${left+movementX}px`
+  }
   function handleNumber(value){
     setRes(res+value)
   }
   return(
-    <div className='calculator' style={{zIndex: tasks.indexOf('calculator')+1}}>
+    <div className='calculator' style={{zIndex: tasks.indexOf('calculator')+1}}
+      ref={calculator}
+      onMouseDown={()=>{
+        calculator.current.addEventListener('mousemove', onDrag)
+      }}
+      onMouseUp={()=>{
+        calculator.current.removeEventListener('mousemove', onDrag)
+      }}
+    >
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'calculator'))}>
           <AiFillCloseCircle/>
         </div>
