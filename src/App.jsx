@@ -14,6 +14,7 @@ import PowerOptions from './components/power_opts/PowerOptions'
 import PowerButton from './components/power_btn/PowerButton'
 import Weather from './components/weather/Weather'
 import Browser from './components/browser/Browser'
+import Calculator from './components/calculator/Calculator'
 
 // const Weather = React.lazy(() => import('./components/weather/Weather'));
 
@@ -27,7 +28,7 @@ let dataObj ={
 function App() {
   const [start, toggleStart] = useState(false)
   const [powerOption ,togglePowerOption] = useState(false)
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(['calculator'])
   const [weather, setWeather] = useState(dataObj)
 
   useEffect(()=>{
@@ -58,7 +59,7 @@ function App() {
         {tasks.includes('editor') && <Editor setTasks={setTasks} tasks={tasks}/>}
         {tasks.includes('browser') && <Browser setTasks={setTasks} tasks={tasks} />}
         {tasks.includes('weather') && <Weather weather={weather}/>}
-
+        {tasks.includes('calculator') && <Calculator setTasks={setTasks} tasks={tasks} />}
         <ClockWidget />
 
         

@@ -1,0 +1,44 @@
+.calculator{
+  background: #22252D;
+  backdrop-filter: blur(25px);
+  max-width: 300px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  position: fixed;
+  z-index: 8;
+  padding-top: 40px;
+}
+.calculator button{
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  height: 100%;
+  background: #272B33;
+  color: #fff;
+  cursor: url('../../cursors/Link Select.cur'), auto;
+  user-select: none;
+}
+.calculator table{
+  border-spacing: 5px;
+  width: 100%;
+}
+#result{
+  margin-bottom: 10px;
+  width: 100%;
+  user-select: none;
+}
+.calculator button.green{
+  color: #26CEB1;
+}
+.calculator button.red{
+  color: rgb(248, 59, 81);
+}
+.calculator .close-btn{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}

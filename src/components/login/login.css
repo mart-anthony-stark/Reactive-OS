@@ -8,14 +8,14 @@
   z-index: 999;
   display: grid;
   place-items: center;
-  transition: margin-top 1s linear, opacity 1.5s linear;
+  transition: opacity 1.5s linear;
 }
 .logged{
-  margin-top: -100%;
+  visibility: hidden;
   opacity: 0;
 }
 .user-login form{
-
+  transform: translateY(-50%);
   background: rgba(255,255,255,0.4);
   backdrop-filter: blur(50px);
   padding: 25px;

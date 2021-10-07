@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './start.css'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {FaFileWord} from 'react-icons/fa'
-import {FcCommandLine, FcTodoList,FcSearch} from 'react-icons/fc'
+import {FcCommandLine, FcTodoList,FcSearch, FcCalculator} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {GiDrum} from 'react-icons/gi'
 import {IconContext} from 'react-icons'
@@ -80,6 +80,15 @@ export default function Start({start, toggleStart, setTasks, tasks}){
           </div>
 
 
+          <div className="application" onDoubleClick={()=> {
+              setTasks([...tasks, 'calculator'])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn" }}>
+              <div><FcCalculator/></div>
+            </IconContext.Provider>
+            <p className='app-name'>Calculator</p>
+          </div>
         </div>
     </div>
   )
