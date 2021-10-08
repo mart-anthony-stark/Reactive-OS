@@ -7,6 +7,7 @@ import {FcCommandLine, FcTodoList, FcCalculator} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {FaFileWord} from 'react-icons/fa'
 import {FcSearch} from 'react-icons/fc'
+import {AiFillFolderOpen} from 'react-icons/ai'
 import {IconContext} from 'react-icons'
 
 export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
@@ -74,6 +75,14 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
           <span>Web Browser</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
             <div data-app='Calculator'><FcCalculator/></div>
+          </IconContext.Provider>
+        </div>
+      }
+      {tasks.includes('files') && 
+        <div className='task-grp'>
+          <span>Web Browser</span>
+          <IconContext.Provider value={{className: "click-btn task" }}>
+            <div data-app='Calculator'><AiFillFolderOpen/></div>
           </IconContext.Provider>
         </div>
       }

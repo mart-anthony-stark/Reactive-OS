@@ -3,18 +3,20 @@ import {AiFillCloseCircle, AiFillFolderOpen} from 'react-icons/ai'
 import {FaRegHdd, FaImages} from 'react-icons/fa'
 import './style.css'
 
-export default function Folder(){
-  useEffect(()=>{
-    document.addEventListener('mouseup', ()=>{
-      folderHeader.current.removeEventListener('mousemove', onDrag)
-    })
-
-    return (document.addEventListener('mouseup', ()=>{
-      folderHeader.current.removeEventListener('mousemove', onDrag)
-    }))
-  },[])
+export default function Folder({tasks, setTasks}){
   const folderApp = useRef()
   const folderHeader = useRef()
+  useEffect(()=>{
+    // document.addEventListener('mouseup', ()=>{
+    //   folderHeader.current.removeEventListener('mousemove', onDrag)
+    // })
+
+    // return ()=> {
+    //   document.removeEventListener('mouseup', ()=>{
+    //     folderHeader.current.removeEventListener('mousemove', onDrag)
+    //   })
+    // }
+  },[])
   function onDrag({movementX,movementY}){
     const styles = window.getComputedStyle(folderApp.current)
     let left = parseInt(styles.left)
@@ -24,11 +26,8 @@ export default function Folder(){
     folderApp.current.style.top = `${top + movementY}px`
   }
   return(
-    <div className='folder' ref={folderApp}>
-      <div className='folder-header' ref={folderHeader}
-      onMouseDown={()=>{
-        folderHeader.current.addEventListener('mousemove', onDrag)
-      }}>
+    <div className='folder' ref={folderApp} style={{zIndex: tasks.indexOf('files')+1}}>
+      <div className='folder-header' ref={folderHeader}>
         <span>File Explorer</span>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'files'))}>
           <AiFillCloseCircle/>

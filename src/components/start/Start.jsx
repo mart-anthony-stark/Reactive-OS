@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './start.css'
-import {AiFillCloseCircle} from 'react-icons/ai'
+import {AiFillCloseCircle, AiFillFolderOpen} from 'react-icons/ai'
 import {FaFileWord} from 'react-icons/fa'
 import {FcCommandLine, FcTodoList,FcSearch, FcCalculator} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
@@ -89,6 +89,19 @@ export default function Start({start, toggleStart, setTasks, tasks}){
             </IconContext.Provider>
             <p className='app-name'>Calculator</p>
           </div>
+
+
+          <div className="application" onDoubleClick={()=> {
+              setTasks([...tasks, 'files'])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn", style:{color: '#232323'} }}>
+              <div><AiFillFolderOpen/></div>
+            </IconContext.Provider>
+            <p className='app-name'>File Explorer</p>
+          </div>
+
+
         </div>
     </div>
   )

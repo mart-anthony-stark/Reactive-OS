@@ -61,7 +61,7 @@ function App() {
         {tasks.includes('browser') && <Browser setTasks={setTasks} tasks={tasks} />}
         {tasks.includes('weather') && <Weather weather={weather}/>}
         {tasks.includes('calculator') && <Calculator setTasks={setTasks} tasks={tasks} />}
-        <Folder />
+        {tasks.includes('files') && <Folder setTasks={setTasks} tasks={tasks}/>}
         <ClockWidget />
 
         
