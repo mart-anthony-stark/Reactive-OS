@@ -78,3 +78,8 @@
 .active-tasks .task-grp:hover span{
   visibility: visible;
 }
+@media (max-width: 500px){
+  .weather{
+    transform: translateY(-50px);
+  }
+}
