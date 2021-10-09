@@ -22,6 +22,7 @@
 }
 .tools span{
   padding: 0 5px;
+  user-select: none;
 }
 .tools span:hover{
   background: black;
@@ -37,4 +38,5 @@
   align-items: center;
   background: #fff;
   padding: 3px 5px;
+  user-select: none;
 }
