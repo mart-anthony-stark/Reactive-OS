@@ -64,7 +64,6 @@ function App() {
         {tasks.includes('files') && <Folder setTasks={setTasks} tasks={tasks}/>}
         <ClockWidget />
 
-        
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption}/>}
       </div>
       <Taskbar start={start} toggleStart={toggleStart} weather={weather} tasks={tasks} setTasks={setTasks}/>

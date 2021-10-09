@@ -123,30 +123,32 @@ export default function Drumpads({setTasks, tasks}){
   const app = useRef()
 
   useEffect(()=>{
-    window.addEventListener('mouseup', ()=>{
-      app.current.removeEventListener('mousemove', onDrag)
+    const app = document.querySelector('.drumpads')
+    function onDrag({movementX, movementY}){
+      let styles = window.getComputedStyle(app)
+      let left = parseInt(styles.left)
+      let top = parseInt(styles.top)
+      app.style.left = `${left+movementX}px`
+      app.style.top = `${top+movementY}px`
+    }
+
+    app.addEventListener('mousedown', ()=>{
+      app.addEventListener('mousemove', onDrag)
+    })
+
+    document.addEventListener('mouseup', ()=>{
+      app.removeEventListener('mousemove', onDrag)
     })
 
     return ()=>{
-      window.removeEventListener('mouseup', ()=>{
-        app.current.removeEventListener('mousemove', onDrag)
+      document.removeEventListener('mouseup', ()=>{
+        app.removeEventListener('mousemove', onDrag)
       })
     }
   },[currentKeys, tasks])
 
-  function onDrag({movementX, movementY}){
-    let styles = window.getComputedStyle(app.current)
-    let left = parseInt(styles.left)
-    let top = parseInt(styles.top)
-    app.current.style.left = `${left+movementX}px`
-    app.current.style.top = `${top+movementY}px`
-    console.log('dragging')
-  }
-
   return(
-    <div className='drumpads' style={{zIndex: tasks.indexOf('drumpads')+1}} ref={app} onMouseDown={()=>{
-        app.current.addEventListener('mousemove', onDrag)
-     }}>
+    <div className='drumpads' style={{zIndex: tasks.indexOf('drumpads')+1}}>
       <div className='drumpads-header'>
         Drumpads
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'drumpads'))}>
