@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './start.css'
 import {AiFillCloseCircle, AiFillFolderOpen} from 'react-icons/ai'
-import {FaFileWord} from 'react-icons/fa'
+import {FaFileWord, FaTwitter} from 'react-icons/fa'
 import {FcCommandLine, FcTodoList,FcSearch, FcCalculator} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
 import {GiDrum} from 'react-icons/gi'
@@ -99,6 +99,17 @@ export default function Start({start, toggleStart, setTasks, tasks}){
               <div><AiFillFolderOpen/></div>
             </IconContext.Provider>
             <p className='app-name'>File Explorer</p>
+          </div>
+
+
+          <div className="application" onDoubleClick={()=> {
+              setTasks([...tasks, 'twitter'])
+              toggleStart(false)
+            }}>
+            <IconContext.Provider value={{className: "click-btn", style:{color: 'rgb(29, 155, 240)'} }}>
+              <div><FaTwitter/></div>
+            </IconContext.Provider>
+            <p className='app-name'>Twitter</p>
           </div>
 
 

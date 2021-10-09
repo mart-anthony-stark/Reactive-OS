@@ -63,7 +63,7 @@ function App() {
         {tasks.includes('weather') && <Weather weather={weather}/>}
         {tasks.includes('calculator') && <Calculator setTasks={setTasks} tasks={tasks} />}
         {tasks.includes('files') && <Folder setTasks={setTasks} tasks={tasks}/>}
-        <Twitter />
+        {tasks.includes('twitter') && <Twitter setTasks={setTasks} tasks={tasks}/>}
         <ClockWidget />
 
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption}/>}
