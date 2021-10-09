@@ -4,39 +4,37 @@ import './style.css'
 
 export default function Calculator({tasks, setTasks}){
   const [res, setRes] = useState('')
-  const calculator = useRef()
+
   useEffect(function(){
+    const calculator = document.querySelector('.calculator')
+
+    function onDrag({movementX, movementY}){
+      let styles = window.getComputedStyle(calculator)
+      let left = parseInt(styles.left)
+      let top = parseInt(styles.top)
+
+      calculator.style.top = `${top+movementY}px`
+      calculator.style.left = `${left+movementX}px`
+    }
+    calculator.addEventListener('mousedown', ()=>{
+      calculator.addEventListener('mousemove', onDrag)
+    })
     window.addEventListener('mouseup', ()=>{
-      calculator.current.removeEventListener('mousemove', onDrag)
+      calculator.removeEventListener('mousemove', onDrag)
     })
 
     return function(){
       window.removeEventListener('mouseup', ()=>{
-        calculator.current.removeEventListener('mousemove', onDrag)
+        calculator.removeEventListener('mousemove', onDrag)
       })
     }
   }, [res])
-  function onDrag({movementX, movementY}){
-    let styles = window.getComputedStyle(calculator.current)
-    let left = parseInt(styles.left)
-    let top = parseInt(styles.top)
-
-    calculator.current.style.top = `${top+movementY}px`
-    calculator.current.style.left = `${left+movementX}px`
-  }
+  
   function handleNumber(value){
     setRes(res+value)
   }
   return(
-    <div className='calculator' style={{zIndex: tasks.indexOf('calculator')+1}}
-      ref={calculator}
-      onMouseDown={()=>{
-        calculator.current.addEventListener('mousemove', onDrag)
-      }}
-      onMouseUp={()=>{
-        calculator.current.removeEventListener('mousemove', onDrag)
-      }}
-    >
+    <div className='calculator' style={{zIndex: tasks.indexOf('calculator')+1}}>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'calculator'))}>
           <AiFillCloseCircle/>
         </div>
