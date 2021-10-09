@@ -15,30 +15,37 @@ import './editor.css'
 
 export default function Editor({setTasks, tasks}){
   const [data, setData] = useState('as')
-  const app = useRef()
-  const header = useRef()
   useEffect(()=>{
+    const app = document.querySelector('.word-editor')
+    const header = document.querySelector('.word-editor-header')
+
+    function onDrag({movementX, movementY}){
+      let styles = window.getComputedStyle(app)
+      let left = parseInt(styles.left) + movementX
+      let top  = parseInt(styles.top)  + movementY
+
+      app.style.top = top+'px'
+      app.style.left = left+'px'
+    }
+    
+    header.addEventListener('mousedown', ()=>{
+      header.addEventListener('mousemove', onDrag)
+    })
+
     document.addEventListener('mouseup', ()=>{
-      header.current.removeEventListener('mousemove', onDrag)
+      header.removeEventListener('mousemove', onDrag)
     })
 
     return ()=>{
       document.removeEventListener('mouseup', ()=>{
-        header.current.removeEventListener('mousemove', onDrag)
+        header.removeEventListener('mousemove', onDrag)
       })
     }
   }, [tasks])
-  function onDrag({movementX, movementY}){
-    let styles = window.getComputedStyle(app.current)
-    let left = parseInt(styles.left) + movementX
-    let top  = parseInt(styles.top)  + movementY
-
-    app.current.style.top = top+'px'
-    app.current.style.left = left+'px'
-  }
+  
   return(
-    <div className='word-editor' ref={app} style={{ zIndex: tasks.indexOf('editor')+1 }}>
-      <div className='word-editor-header' ref={header} onMouseDown={()=>{ header.current.addEventListener('mousemove', onDrag) }}>
+    <div className='word-editor' style={{ zIndex: tasks.indexOf('editor')+1 }}>
+      <div className='word-editor-header'>
         <span>Word editor</span>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'editor'))}>
           <AiFillCloseCircle/>
