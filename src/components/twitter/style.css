@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+.twitter{
+  position: fixed;
+  z-index: 13;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  height: 550px;
+  max-width: 950px;
+  width: 100%;
+  background: grey;
+  border-radius: 25px 25px 0 0;
+}
+@font-face{
+  font-family: twitterchirp;
+  src: url(./font/twitterchirp.ttf);
+}
+.twitter .hero{
+  font-family: 'Roboto', sans-serif;
+  height: calc(100% - 40px);
+  margin-top: 38px;
+  width: 100%;
+  background: #15202B;
+  color: #fff;
+  display: grid;
+  grid-template-columns: .7fr 1fr .6fr;
+}
+.twitter .left{
+  position: relative;
+}
+.twitter .left::after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: .8px;
+  background: rgb(75, 75, 75);
+  top: 0;
+  right: 0;
+}
+.twitter .left .nav{
+  padding: 15px;
+}
+.twitter .left .nav .logo{
+  font-size: 2rem;
+}
+.twitter .left .nav .link{
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  max-width: 100%;
+  width: auto;
+}
+.twitter .left .nav .link:hover{
+  background: rgb(32, 49, 66);
+}
+.tweet{
+  padding: 10px;
+  border: none;
+  background: #1D9BF0;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #fff;
+  border-radius: 30px;
+  margin: 0 10px;
+}
+.left .profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.left .profile p{
+  color: rgb(124, 124, 124);
+}
+.left .profile img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

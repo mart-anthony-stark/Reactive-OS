@@ -16,6 +16,7 @@ import Weather from './components/weather/Weather'
 import Browser from './components/browser/Browser'
 import Calculator from './components/calculator/Calculator'
 import Folder from './components/folder/Folder'
+import Twitter from './components/twitter/Twitter'
 
 // const Weather = React.lazy(() => import('./components/weather/Weather'));
 
@@ -62,6 +63,7 @@ function App() {
         {tasks.includes('weather') && <Weather weather={weather}/>}
         {tasks.includes('calculator') && <Calculator setTasks={setTasks} tasks={tasks} />}
         {tasks.includes('files') && <Folder setTasks={setTasks} tasks={tasks}/>}
+        <Twitter />
         <ClockWidget />
 
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption}/>}

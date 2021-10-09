@@ -1,33 +1,39 @@
-import React,{useEffect, useRef} from 'react'
+import React,{useEffect} from 'react'
 import {AiFillCloseCircle, AiFillFolderOpen} from 'react-icons/ai'
 import {FaRegHdd, FaImages} from 'react-icons/fa'
 import './style.css'
 
 export default function Folder({tasks, setTasks}){
-  const folderApp = useRef()
-  const folderHeader = useRef()
   useEffect(()=>{
-    // document.addEventListener('mouseup', ()=>{
-    //   folderHeader.current.removeEventListener('mousemove', onDrag)
-    // })
+    const folderApp = document.querySelector('.folder')
+    const folderHeader = document.querySelector('.folder-header')
 
-    // return ()=> {
-    //   document.removeEventListener('mouseup', ()=>{
-    //     folderHeader.current.removeEventListener('mousemove', onDrag)
-    //   })
-    // }
+    function onDrag({movementX,movementY}){
+      const styles = window.getComputedStyle(folderApp)
+      let left = parseInt(styles.left)
+      let top = parseInt(styles.top)
+
+      folderApp.style.left = `${left + movementX}px`
+      folderApp.style.top = `${top + movementY}px`
+    }
+    folderHeader.addEventListener('mousedown', ()=>{
+      folderHeader.addEventListener('mousemove', onDrag)
+    })
+
+    document.addEventListener('mouseup', ()=>{
+      folderHeader.removeEventListener('mousemove', onDrag)
+    })
+
+    return ()=> {
+      document.removeEventListener('mouseup', ()=>{
+        folderHeader.removeEventListener('mousemove', onDrag)
+      })
+    }
   },[])
-  function onDrag({movementX,movementY}){
-    const styles = window.getComputedStyle(folderApp.current)
-    let left = parseInt(styles.left)
-    let top = parseInt(styles.top)
-
-    folderApp.current.style.left = `${left + movementX}px`
-    folderApp.current.style.top = `${top + movementY}px`
-  }
+  
   return(
-    <div className='folder' ref={folderApp} style={{zIndex: tasks.indexOf('files')+1}}>
-      <div className='folder-header' ref={folderHeader}>
+    <div className='folder' style={{zIndex: tasks.indexOf('files')+1}}>
+      <div className='folder-header'>
         <span>File Explorer</span>
         <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'files'))}>
           <AiFillCloseCircle/>
