@@ -64,16 +64,62 @@
   margin: 0 10px;
 }
 .left .profile{
+  width: 250px;
+  margin: auto;
+  border-radius: 30px;
+  padding: 5px 0;
+}
+.left .profile:hover{
+  background: rgba(218, 218, 218, 0.151);
+}
+.left .profile, .middle .profile{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.left .profile p{
-  color: rgb(124, 124, 124);
+.left .profile p, .middle .profile p{
+  color: rgb(167, 167, 167);
 }
 .left .profile img{
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+.middle .header{
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+  align-items: center;
+}
+.middle .header::after{
+  content: '';
+  position: absolute;
+  height: .8px;
+  width: 100%;
+  background: rgb(128, 128, 128);
+  bottom: 0;
+}
+.middle .header .back{
+  font-size: 1.3rem;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.middle .header .back:hover{
+  background: rgba(218, 218, 218, 0.151);
+}
+.middle .header .profile{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+.middle .header .profile p{
+  font-size: .8rem;
 }
