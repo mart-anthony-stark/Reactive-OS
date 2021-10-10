@@ -5,7 +5,7 @@ import {CgMenuRound} from 'react-icons/cg'
 import {GiBattery100, GiDrum} from 'react-icons/gi'
 import {FcCommandLine, FcTodoList, FcCalculator} from 'react-icons/fc'
 import {TiCodeOutline} from 'react-icons/ti'
-import {FaFileWord} from 'react-icons/fa'
+import {FaFileWord, FaTwitter} from 'react-icons/fa'
 import {FcSearch} from 'react-icons/fc'
 import {AiFillFolderOpen} from 'react-icons/ai'
 import {IconContext} from 'react-icons'
@@ -72,7 +72,7 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
       }
       {tasks.includes('calculator') && 
         <div className='task-grp'>
-          <span>Web Browser</span>
+          <span>Calculator</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
             <div data-app='Calculator'><FcCalculator/></div>
           </IconContext.Provider>
@@ -80,9 +80,17 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
       }
       {tasks.includes('files') && 
         <div className='task-grp'>
-          <span>Web Browser</span>
+          <span>File Explorer</span>
           <IconContext.Provider value={{className: "click-btn task" }}>
             <div data-app='Calculator'><AiFillFolderOpen/></div>
+          </IconContext.Provider>
+        </div>
+      }
+      {tasks.includes('twitter') && 
+        <div className='task-grp'>
+          <span>Twitter</span>
+          <IconContext.Provider value={{className: "click-btn task", style: {color: '#1D9BF0'} }}>
+            <div data-app='Calculator'><FaTwitter/></div>
           </IconContext.Provider>
         </div>
       }

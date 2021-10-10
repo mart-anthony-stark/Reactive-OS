@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import LeftSidebar from './LeftSidebar'
-import Middle from './Middle'
+import Profile from './Profile'
 import './style.css'
 
 export default function Twitter({tasks, setTasks}){
@@ -49,7 +49,7 @@ export default function Twitter({tasks, setTasks}){
       </div>
       <div className='hero'>
         <LeftSidebar />
-        <Middle />
+        <Profile />
       </div>
     </div>
   )
