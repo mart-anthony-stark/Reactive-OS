@@ -10,6 +10,33 @@ export default function Right(){
         <input type='text' placeholder='Search Twitter'/>
       </div>
       <img src={MediaImg} className='featured'/>
+      <div className='recommendations'>
+        <h3>You might like</h3>
+        <div className='user'>
+          <div className='user-photo'></div>
+          <div className='user-detail'>
+            <div></div>
+            <div></div>
+          </div>
+          <button className='click-btn'>Follow</button>
+        </div>
+        <div className='user'>
+          <div className='user-photo'></div>
+          <div className='user-detail'>
+            <div></div>
+            <div></div>
+          </div>
+          <button className='click-btn'>Follow</button>
+        </div>
+        <div className='user'>
+          <div className='user-photo'></div>
+          <div className='user-detail'>
+            <div></div>
+            <div></div>
+          </div>
+          <button className='click-btn'>Follow</button>
+        </div>
+      </div>
     </div>
   )
 }

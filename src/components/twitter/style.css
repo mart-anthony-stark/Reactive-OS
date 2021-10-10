@@ -237,3 +237,36 @@ h3.active{
   margin: auto;
   padding-left: 35px;
 }
+.twitter .right-sidebar .recommendations{
+  width: 90%;
+  padding: 25px;
+  background: #192734;
+  border-radius: 15px;
+}
+.twitter .right-sidebar .recommendations .user{
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+.twitter .right-sidebar .recommendations .user .user-photo{
+  height: 50px;
+  width: 50px;
+  background: rgb(167, 167, 167);
+  border-radius: 50%;
+}
+.twitter .right-sidebar .recommendations .user .user-detail div{
+  height: 20px;
+  width: 150px;
+  background: rgba(114, 114, 114, 0.39);
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+.twitter .right-sidebar .recommendations .user button{
+  height: 30px;
+  padding: 5px 15px;
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  align-self: center;
+}
