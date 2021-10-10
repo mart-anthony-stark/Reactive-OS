@@ -26,7 +26,7 @@
   background: #15202B;
   color: #fff;
   display: grid;
-  grid-template-columns: .6fr 1fr .5fr;
+  grid-template-columns: .5fr 1fr .5fr;
 }
 .twitter .left{
   position: relative;
@@ -60,7 +60,7 @@
   padding: 10px;
   border: none;
   background: #1D9BF0;
-  width: 100%;
+  width: 80%;
   font-size: 1.6rem;
   color: #fff;
   border-radius: 30px;
@@ -148,12 +148,14 @@
   width: 100%;
 }
 .middle .profile-details{
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .middle .profile-details .edit{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  left: -15px;
+  position: relative;
 }
 .middle .profile-details img{
   position: relative;
@@ -162,7 +164,7 @@
   border-radius: 50%;
   z-index: 1;
   border: 3px solid #15202B;
-  margin: -75px 0 0 10px;
+  margin: -75px 0 0 0px;
 }
 .middle .profile-details .edit button{
   border: 1px solid rgb(167, 167, 167);
