@@ -58,8 +58,6 @@ const bankOne = [
     id: 'Closed-HH',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
   },
-];
-const bankTwo = [
   {
     keyCode: 81,
     keyTrigger: 'Q',
@@ -161,9 +159,7 @@ export default function Drumpads({setTasks, tasks}){
           {currentKeys.map(pad => <Key key={pad.id} pad={pad} />)}
         </div>
         <div className='controls'>
-          <div className={`toggle ${currentKeys==bankOne && 'toggled'}`} onClick={()=>{ currentKeys==bankOne ? setKeys(bankTwo) : setKeys(bankOne) }}>
-            <div></div>
-          </div>
+          
         </div>
       </div>
     </div>

@@ -4,8 +4,11 @@
   background: rgb(37, 37, 37);
   padding: 25px;
   border-radius: 15px;
-  max-width: 400px;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 900px;
+  /* width: 100%; */
 }
 .drumpads-header{
   background: #fff;
@@ -22,7 +25,7 @@
 .drumpads .keys{
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(6, 100px);
   grid-auto-rows: 100px;
   gap: 10px;
   color: white;
