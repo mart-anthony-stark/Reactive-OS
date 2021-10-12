@@ -17,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 @font-face{
   font-family: 'google';
@@ -71,4 +72,22 @@
 }
 .search-engine .covid a{
   color: rgb(47, 0, 255);
+}
+.search-engine .language{
+  margin-top: 25px;
+}
+.search-engine .top-nav{
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+}
+.search-engine #profile-image{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
