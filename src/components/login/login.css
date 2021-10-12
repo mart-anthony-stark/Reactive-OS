@@ -8,7 +8,7 @@
   z-index: 999;
   display: grid;
   place-items: center;
-  transition: opacity 1.5s linear;
+  transition: 1.5s linear;
 }
 .logged{
   visibility: hidden;
@@ -35,7 +35,7 @@
   padding: 10px;
   margin-top: 20px;
   /* border-radius: 25px; */
-  background: rgb(175, 29, 175);
+  background: rgb(35, 7, 39);
   border: none;
   color: #fff;
   cursor: url('../../cursors/Link Select.cur'), auto;
