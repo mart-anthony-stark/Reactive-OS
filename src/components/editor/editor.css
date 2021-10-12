@@ -1,13 +1,18 @@
 .word-editor{
   position: relative;
   z-index: 5;
-  width: 500px;
+  max-width: 900px;
+  width: 100%;
   background: rgb(202, 202, 202);
-  padding: 15px;
+  padding: 10px;
   border: 3px solid black;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 .codex-editor{
-  margin-top: 15px;
+  margin-top: 5px;
+  width: 100%;
 }
 .ce-toolbar__settings-btn{
   color: rgb(0, 0, 0);
