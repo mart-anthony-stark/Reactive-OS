@@ -44,6 +44,14 @@ export default function Browser({setTasks, tasks}){
       <div className='search-engine'>
         <h2><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h2>
         <input type='text' placeholder='Search' />
+        <div className='buttons'>
+          <button className='click-btn'>Boogle Search</button>
+          <button className='click-btn'>I'm Feeling Lucky</button>
+        </div>
+        <p className='covid'>
+          Have questions on COVID-19 vaccine side effects?
+          <a href='#' target='_blank'> Find out more</a>
+        </p>
       </div>
     </div>
   )

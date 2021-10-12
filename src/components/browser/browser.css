@@ -1,10 +1,10 @@
 .browser{
   position: fixed;
   z-index: 6;
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
-  height: 500px;
-  background: grey;
+  height: 530px;
+  background: rgb(228, 228, 228);
   border-radius: 25px;
   top: 50%;
   left: 50%;
@@ -48,4 +48,27 @@
 }
 .search-engine h2 span:nth-child(6){
   color: rgb(185, 42, 42);
+}
+.search-engine .buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.search-engine .buttons button{
+  border: none;
+  font-size: 1.1rem;
+  padding: 10px;
+  background: rgb(216, 216, 216);
+}
+.search-engine .buttons button:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}
+.search-engine .covid{
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+.search-engine .covid a{
+  color: rgb(47, 0, 255);
 }
