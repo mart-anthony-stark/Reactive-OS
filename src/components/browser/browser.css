@@ -81,13 +81,62 @@
   top: 15px;
   right: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
-  
+  width: 100%;
+  padding: 10px 15px;
+}
+.search-engine .top-nav .opts{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.search-engine .top-nav .searchbox-top{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+}
+.search-engine .top-nav .searchbox-top input{
+  width: 100%;
+  margin: 0;
+  background: rgb(228, 228, 228);
+  color: black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}
+.search-engine .top-nav .searchbox-top input::placeholder{
+  color: #000;
+}
+.search-engine .top-nav .searchbox-top .icons{
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  display: flex;
+  gap: 8px;
 }
 .search-engine #profile-image{
   height: 30px;
   width: 30px;
   border-radius: 50%;
+}
+.search-engine .search-results{
+  position: absolute;
+  background: rgb(228, 228, 228);
+  height: 85%;
+  width: 100%;
+  bottom: 0;
+  overflow: auto;
+  padding: 10px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+}
+.search-engine #search-close{
+  position: absolute;
+  right: 0;
+  width: 50px;
 }

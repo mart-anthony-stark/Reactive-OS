@@ -2,9 +2,13 @@ import React, {useState, useEffect, useRef}  from 'react'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import ProfileImg from './dp.jpg'
 import {CgMenuGridO} from 'react-icons/cg'
+import Results from './Results'
+import Searchbox from './Searchbox'
 import './browser.css'
 
 export default function Browser({setTasks, tasks}){
+  const [search, setSearch] = useState('')
+  const [isResultReady, setResultOpen] = useState(false)
 
   useEffect(()=>{
     const app = document.querySelector('.browser')
@@ -34,6 +38,26 @@ export default function Browser({setTasks, tasks}){
     }
   }, [tasks])
 
+  async function handleSearch(){
+    if(search !== ''){
+      let query = `https://www.googleapis.com/customsearch/v1?key=AIzaSyCIg2swnHlTn-VtcdAvEQgKekCVqorQRsM&cx=d0a5377312a2b35aa&q=${search}`
+      const res = await fetch(query)
+      const data = await res.json()
+
+      console.log(data)
+      setResultOpen(true)
+      setSearch('')
+    }else {
+      console.log('Enter query')
+    }
+  }
+
+  function handleEnter(e){
+    if(e.code === 'Enter') {
+      handleSearch()
+    }
+  }
+
   return(
     <div className='browser' style={{ zIndex: tasks.indexOf('browser')+1 }}>
       <div className='browser-header app-header'>
@@ -44,17 +68,20 @@ export default function Browser({setTasks, tasks}){
       </div>
 
       <div className='search-engine'>
-        <div className='top-nav'>
-          <h4>Gmail</h4>
-          <h4>Images</h4>
-          <CgMenuGridO/>
-          <img id='profile-image' src={ProfileImg} />
+        <div className='top-nav' style={{justifyContent: isResultReady?'space-between': 'flex-end'}}>
+          {isResultReady && <Searchbox />}
+          <div className='opts'>
+            <h4>Gmail</h4>
+            <h4>Images</h4>
+            <CgMenuGridO/>
+            <img id='profile-image' src={ProfileImg} />
+          </div>
         </div>
-
+        {isResultReady && <Results setResultOpen={setResultOpen}/>}
         <h2><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h2>
-        <input type='text' placeholder='Search' />
+        <input type='text' placeholder='Search' value={search} onChange={e => setSearch(e.target.value)} onKeyDown={handleEnter}/>
         <div className='buttons'>
-          <button className='click-btn'>Boogle Search</button>
+          <button className='click-btn' onClick={handleSearch}>Boogle Search</button>
           <button className='click-btn'>I'm Feeling Lucky</button>
         </div>
         <p className='covid'>
