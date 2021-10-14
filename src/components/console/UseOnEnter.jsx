@@ -2,7 +2,9 @@ import React from 'react'
 
 const commands = {
   help: `help
-        \nCommands: [help]: `,
+        \nCommands:\n
+        \n[help]: 
+        \n\tMart`,
   quit: "Are you sure you want to quit? "
 };
 

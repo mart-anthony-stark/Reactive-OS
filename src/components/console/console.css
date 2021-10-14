@@ -51,3 +51,9 @@
   overflow: auto;
   padding: 10px;
 }
+.console pre{
+  font-size: 1rem;
+}
+.console input{
+  width: 70%;
+}
