@@ -27,6 +27,7 @@ const resObj ={
 
 export default function Browser({setTasks, tasks}){
   const [search, setSearch] = useState('')
+  const [currentSearch, setCurrentSearch] = useState('')
   const [isResultReady, setResultOpen] = useState(false)
   const [result, setResult] = useState(resObj)
 
@@ -65,10 +66,11 @@ export default function Browser({setTasks, tasks}){
       const data = await res.json()
 
       setResult(data)
+      setCurrentSearch(data.queries.request[0].searchTerms)
       setResultOpen(true)
       setSearch('')
     }else {
-      console.log('Enter query')
+      console.error('Invalid query. Please enter a value')
     }
   }
 
@@ -94,7 +96,14 @@ export default function Browser({setTasks, tasks}){
         }}>
           <div className='search-logo'>
             {isResultReady && <h4><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h4> }
-            {isResultReady && <Searchbox />}
+            {isResultReady && 
+            <Searchbox 
+              currentSearch={currentSearch}
+              setCurrentSearch={setCurrentSearch}
+              handleEnter={handleEnter}
+              setSearch={setSearch}
+              />
+            }
           </div>
           <div className='opts'>
             <h4>Gmail</h4>

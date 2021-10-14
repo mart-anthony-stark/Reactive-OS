@@ -2,7 +2,7 @@ import React from 'react'
 import {AiFillCloseCircle} from 'react-icons/ai'
 
 export default function Results({setResultOpen, result}){
-  React.useEffect(()=>{console.log(result)},[])
+
   return(
     <div className='search-results'>
       { result.items.map((item, i) => (
