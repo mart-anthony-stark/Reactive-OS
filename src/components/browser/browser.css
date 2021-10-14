@@ -18,6 +18,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 @font-face{
   font-family: 'google';
@@ -86,6 +88,15 @@
   gap: 10px;
   width: 100%;
   padding: 10px 15px;
+  /* box-shadow: 0 2px 2px rgb(0 0 0 / 40%); */
+}
+.search-engine .top-nav .search-logo{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: inherit;
+  width: 100%;
 }
 .search-engine .top-nav .opts{
   display: flex;
@@ -100,6 +111,30 @@
   align-items: center;
   max-width: 500px;
   width: 100%;
+}
+.search-engine h4 span:first-child{
+  color: rgb(42, 42, 196);
+  font-size: 1.3rem;
+}
+.search-engine h4 span:nth-child(2){
+  color: rgb(192, 42, 42);
+  font-size: 1.3rem;
+}
+.search-engine h4 span:nth-child(3){
+  color: rgb(194, 194, 34);
+    font-size: 1.3rem;
+}
+.search-engine h4 span:nth-child(4){
+  color: rgb(43, 43, 177);
+  font-size: 1.3rem;
+}
+.search-engine h4 span:nth-child(5){
+  color: rgb(43, 175, 43);
+  font-size: 1.3rem;
+}
+.search-engine h4 span:nth-child(6){
+  color: rgb(185, 42, 42);
+  font-size: 1.3rem;
 }
 .search-engine .top-nav .searchbox-top input{
   width: 100%;
@@ -139,4 +174,15 @@
   position: absolute;
   right: 0;
   width: 50px;
+}
+.search-engine .search-results .result-card{
+  margin: 10px 0 30px 0px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateX(20%);
+}
+.search-engine .search-results .result-card .snippet{
+  color: #303030;
 }

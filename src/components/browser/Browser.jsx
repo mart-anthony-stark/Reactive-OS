@@ -6,9 +6,29 @@ import Results from './Results'
 import Searchbox from './Searchbox'
 import './browser.css'
 
+const resObj ={
+    queries: {
+      request: [
+        {searchTerms: ''}
+      ]
+    },
+    items: [
+      {
+        title: '',
+        htmlTitle: '',
+        link: '',
+        displayLink: '',
+        snippet: '',
+        formattedUrl:''
+      }
+    ]
+  }
+
+
 export default function Browser({setTasks, tasks}){
   const [search, setSearch] = useState('')
   const [isResultReady, setResultOpen] = useState(false)
+  const [result, setResult] = useState(resObj)
 
   useEffect(()=>{
     const app = document.querySelector('.browser')
@@ -44,7 +64,7 @@ export default function Browser({setTasks, tasks}){
       const res = await fetch(query)
       const data = await res.json()
 
-      console.log(data)
+      setResult(data)
       setResultOpen(true)
       setSearch('')
     }else {
@@ -68,8 +88,14 @@ export default function Browser({setTasks, tasks}){
       </div>
 
       <div className='search-engine'>
-        <div className='top-nav' style={{justifyContent: isResultReady?'space-between': 'flex-end'}}>
-          {isResultReady && <Searchbox />}
+        <div className='top-nav' style={{
+          justifyContent: isResultReady?'space-between': 'flex-end',
+          boxShadow: isResultReady && '0 2px 2px rgb(0 0 0 / 40%)'
+        }}>
+          <div className='search-logo'>
+            {isResultReady && <h4><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h4> }
+            {isResultReady && <Searchbox />}
+          </div>
           <div className='opts'>
             <h4>Gmail</h4>
             <h4>Images</h4>
@@ -77,7 +103,7 @@ export default function Browser({setTasks, tasks}){
             <img id='profile-image' src={ProfileImg} />
           </div>
         </div>
-        {isResultReady && <Results setResultOpen={setResultOpen}/>}
+        {isResultReady && <Results setResultOpen={setResultOpen} result={result} />}
         <h2><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h2>
         <input type='text' placeholder='Search' value={search} onChange={e => setSearch(e.target.value)} onKeyDown={handleEnter}/>
         <div className='buttons'>
