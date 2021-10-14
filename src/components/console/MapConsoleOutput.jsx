@@ -14,7 +14,7 @@ const MapConsoleOutput = ({ consoleOutput }) => {
       {consoleOutput.map((item, index) => (
         <div key={index}>
           <Prompt />
-          <span>{item}</span>
+          <pre>{item}</pre>
         </div>
       ))}
     </div>

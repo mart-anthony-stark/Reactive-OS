@@ -1,5 +1,5 @@
 .console{
-  position: relative;
+  position: fixed;
   max-width: 500px;
   width: 100%;
   top: 50%;
@@ -7,8 +7,7 @@
   height: 300px;
   background: rgb(54, 53, 116);
   color: rgb(0, 255, 13);
-  padding: 35px 10px;
-  overflow-y: scroll;
+  padding: 35px 0px 0 0;
   transform: translate(-50%,-50%);
   z-index: 1;
 }
@@ -40,10 +39,15 @@
   padding: 0 10px;
   max-width: 500px;
   width: 100%;
-  transform: translate(-10px,-35px);
+  transform: translate(0px,-35px);
   user-select: none;
 }
 .console .close-btn{
   font-size: 1.2em;
   color: rgb(206, 34, 34);
+}
+.console .main-console{
+  max-height: 100%;
+  overflow: auto;
+  padding: 10px;
 }

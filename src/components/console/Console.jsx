@@ -54,6 +54,7 @@ const Console = ({setTasks, tasks}) => {
           <AiFillCloseCircle/>
         </div>
       </div>
+      <div className='main-console' id='console-main'>
       <MapConsoleOutput consoleOutput={consoleOutput} />
       <div className="input-prompt">
         <Prompt />
@@ -65,9 +66,13 @@ const Console = ({setTasks, tasks}) => {
           onChange={(e)=>setInput(e.target.value)}
           onKeyPress={({ target: { value }, key }) => {
             onEnter(value, key)
-            if(key==='Enter')setInput('')
+            if(key==='Enter') {
+              setInput('')
+              
+            }
           }}
         />
+      </div>
       </div>
     </section>
   );
