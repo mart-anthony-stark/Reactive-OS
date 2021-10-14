@@ -95,7 +95,12 @@ export default function Browser({setTasks, tasks}){
           boxShadow: isResultReady && '0 2px 2px rgb(0 0 0 / 40%)'
         }}>
           <div className='search-logo'>
-            {isResultReady && <h4><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h4> }
+            {isResultReady && <h4 onClick={()=>{
+                setCurrentSearch('')
+                setSearch('')
+                setResultOpen(false)
+              }
+            } className='click-btn'><span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h4> }
             {isResultReady && 
             <Searchbox 
               currentSearch={currentSearch}
