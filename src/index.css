@@ -15,7 +15,7 @@ body{
 }
 main{
   min-height: 100vh;
-  background: url('./img/desktop-bg.jpg') center;
+  background: url('./img/desktop-dark.jpg') center;
   background-size: cover;
 }
 .desktop{

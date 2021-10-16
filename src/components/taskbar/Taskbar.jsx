@@ -114,7 +114,7 @@ export default function Taskbar({start,toggleStart,weather, setTasks, tasks}){
           <img src={iconUrl} className='weather-icon'/>
         </div>
         <Clock />
-        <IconContext.Provider value={{className: "click-btn battery" }}>
+        <IconContext.Provider value={{className: "click-btn battery", style:{color: 'black'} }}>
           <GiBattery100 />
         </IconContext.Provider>
       </div>

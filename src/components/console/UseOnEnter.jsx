@@ -4,7 +4,9 @@ const commands = {
   help: `help
         \nCommands:\n
         \n[help]: 
-        \n\tMart`,
+        \n\tHelp
+        \n[quit]:
+        \n \tExits the terminal`,
   quit: "Are you sure you want to quit? "
 };
 
