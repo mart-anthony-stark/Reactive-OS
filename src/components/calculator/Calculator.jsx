@@ -28,7 +28,7 @@ export default function Calculator({tasks, setTasks}){
         calculator.removeEventListener('mousemove', onDrag)
       })
     }
-  }, [res])
+  }, [])
   
   function handleNumber(value){
     setRes(res+value)
