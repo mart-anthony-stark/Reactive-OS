@@ -6,7 +6,7 @@ import './login.css'
 
 export default function Login({weather}){
 const [showPass, toggleShowPass] = useState('password')
-const [isLogged, setLog] = useState(true)
+const [isLogged, setLog] = useState(false)
 const [user, setUser] = useState({username: '', password: ''})
 const [err, setErr] = useState({username: '', password: ''})
 const [time, setTime] = useState('00:00:00 am')
