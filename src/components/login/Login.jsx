@@ -13,7 +13,12 @@ const [time, setTime] = useState('00:00:00 am')
 const [date, setDate] = useState('')
 
 React.useEffect(()=>{
-  setInterval(getTime(), 1000)
+  setInterval(()=> {
+    getTime()
+  }, 1000)
+
+  return clearInterval()
+  
 }, [])
 function handleSubmit(e){
   e.preventDefault()
