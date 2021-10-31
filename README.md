@@ -23,12 +23,22 @@ React OS is a desktop environment UI built in ReactJS
 - Clock Widget
 
 ## Logging in
-Username: martanthony
+Username: martanthony <br>
 Password: admin
 <img src="./screenshots/login.png" width="100%" height="400px" align="center" style=""/>
 
-
+## Desktop UI
 <img src="./screenshots/desktop.png" width="100%" height="400px" align="center" style=""/>
+
+## Applications
 <img src="./screenshots/apps.png" width="100%" height="400px" align="center" style=""/>
+
+## Code editor with live preview
+<img src="./screenshots/code editor.png" width="100%" height="400px" align="center" style=""/>
+
+## Search Engine
+Using Google's Programmable Search Engine
 <img src="./screenshots/search engine.png" width="100%" height="400px" align="center" style=""/>
+
+## Twitter UI clone
 <img src="./screenshots/twitter.png" width="100%" height="400px" align="center" style=""/>
