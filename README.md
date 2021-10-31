@@ -22,7 +22,12 @@ React OS is a desktop environment UI built in ReactJS
 - Weather updates
 - Clock Widget
 
+## Logging in
+Username: martanthony
+Password: admin
 <img src="./screenshots/login.png" width="100%" height="400px" align="center" style=""/>
+
+
 <img src="./screenshots/desktop.png" width="100%" height="400px" align="center" style=""/>
 <img src="./screenshots/apps.png" width="100%" height="400px" align="center" style=""/>
 <img src="./screenshots/search engine.png" width="100%" height="400px" align="center" style=""/>
