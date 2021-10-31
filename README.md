@@ -9,8 +9,11 @@ React OS is a desktop environment UI built in ReactJS. This UI simulates compute
 <br>Developed by: <strong>Mart Anthony Salazar</strong>
 
 ### Getting Started
+#### To run locally, you need to install nodejs first and execute the following commands:
+- npm install
 - npm run dev
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+<hr>
+Edit [App.jsx](#src/App.jsx) and watch it live update!
 
 ## Features
 - Command Line Interface
