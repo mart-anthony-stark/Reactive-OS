@@ -4,6 +4,8 @@
 
 Using the two in conjunction is one of the fastest ways to build a web app.
 
+React OS is a desktop environment UI built in ReactJS
+
 ### Getting Started
 - npm run dev
 - Edit [App.jsx](#src/App.jsx) and watch it live update!
