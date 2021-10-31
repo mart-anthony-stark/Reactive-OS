@@ -4,7 +4,7 @@
 
 Using the two in conjunction is one of the fastest ways to build a web app.
 
-React OS is a desktop environment UI built in ReactJS. This UI simulates computer features such as opening an application, context menu, widgets, and even browsing the internet.
+Reactive OS is a desktop environment UI built in ReactJS. This UI simulates computer features such as opening an application, context menu, widgets, and even browsing the internet.
 
 <br>Developed by: <strong>Mart Anthony Salazar</strong>
 
