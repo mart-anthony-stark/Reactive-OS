@@ -12,7 +12,9 @@ const [err, setErr] = useState({username: '', password: ''})
 const [time, setTime] = useState('00:00:00 am')
 const [date, setDate] = useState('')
 
-React.useEffect(()=>{getTime()}, [])
+React.useEffect(()=>{
+  setInterval(getTime(), 1000)
+}, [])
 function handleSubmit(e){
   e.preventDefault()
   user.username !== 'martanthony' && setErr({username: 'Account not found', password: user.password})
@@ -25,7 +27,10 @@ const getTime = () => {
     let m = date.getMinutes()
     let s = date.getSeconds()
     let ampm = h >= 12 ? 'pm':'am'
-    h = (h >= 12) ? h-12 : (h == 0 ? 12: h)
+    // h = (h >= 12) ? h-12 : (h == 0 ? 12: h)
+
+    if(h>12) h = h-12
+    if(h==0) h = 12
 
     h = h<10 ? "0"+h : h
     m = m<10 ? "0"+m : m

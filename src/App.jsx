@@ -18,8 +18,6 @@ import Calculator from './components/calculator/Calculator'
 import Folder from './components/folder/Folder'
 import Twitter from './components/twitter/Twitter'
 
-// const Weather = React.lazy(() => import('./components/weather/Weather'));
-
 
 let dataObj ={
     main:{humidity:'',pressure:'', temp:''},
