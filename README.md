@@ -8,4 +8,8 @@ Using the two in conjunction is one of the fastest ways to build a web app.
 - npm run dev
 - Edit [App.jsx](#src/App.jsx) and watch it live update!
 
-<img src="./screenshots/login.png" width="70%" height="200px" align="center"/>
+<img src="./screenshots/login.png" width="100%" height="400px" align="center" style=""/>
+<img src="./screenshots/desktop.png" width="100%" height="400px" align="center" style=""/>
+<img src="./screenshots/apps.png" width="100%" height="400px" align="center" style=""/>
+<img src="./screenshots/search engine.png" width="100%" height="400px" align="center" style=""/>
+<img src="./screenshots/twitter.png" width="100%" height="400px" align="center" style=""/>
