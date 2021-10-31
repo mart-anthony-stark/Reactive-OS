@@ -8,6 +8,18 @@ Using the two in conjunction is one of the fastest ways to build a web app.
 - npm run dev
 - Edit [App.jsx](#src/App.jsx) and watch it live update!
 
+## Features
+- Command Line Interface
+- Code editor(html,css,js) with live preview
+- Todolist app
+- Drumpads
+- Word Editor
+- Search Engine
+- Calculator
+- Twitter UI clone
+- Weather updates
+- Clock Widget
+
 <img src="./screenshots/login.png" width="100%" height="400px" align="center" style=""/>
 <img src="./screenshots/desktop.png" width="100%" height="400px" align="center" style=""/>
 <img src="./screenshots/apps.png" width="100%" height="400px" align="center" style=""/>
