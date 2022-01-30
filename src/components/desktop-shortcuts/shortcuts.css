@@ -1,5 +1,17 @@
 .desktop-shortcuts {
-  height: 500px;
-  background: #000;
   width: 300px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 50px);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.desktop-shortcuts .app-icon {
+  font-size: 70px;
+  /* cursor: ; */
+  padding: 10px;
+}
+.desktop-shortcuts .app-icon:hover {
+  background: rgba(255, 255, 255, 0.158);
+  border-radius: 5px;
 }
