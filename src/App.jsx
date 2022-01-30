@@ -95,7 +95,9 @@ function App() {
         {tasks.includes("twitter") && (
           <Twitter setTasks={setTasks} tasks={tasks} />
         )}
-        <Spotify />
+        {tasks.includes("spotify") && (
+          <Spotify setTasks={setTasks} tasks={tasks} />
+        )}
         <ClockWidget />
 
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption} />}
