@@ -17,6 +17,7 @@ import Browser from './components/browser/Browser'
 import Calculator from './components/calculator/Calculator'
 import Folder from './components/folder/Folder'
 import Twitter from './components/twitter/Twitter'
+import Shortcuts from './components/desktop-shortcuts/Shortcuts';
 
 
 let dataObj ={
@@ -50,6 +51,8 @@ function App() {
       <div className='desktop'>
         <ContextMenu toggleStart={toggleStart} togglePowerOption={togglePowerOption}/>
         <Start start={start} toggleStart={toggleStart} setTasks={setTasks} tasks={tasks} />
+        {/* Desktop Shortcut apps */}
+        <Shortcuts />
 
         {/** APPS */}
         {tasks.includes('console') && <Console setTasks={setTasks} tasks={tasks}/>}
