@@ -1,25 +1,28 @@
-.user-login{
+.user-login {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./login-bg.jpg) center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./login-bg.jpg) center;
   z-index: 999;
   display: grid;
   place-items: center;
   transition: 1.5s linear;
 }
-.logged{
+.logged {
   visibility: hidden;
   opacity: 0;
 }
-.user-login form{
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(50px);
-  padding: 25px;
-  min-width: 300px;
+.user-login form {
+  transform: translateY(-50px);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(150px);
+  padding: 55px;
+  max-width: 500px;
+  height: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,10 +30,11 @@
   border-radius: 15px;
   gap: 10px;
 }
-.user-login form input, .input-cont{
+.user-login form input,
+.input-cont {
   width: 100%;
 }
-.user-login form button{
+.user-login form button {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
@@ -38,29 +42,34 @@
   background: rgb(35, 7, 39);
   border: none;
   color: #fff;
-  cursor: url('../../cursors/Link Select.cur'), auto;
+  cursor: url("../../cursors/Link Select.cur"), auto;
   outline: 2px solid #fff;
+  border-radius: 25px;
 }
-.user-icon{
-  font-size: 4em;
+.user-icon {
+  /* font-size: 4em; */
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  border: 3px solid white;
 }
-.login-widget{
+.login-widget {
   position: absolute;
   right: 50px;
   bottom: 20px;
-  color: rgba(255,255,255,0.8);
-  background: rgba(0,0,0,0.8);
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 2em;
   display: flex;
   gap: 20px;
   align-items: flex-end;
 }
-.login-time{
+.login-time {
   font-size: 1.5em;
-  border-right: 2px solid rgba(255,255,255,0.8);
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
   padding: 5px;
 }
-.login-time p{
-  font-size: .5em;
+.login-time p {
+  font-size: 0.5em;
 }
