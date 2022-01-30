@@ -1,7 +1,7 @@
 import React from "react";
 import "./start.css";
 import { AiFillCloseCircle, AiFillFolderOpen } from "react-icons/ai";
-import { FaFileWord, FaTwitter } from "react-icons/fa";
+import { FaFileWord, FaTwitter, FaSpotify } from "react-icons/fa";
 import {
   FcCommandLine,
   FcTodoList,
@@ -167,6 +167,26 @@ export default function Start({ start, toggleStart, setTasks, tasks }) {
             </div>
           </IconContext.Provider>
           <p className="app-name">Twitter</p>
+        </div>
+
+        <div
+          className="application"
+          onDoubleClick={() => {
+            setTasks([...tasks, "spotify"]);
+            toggleStart(false);
+          }}
+        >
+          <IconContext.Provider
+            value={{
+              className: "click-btn",
+              style: { color: "#1db853" },
+            }}
+          >
+            <div>
+              <FaSpotify />
+            </div>
+          </IconContext.Provider>
+          <p className="app-name">Spotify</p>
         </div>
       </div>
     </div>
