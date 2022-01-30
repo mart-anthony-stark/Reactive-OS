@@ -1,4 +1,4 @@
-.digital-clock{
+.digital-clock {
   font-family: digital;
   max-width: 320px;
   width: 100%;
@@ -9,15 +9,15 @@
   display: block;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   position: absolute;
   top: 30px;
-  left: 30px;
+  right: 30px;
 }
-.digital-clock .inner{
+.digital-clock .inner {
   user-select: none;
 }
-.digital-clock .inner span{
+.digital-clock .inner span {
   display: block;
   font-size: 25px;
 }
