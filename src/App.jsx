@@ -18,6 +18,7 @@ import Calculator from "./components/calculator/Calculator";
 import Folder from "./components/folder/Folder";
 import Twitter from "./components/twitter/Twitter";
 import Shortcuts from "./components/desktop-shortcuts/Shortcuts";
+import Spotify from "./components/spotify/Spotify";
 
 let dataObj = {
   main: { humidity: "", pressure: "", temp: "" },
@@ -94,6 +95,7 @@ function App() {
         {tasks.includes("twitter") && (
           <Twitter setTasks={setTasks} tasks={tasks} />
         )}
+        <Spotify />
         <ClockWidget />
 
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption} />}
