@@ -1,46 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  cursor: url('./cursors/Normal Select.cur'), auto;
-  font-family: 'Open Sans Condensed', sans-serif;
+body {
+  cursor: url("./cursors/Normal Select.cur"), auto;
+  font-family: "Open Sans Condensed", sans-serif;
   overflow: hidden;
+  user-select: none;
 }
-@font-face{
+@font-face {
   font-family: digital;
   src: url(./fonts/digital-7.ttf);
 }
-main{
+main {
   min-height: 100vh;
-  background: url('./img/desktop-dark.jpg') center;
+  background: url("./img/desktop-dark.jpg") center;
   background-size: cover;
 }
-.desktop{
+.desktop {
   height: calc(100vh - 67px);
   padding: 20px;
 }
-.click-btn{
-  cursor: url('./cursors/Link Select.cur'), auto;
+.click-btn {
+  cursor: url("./cursors/Link Select.cur"), auto;
 }
-p{
+p {
   font-size: 1em;
 }
-.close-btn{
+.close-btn {
   font-size: 1.2em;
   color: rgb(206, 34, 34);
-  cursor: url('./cursors/Link Select.cur'), auto;
+  cursor: url("./cursors/Link Select.cur"), auto;
 }
-.app-header{
+.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
   border-radius: 15px 15px 0 0;
   user-select: none;
-  box-shadow: 0 5px 5px rgba(0,0,0,.4);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
   background: #fff;
   position: absolute;
   top: 0;
