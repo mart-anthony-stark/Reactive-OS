@@ -1,16 +1,16 @@
-.start-menu{
+.start-menu {
   position: fixed;
   z-index: 20;
   height: 80%;
-  max-width: 500px;
+  max-width: 850px;
   width: 100%;
   top: 50%;
   left: 50%;
-  background: rgba(255, 255, 255,0.4);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(25px);
-  transform: scale(0) translate(-50%,-300%);
+  transform: scale(0) translate(-50%, -300%);
   transform-origin: left;
-  transition: .3s linear;
+  transition: 0.3s linear;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -19,20 +19,20 @@
   padding: 25px;
   user-select: none;
 }
-.start-menu.open{
-  transform: scale(1) translate(-50%,-50%);
+.start-menu.open {
+  transform: scale(1) translate(-50%, -50%);
 }
-.start-menu .title{
+.start-menu .title {
   font-size: 40px;
 }
-.start-menu .close{
+.start-menu .close {
   color: white;
   font-size: 2.5em;
   position: absolute;
   right: 20px;
   top: 20px;
 }
-.apps{
+.apps {
   font-size: 60px;
   display: grid;
   gap: 40px;
@@ -41,13 +41,13 @@
   width: 85%;
   margin: auto;
 }
-.apps .application{
+.apps .application {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.apps p.app-name{
+.apps p.app-name {
   font-weight: bolder;
   font-size: 18px;
 }
