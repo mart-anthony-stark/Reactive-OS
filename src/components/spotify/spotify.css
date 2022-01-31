@@ -5,7 +5,7 @@
   left: 50%;
   transform: translate(-50%, -55%);
   height: 550px;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   background: #181818;
   border-radius: 25px 25px 0 0;
@@ -22,4 +22,36 @@
   margin-top: 30px;
   padding: 20px;
   color: white;
+  position: relative;
+}
+.spotify-header {
+  z-index: 9;
+}
+.spotify-main .sidebar {
+  position: fixed;
+  top: 30px;
+  padding: 20px;
+  left: 0;
+  width: 250px;
+  background: #000000;
+  height: calc(100% - 30px);
+}
+.spotify-main .spotify-icon {
+  font-size: 40px;
+}
+.spotify-main .sidebar .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Bottom controls */
+.spotify-main .bottom {
+  width: 100%;
+  height: 80px;
+  background: #181818;
+  position: fixed;
+  bottom: 0;
+  transform: translateX(-20px);
+  box-shadow: inset 0 0.8px 0 white;
 }
