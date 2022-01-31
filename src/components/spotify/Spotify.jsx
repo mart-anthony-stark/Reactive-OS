@@ -40,6 +40,11 @@ const Spotify = ({ setTasks, tasks }) => {
           <AiFillCloseCircle />
         </div>
       </div>
+      <div className="spotify-main">
+        <div className="sidebar">
+          <h1>Spotify</h1>
+        </div>
+      </div>
     </div>
   );
 };
