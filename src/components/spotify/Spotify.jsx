@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./spotify.css";
 
 const Spotify = ({ setTasks, tasks }) => {
+  useEffect(function () {
+    const spotify = document.querySelector(".spotify");
+
+    function onDrag({ movementX, movementY }) {
+      let styles = window.getComputedStyle(spotify);
+      let left = parseInt(styles.left);
+      let top = parseInt(styles.top);
+
+      spotify.style.top = `${top + movementY}px`;
+      spotify.style.left = `${left + movementX}px`;
+    }
+    spotify.addEventListener("mousedown", () => {
+      spotify.addEventListener("mousemove", onDrag);
+    });
+    window.addEventListener("mouseup", () => {
+      spotify.removeEventListener("mousemove", onDrag);
+    });
+
+    return function () {
+      window.removeEventListener("mouseup", () => {
+        spotify.removeEventListener("mousemove", onDrag);
+      });
+    };
+  }, []);
   return (
     <div className="spotify" style={{ zIndex: tasks.indexOf("spotify") + 1 }}>
       <div className="spotify-header app-header">
