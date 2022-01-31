@@ -1,16 +1,9 @@
-import React from 'react'
-import Prompt from './Prompt'
+import React from "react";
+import Prompt from "./Prompt";
 
 const MapConsoleOutput = ({ consoleOutput }) => {
-  const scrollRef = React.useRef();
-
-  React.useEffect(() => {
-    if (scrollRef.current)
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-  });
-
   return (
-    <div className="console-output" ref={scrollRef}>
+    <div className="console-output">
       {consoleOutput.map((item, index) => (
         <div key={index}>
           <Prompt />
