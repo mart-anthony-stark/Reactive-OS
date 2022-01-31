@@ -12,6 +12,7 @@
   --c-main: #000000;
   --c-sec: #181818;
   --c-accent: #1db853;
+  overflow: hidden;
 }
 @font-face {
   font-family: Gotham;
@@ -21,8 +22,10 @@
   font-family: Gotham;
   margin-top: 30px;
   padding: 20px;
+  padding-right: 0;
   color: white;
   position: relative;
+  height: 100%;
 }
 .spotify-header {
   z-index: 9;
@@ -83,4 +86,19 @@
   bottom: 0;
   transform: translateX(-20px);
   box-shadow: inset 0 0.8px 0 white;
+}
+
+/* Main field */
+.spotify-main .feed {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 250px;
+  padding-bottom: 100px;
+}
+.spotify-main .feed::-webkit-scrollbar {
+  width: 15px;
+}
+.spotify-main .feed::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.466);
 }
