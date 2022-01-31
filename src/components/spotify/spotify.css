@@ -45,6 +45,35 @@
   gap: 10px;
 }
 
+.spotify-main .sidebar .link-menu {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spotify-main .sidebar .link-menu .link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 100;
+  color: rgb(153, 153, 153);
+  transition: 0.3s ease;
+}
+.spotify-main .sidebar .link-menu .link.active {
+  font-weight: 800;
+  color: white;
+}
+.spotify-main .sidebar .link-menu .link:hover {
+  color: white;
+}
+.spotify-main .sidebar .link-menu .link .link-icon {
+  font-size: 25px;
+}
+
 /* Bottom controls */
 .spotify-main .bottom {
   width: 100%;
