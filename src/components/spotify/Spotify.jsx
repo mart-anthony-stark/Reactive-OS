@@ -89,6 +89,11 @@ const Spotify = ({ setTasks, tasks }) => {
             </div>
           </div>
         </div>
+
+        {/* Main scrollable field (item tracks) */}
+        <div className="feed">
+          <div className="topnav"></div>
+        </div>
         {/* Bottom music controls */}
         <div className="bottom"></div>
       </div>
