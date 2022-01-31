@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { FaSpotify } from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
 import "./spotify.css";
 
 const Spotify = ({ setTasks, tasks }) => {
@@ -42,8 +44,19 @@ const Spotify = ({ setTasks, tasks }) => {
       </div>
       <div className="spotify-main">
         <div className="sidebar">
-          <h1>Spotify</h1>
+          <div className="title">
+            <IconContext.Provider
+              value={{
+                className: "spotify-icon",
+              }}
+            >
+              <FaSpotify />
+            </IconContext.Provider>
+            <h1>Spotify</h1>
+          </div>
         </div>
+        {/* Bottom music controls */}
+        <div className="bottom"></div>
       </div>
     </div>
   );
