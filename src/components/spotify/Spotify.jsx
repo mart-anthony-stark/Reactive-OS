@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { AiFillCloseCircle, AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
-import { BiLibrary } from "react-icons/bi";
+import { VscLibrary } from "react-icons/vsc";
 import { IconContext } from "react-icons/lib";
 import "./spotify.css";
 
@@ -83,9 +83,9 @@ const Spotify = ({ setTasks, tasks }) => {
                   className: "link-icon",
                 }}
               >
-                <BiLibrary />
+                <VscLibrary />
               </IconContext.Provider>
-              <span>Library</span>
+              <span>Your Library</span>
             </div>
           </div>
         </div>
