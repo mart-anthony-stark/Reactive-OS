@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const commands = {
   help: `help
@@ -7,7 +7,7 @@ const commands = {
         \n\tHelp
         \n[quit]:
         \n \tExits the terminal`,
-  quit: "Are you sure you want to quit? "
+  quit: "Are you sure you want to quit? ",
 };
 
 const UseOnEnter = () => {
@@ -15,8 +15,13 @@ const UseOnEnter = () => {
 
   const onEnter = (value, key) => {
     if (key === "Enter") {
-      const newConsoleLine = commands[value] || "Command not recognized by the HTML OS";
-      return updateConsoleOutput(consoleOutput =>
+      setTimeout(() => {
+        const objDiv = document.querySelector("#console-main");
+        objDiv.scrollTop = objDiv.scrollHeight;
+      }, 100);
+      const newConsoleLine =
+        commands[value] || "Command not recognized by the HTML OS";
+      return updateConsoleOutput((consoleOutput) =>
         consoleOutput.concat(newConsoleLine)
       );
     }
