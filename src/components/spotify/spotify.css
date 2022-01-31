@@ -38,6 +38,7 @@
   width: 250px;
   background: #000000;
   height: calc(100% - 30px);
+  z-index: 5;
 }
 .spotify-main .spotify-icon {
   font-size: 40px;
@@ -86,6 +87,7 @@
   bottom: 0;
   transform: translateX(-20px);
   box-shadow: inset 0 0.8px 0 white;
+  z-index: 6;
 }
 
 /* Main field */
@@ -93,12 +95,24 @@
   position: relative;
   height: 100%;
   overflow-y: auto;
-  padding-left: 250px;
-  padding-bottom: 100px;
+  padding: 50px 0 100px 250px;
 }
 .spotify-main .feed::-webkit-scrollbar {
   width: 15px;
 }
 .spotify-main .feed::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.466);
+}
+.spotify-main .feed .topnav {
+  position: fixed;
+  top: 30px;
+  left: 0px;
+  height: 105px;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(34, 136, 73, 0.1),
+    rgba(34, 136, 73, 0.5)
+  );
+  z-index: 2;
 }
