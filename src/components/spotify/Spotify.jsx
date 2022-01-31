@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
+import { BiLibrary } from "react-icons/bi";
 import { IconContext } from "react-icons/lib";
 import "./spotify.css";
 
@@ -53,6 +54,39 @@ const Spotify = ({ setTasks, tasks }) => {
               <FaSpotify />
             </IconContext.Provider>
             <h1>Spotify</h1>
+          </div>
+
+          <div className="link-menu">
+            <div className="link active">
+              <IconContext.Provider
+                value={{
+                  className: "link-icon",
+                }}
+              >
+                <AiFillHome />
+              </IconContext.Provider>
+              <span>Home</span>
+            </div>
+            <div className="link">
+              <IconContext.Provider
+                value={{
+                  className: "link-icon",
+                }}
+              >
+                <AiOutlineSearch />
+              </IconContext.Provider>
+              <span>Search</span>
+            </div>
+            <div className="link">
+              <IconContext.Provider
+                value={{
+                  className: "link-icon",
+                }}
+              >
+                <BiLibrary />
+              </IconContext.Provider>
+              <span>Library</span>
+            </div>
           </div>
         </div>
         {/* Bottom music controls */}
