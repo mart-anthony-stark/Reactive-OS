@@ -40,6 +40,15 @@
   grid-auto-rows: 100px;
   width: 85%;
   margin: auto;
+  overflow: auto;
+}
+.apps::-webkit-scrollbar {
+  width: 3px;
+  background: white;
+  cursor: url("/src/cursors/Normal Select.cur"), auto;
+}
+.apps::-webkit-scrollbar-thumb {
+  background: black;
 }
 .apps .application {
   display: flex;
