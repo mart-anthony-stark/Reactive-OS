@@ -7,6 +7,7 @@ import {
   AiTwotoneHeart,
   AiFillLeftCircle,
   AiFillRightCircle,
+  AiFillCaretDown,
 } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
 import { VscLibrary } from "react-icons/vsc";
@@ -130,6 +131,8 @@ const Spotify = ({ setTasks, tasks }) => {
             </div>
             <div className="right">
               <img src={dp} alt="Spotify account" className="dp" />
+              <h5>Mart Anthony ...</h5>
+              <AiFillCaretDown />
             </div>
           </div>
           <div className="top-overlay"></div>
