@@ -77,6 +77,26 @@
 .spotify-main .sidebar .link-menu .link .link-icon {
   font-size: 25px;
 }
+.spotify-main .sidebar .ops {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 25px;
+}
+.spotify-main .sidebar .ops .ops-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spotify-main .sidebar .ops .ops-item .add-icon {
+  height: 25px;
+  width: 25px;
+  background: white;
+  color: black;
+  padding: 5px;
+}
 
 /* Bottom controls */
 .spotify-main .bottom {
@@ -107,12 +127,31 @@
   position: fixed;
   top: 30px;
   left: 0px;
-  height: 105px;
+  height: 70px;
   width: 100%;
   background: linear-gradient(
     to top,
     rgba(34, 136, 73, 0.1),
     rgba(34, 136, 73, 0.5)
   );
+  padding: 20px 20px 20px 260px;
+  display: flex;
+  justify-content: space-between;
   z-index: 2;
+}
+.spotify-main .feed .topnav .left {
+}
+.spotify-main .feed .topnav .right {
+  background: #000;
+  border-radius: 25px;
+  padding: 5px;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.spotify-main .feed .topnav .right img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
 }
