@@ -6,6 +6,7 @@ import {
   FcSearch,
   FcCalculator,
 } from "react-icons/fc";
+import { AiFillChrome } from "react-icons/ai";
 import { FaFileWord, FaTwitter } from "react-icons/fa";
 import "./shortcuts.css";
 
@@ -22,14 +23,19 @@ const Shortcuts = ({ tasks, toggleStart, setTasks }) => {
           <FcCalculator />
         </div>
       </IconContext.Provider>
-      <IconContext.Provider value={{ className: "click-btn app-icon" }}>
+      <IconContext.Provider
+        value={{
+          className: "click-btn app-icon",
+          style: { color: "rgb(13, 118, 167)" },
+        }}
+      >
         <div
           onDoubleClick={() => {
             setTasks([...tasks, "browser"]);
             toggleStart(false);
           }}
         >
-          <FcSearch />
+          <AiFillChrome />
         </div>
       </IconContext.Provider>
       <IconContext.Provider value={{ className: "click-btn app-icon" }}>
