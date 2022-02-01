@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   AiFillCloseCircle,
   AiFillHome,
@@ -17,6 +17,13 @@ import { handleDrag } from "../../../helpers";
 import dp from "../browser/dp.jpg";
 
 const Spotify = ({ setTasks, tasks }) => {
+  const [scrolledDown, setScrolldown] = useState(false);
+
+  const handleScroll = (e) => {
+    if (e.target.scrollTop > 0) setScrolldown(true);
+    else setScrolldown(false);
+  };
+
   useEffect(function () {
     const spotify = document.querySelector(".spotify");
 
@@ -123,8 +130,8 @@ const Spotify = ({ setTasks, tasks }) => {
         </div>
 
         {/* Main scrollable field (item tracks) */}
-        <div className="feed">
-          <div className="topnav">
+        <div className="feed" onScroll={handleScroll}>
+          <div className={`topnav ${scrolledDown && "scrolled"}`}>
             <div className="left">
               <AiFillLeftCircle />
               <AiFillRightCircle />
@@ -136,6 +143,9 @@ const Spotify = ({ setTasks, tasks }) => {
             </div>
           </div>
           <div className="top-overlay"></div>
+          <div className="daily-mix">
+            <h1>Good {new Date().getHours < 12 ? "Morning" : "Evening"}</h1>
+          </div>
         </div>
         {/* Bottom music controls */}
         <div className="bottom"></div>
