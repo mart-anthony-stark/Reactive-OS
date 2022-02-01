@@ -124,6 +124,8 @@
   background: rgba(255, 255, 255, 0.466);
 }
 .spotify-main .feed .topnav {
+  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
   position: fixed;
   top: 30px;
   left: 0px;
@@ -139,10 +141,12 @@
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .spotify-main .feed .topnav .left {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   color: rgb(122, 122, 122);
   font-size: 30px;
   cursor: url("/src/cursors/Normal Select.cur"), auto;
@@ -151,7 +155,8 @@
   background: #000;
   border-radius: 25px;
   padding: 5px;
-  max-width: 300px;
+  padding-right: 15px;
+  max-width: 200px;
   width: 100%;
   display: flex;
   justify-content: space-between;
