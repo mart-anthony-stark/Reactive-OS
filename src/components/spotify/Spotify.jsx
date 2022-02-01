@@ -6,6 +6,7 @@ import {
   AiOutlinePlus,
   AiTwotoneHeart,
   AiFillLeftCircle,
+  AiFillRightCircle,
 } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
 import { VscLibrary } from "react-icons/vsc";
@@ -125,6 +126,7 @@ const Spotify = ({ setTasks, tasks }) => {
           <div className="topnav">
             <div className="left">
               <AiFillLeftCircle />
+              <AiFillRightCircle />
             </div>
             <div className="right">
               <img src={dp} alt="Spotify account" className="dp" />
