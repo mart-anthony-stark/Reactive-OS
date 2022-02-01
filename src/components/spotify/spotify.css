@@ -21,7 +21,7 @@
 .spotify-main {
   font-family: Gotham;
   margin-top: 30px;
-  padding: 20px;
+  /* padding: 20px; */
   padding-right: 0;
   color: white;
   position: relative;
@@ -116,7 +116,10 @@
   height: 100%;
   overflow-y: auto;
   padding: 50px 0 100px 250px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 .spotify-main .feed::-webkit-scrollbar {
   width: 15px;
 }
@@ -124,25 +127,21 @@
   background: rgba(255, 255, 255, 0.466);
 }
 .spotify-main .feed .topnav {
-  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
   position: fixed;
   top: 30px;
   left: 0px;
   height: 70px;
   width: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(34, 136, 73, 0.1),
-    rgba(34, 136, 73, 0.5)
-  );
-  padding: 20px 20px 20px 260px;
+  background: transparent;
+  padding: 40px 20px 40px 260px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: 0.5s ease-in-out;
+}
+.spotify-main .feed .topnav.scrolled {
+  background: #216338;
 }
 .spotify-main .feed .topnav .left {
   display: flex;
@@ -160,9 +159,27 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translateX(-20px);
 }
 .spotify-main .feed .topnav .right img {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+}
+.spotify-main .feed .top-overlay {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to top,
+    rgba(29, 184, 83, 0),
+    rgba(29, 184, 83, 0.452)
+  );
+  transform: translateY(-10px);
+  z-index: 1;
+}
+.spotify-main .feed .daily-mix {
+  margin-top: 50px;
 }
