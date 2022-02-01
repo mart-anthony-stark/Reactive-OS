@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
-import { AiFillCloseCircle, AiFillHome, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiFillCloseCircle,
+  AiFillHome,
+  AiOutlineSearch,
+  AiOutlinePlus,
+  AiTwotoneHeart,
+  AiFillLeftCircle,
+} from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
 import { VscLibrary } from "react-icons/vsc";
 import { IconContext } from "react-icons/lib";
 import "./spotify.css";
+import { handleDrag } from "../../../helpers";
+import dp from "../browser/dp.jpg";
 
 const Spotify = ({ setTasks, tasks }) => {
   useEffect(function () {
     const spotify = document.querySelector(".spotify");
 
     function onDrag({ movementX, movementY }) {
-      let styles = window.getComputedStyle(spotify);
-      let left = parseInt(styles.left);
-      let top = parseInt(styles.top);
-
-      spotify.style.top = `${top + movementY}px`;
-      spotify.style.left = `${left + movementX}px`;
+      handleDrag(movementX, movementY, spotify);
     }
     spotify.addEventListener("mousedown", () => {
       spotify.addEventListener("mousemove", onDrag);
@@ -88,11 +92,45 @@ const Spotify = ({ setTasks, tasks }) => {
               <span>Your Library</span>
             </div>
           </div>
+
+          <div className="ops">
+            <div className="ops-item">
+              <IconContext.Provider
+                value={{ className: "add-icon", style: { fontSize: "5px" } }}
+              >
+                <AiOutlinePlus />
+              </IconContext.Provider>
+              <span>Create Playlist</span>
+            </div>
+            <div className="ops-item">
+              <IconContext.Provider
+                value={{
+                  className: "add-icon",
+                  style: {
+                    color: "rgba(255,255,255,.7)",
+                    background:
+                      "linear-gradient(to bottom right, rgb(58, 37, 131), #a572a5)",
+                  },
+                }}
+              >
+                <AiTwotoneHeart />
+              </IconContext.Provider>
+              <span>Liked Songs</span>
+            </div>
+          </div>
         </div>
 
         {/* Main scrollable field (item tracks) */}
         <div className="feed">
-          <div className="topnav"></div>
+          <div className="topnav">
+            <div className="left">
+              <AiFillLeftCircle />
+            </div>
+            <div className="right">
+              <img src={dp} alt="Spotify account" className="dp" />
+            </div>
+          </div>
+          <div className="top-overlay"></div>
         </div>
         {/* Bottom music controls */}
         <div className="bottom"></div>
