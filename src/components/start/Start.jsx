@@ -1,13 +1,12 @@
 import React from "react";
 import "./start.css";
-import { AiFillCloseCircle, AiFillFolderOpen } from "react-icons/ai";
-import { FaFileWord, FaTwitter, FaSpotify } from "react-icons/fa";
 import {
-  FcCommandLine,
-  FcTodoList,
-  FcSearch,
-  FcCalculator,
-} from "react-icons/fc";
+  AiFillChrome,
+  AiFillCloseCircle,
+  AiFillFolderOpen,
+} from "react-icons/ai";
+import { FaFileWord, FaTwitter, FaSpotify } from "react-icons/fa";
+import { FcCommandLine, FcTodoList, FcCalculator } from "react-icons/fc";
 import { TiCodeOutline } from "react-icons/ti";
 import { GiDrum } from "react-icons/gi";
 import { IconContext } from "react-icons";
@@ -109,9 +108,14 @@ export default function Start({ start, toggleStart, setTasks, tasks }) {
             toggleStart(false);
           }}
         >
-          <IconContext.Provider value={{ className: "click-btn" }}>
+          <IconContext.Provider
+            value={{
+              className: "click-btn",
+              style: { color: "rgb(13, 118, 167)" },
+            }}
+          >
             <div>
-              <FcSearch />
+              <AiFillChrome />
             </div>
           </IconContext.Provider>
           <p className="app-name">Web Browser</p>
