@@ -200,6 +200,17 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  cursor: url("/src/cursors/Link Select.cur"), auto;
+}
+.spotify-main .feed .daily-mix .mixes .single-item:hover {
+  background: rgba(153, 153, 153, 0.459);
+}
+.spotify-main .feed .daily-mix .mixes .single-item .play-pause-icon.play {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.spotify-main .feed .daily-mix .mixes .single-item:hover .play-pause-icon.play {
+  opacity: 1;
 }
 .spotify-main .feed .daily-mix .mixes .single-item .item-right {
   display: flex;
