@@ -228,6 +228,8 @@
 
 /* Bottom controls */
 .spotify-main .bottom {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: 100%;
   height: 80px;
   background: #181818;
@@ -243,4 +245,19 @@
   box-shadow: inset 0 0.8px 0 white;
   z-index: 6;
   padding: 10px;
+}
+.spotify-main .bottom .current-song-preview {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.spotify-main .bottom .current-song-preview span {
+  color: #bbbbbb;
+  font-size: 12px;
+}
+.spotify-main .bottom .current-song-preview .icons {
+  display: flex;
+  color: rgba(255, 255, 255, 0.466);
+  gap: 5px;
+  font-size: 18px;
 }
