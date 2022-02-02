@@ -1,4 +1,5 @@
 import React from "react";
+import PowerButton from "../power_btn/PowerButton";
 import "./taskbar.css";
 import Clock from "../clock/Clock";
 import { CgMenuRound } from "react-icons/cg";
@@ -7,6 +8,7 @@ import { FcCommandLine, FcTodoList, FcCalculator } from "react-icons/fc";
 import { TiCodeOutline } from "react-icons/ti";
 import { FaFileWord, FaSpotify, FaTwitter } from "react-icons/fa";
 import { AiFillFolderOpen, AiFillChrome } from "react-icons/ai";
+
 import { IconContext } from "react-icons";
 
 export default function Taskbar({
@@ -15,6 +17,7 @@ export default function Taskbar({
   weather,
   setTasks,
   tasks,
+  togglePowerOption,
 }) {
   const iconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   return (
@@ -163,6 +166,7 @@ export default function Taskbar({
           <h3>{weather.main.temp} °C</h3>
           <img src={iconUrl} className="weather-icon" />
         </div>
+        <PowerButton togglePowerOption={togglePowerOption} />
         <Clock />
         <IconContext.Provider
           value={{ className: "click-btn battery", style: { color: "black" } }}

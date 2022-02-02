@@ -11,7 +11,6 @@ import Drumpads from "./components/drumpads/Drumpads";
 import Editor from "./components/editor/Editor";
 import SearchEngine from "./components/search/SearchEngine";
 import PowerOptions from "./components/power_opts/PowerOptions";
-import PowerButton from "./components/power_btn/PowerButton";
 import Weather from "./components/weather/Weather";
 import Browser from "./components/browser/Browser";
 import Calculator from "./components/calculator/Calculator";
@@ -49,7 +48,6 @@ function App() {
   return (
     <main>
       <Login weather={weather} />
-      <PowerButton togglePowerOption={togglePowerOption} />
       <div className="desktop">
         <ContextMenu
           toggleStart={toggleStart}
@@ -108,6 +106,7 @@ function App() {
         weather={weather}
         tasks={tasks}
         setTasks={setTasks}
+        togglePowerOption={togglePowerOption}
       />
     </main>
   );

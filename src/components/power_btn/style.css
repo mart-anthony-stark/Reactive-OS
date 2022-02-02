@@ -1,13 +1,15 @@
-.power-btn{
-  position: fixed;
-  z-index: 100;
-  top: 20px;
-  right: 20px;
-}
-.power{
-  box-sizing: unset;
-  font-size: 25px;
-  background: rgba(255,255,255,.4);
-  padding: 10px;
+.power-btn {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background: rgb(0, 0, 0);
   border-radius: 50%;
+}
+.power {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
 }
