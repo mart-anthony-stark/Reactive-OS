@@ -199,7 +199,7 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .spotify-main .feed .daily-mix .mixes .single-item .item-right {
   display: flex;
