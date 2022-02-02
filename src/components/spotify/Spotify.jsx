@@ -146,6 +146,11 @@ const Spotify = ({ setTasks, tasks }) => {
           <div className="top-overlay"></div>
           <div className="daily-mix">
             <h1>Good {new Date().getHours < 12 ? "Morning" : "Evening"}</h1>
+            <div className="mixes">
+              {mixes.map((mix) => (
+                <div className="single-item"></div>
+              ))}
+            </div>
           </div>
         </div>
         {/* Bottom music controls */}
@@ -154,5 +159,44 @@ const Spotify = ({ setTasks, tasks }) => {
     </div>
   );
 };
+
+const mixes = [
+  {
+    title: "Daily Mix 1",
+  },
+  {
+    title: "Daily Mix 2",
+  },
+  {
+    title: "Daily Mix 3",
+  },
+  {
+    title: "Daily Mix 4",
+  },
+  {
+    title: "Daily Mix 5",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+  {
+    title: "Daily Mix 6",
+  },
+];
 
 export default Spotify;
