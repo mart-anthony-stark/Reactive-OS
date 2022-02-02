@@ -1,6 +1,6 @@
 {
-  "name": "ReplitReactjsProject",
-  "version": "0.0.1",
+  "name": "ReactiveOS",
+  "version": "0.2.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
