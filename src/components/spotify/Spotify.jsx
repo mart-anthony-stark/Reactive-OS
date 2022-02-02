@@ -175,27 +175,27 @@ const Spotify = ({ setTasks, tasks }) => {
 const mixes = [
   {
     title: "Daily Mix 1",
-    img: "/src/img/DailyMix/1.jpg",
+    img: "https://github.com/mart-anthony-stark/Reactive-OS/blob/master/src/img/DailyMix/1.jpg?raw=true",
   },
   {
     title: "Daily Mix 2",
-    img: "/src/img/DailyMix/2.jpg",
+    img: "https://github.com/mart-anthony-stark/Reactive-OS/blob/master/src/img/DailyMix/2.jpg?raw=true",
   },
   {
     title: "Daily Mix 3",
-    img: "/src/img/DailyMix/3.jpg",
+    img: "https://github.com/mart-anthony-stark/Reactive-OS/blob/master/src/img/DailyMix/3.jpg?raw=true",
   },
   {
     title: "K-Pop Mix",
-    img: "/src/img/DailyMix/kpop.jpg",
+    img: "https://github.com/mart-anthony-stark/Reactive-OS/blob/master/src/img/DailyMix/kpop.jpg?raw=true",
   },
   {
     title: "NCT 127",
-    img: "/src/img/DailyMix/NCT127.jpg",
+    img: "https://github.com/mart-anthony-stark/Reactive-OS/blob/master/src/img/DailyMix/NCT127.jpg?raw=true",
   },
   {
     title: "TWICE",
-    img: "/src/img/DailyMix/twice.jpg",
+    img: "https://github.com/mart-anthony-stark/Reactive-OS/blob/master/src/img/DailyMix/twice.jpg?raw=true",
   },
 ];
 
