@@ -201,6 +201,25 @@
   align-items: center;
   gap: 30px;
 }
+.spotify-main .feed .daily-mix .mixes .single-item .item-right {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.spotify-main
+  .feed
+  .daily-mix
+  .mixes
+  .single-item
+  .item-right
+  .play-pause-icon {
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
 .spotify-main .feed .daily-mix .mixes .single-item img {
   height: 100%;
   width: 90px;
