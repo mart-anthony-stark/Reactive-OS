@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import DailyMix from "./DailyMix";
 import {
   AiFillCloseCircle,
   AiFillHome,
@@ -7,11 +8,9 @@ import {
   AiTwotoneHeart,
   AiFillLeftCircle,
   AiFillRightCircle,
-  AiOutlinePause,
   AiFillCaretDown,
 } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
-import { BiPlay } from "react-icons/bi";
 import { VscLibrary } from "react-icons/vsc";
 import { IconContext } from "react-icons/lib";
 import "./spotify.css";
@@ -151,29 +150,7 @@ const Spotify = ({ setTasks, tasks }) => {
             <h1>Good {new Date().getHours < 12 ? "Morning" : "Evening"}</h1>
             <div className="mixes">
               {mixes.map((mix) => (
-                <div className="single-item">
-                  <img src={mix.img} alt={mix.title} />
-                  <div className="item-right">
-                    <h4>{mix.title}</h4>
-                    {playingMix === mix.title ? (
-                      <IconContext.Provider
-                        value={{
-                          className: "play-pause-icon",
-                        }}
-                      >
-                        <AiOutlinePause />
-                      </IconContext.Provider>
-                    ) : (
-                      <IconContext.Provider
-                        value={{
-                          className: "play-pause-icon play",
-                        }}
-                      >
-                        <BiPlay />
-                      </IconContext.Provider>
-                    )}
-                  </div>
-                </div>
+                <DailyMix mix={mix} playingMix={playingMix} />
               ))}
             </div>
           </div>
