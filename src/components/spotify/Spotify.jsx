@@ -154,11 +154,15 @@ const Spotify = ({ setTasks, tasks }) => {
                   <img src={mix.img} alt={mix.title} />
                   <div className="item-right">
                     <h4>{mix.title}</h4>
-                    <IconContext.Provider value={{
-                      className:"play-pause-icon"
-                    }}>
-                      <AiOutlinePause />
-                    </IconContext.Provider>
+                    {playingMix === mix.title && (
+                      <IconContext.Provider
+                        value={{
+                          className: "play-pause-icon",
+                        }}
+                      >
+                        <AiOutlinePause />
+                      </IconContext.Provider>
+                    )}
                   </div>
                 </div>
               ))}
