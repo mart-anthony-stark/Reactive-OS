@@ -22,7 +22,11 @@ import dp from "../browser/dp.jpg";
 const Spotify = ({ setTasks, tasks }) => {
   const [scrolledDown, setScrolldown] = useState(false);
   const [playingMix, setPlayingMix] = useState("Daily Mix 1");
-  const [currentSong, setCurrentSong] = useState(song);
+  const [currentSong, setCurrentSong] = useState({
+    title: "Love me or Leave me",
+    img: "https://i.scdn.co/image/ab67616d000048510582daa99a6621b6ffd83525",
+    artist: "Day 6",
+  });
 
   const handleScroll = (e) => {
     if (e.target.scrollTop > 0) setScrolldown(true);
@@ -194,10 +198,5 @@ const mixes = [
     img: "/src/img/DailyMix/twice.jpg",
   },
 ];
-
-const song = {
-  title: "Love me or Leave me",
-  img: "https://i.scdn.co/image/ab67616d000048510582daa99a6621b6ffd83525",
-};
 
 export default Spotify;
