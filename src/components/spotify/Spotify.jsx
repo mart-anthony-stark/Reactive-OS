@@ -26,20 +26,21 @@ const Spotify = ({ setTasks, tasks }) => {
 
   useEffect(function () {
     const spotify = document.querySelector(".spotify");
+    const header = document.querySelector(".spotify-header");
 
     function onDrag({ movementX, movementY }) {
       handleDrag(movementX, movementY, spotify);
     }
-    spotify.addEventListener("mousedown", () => {
-      spotify.addEventListener("mousemove", onDrag);
+    header.addEventListener("mousedown", () => {
+      header.addEventListener("mousemove", onDrag);
     });
     window.addEventListener("mouseup", () => {
-      spotify.removeEventListener("mousemove", onDrag);
+      header.removeEventListener("mousemove", onDrag);
     });
 
     return function () {
       window.removeEventListener("mouseup", () => {
-        spotify.removeEventListener("mousemove", onDrag);
+        header.removeEventListener("mousemove", onDrag);
       });
     };
   }, []);
