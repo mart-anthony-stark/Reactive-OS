@@ -205,6 +205,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   padding-right: 10px;
 }
 .spotify-main
@@ -214,11 +215,12 @@
   .single-item
   .item-right
   .play-pause-icon {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   padding: 5px;
   border-radius: 50%;
   background: var(--c-accent);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.459);
 }
 .spotify-main .feed .daily-mix .mixes .single-item img {
   height: 100%;
