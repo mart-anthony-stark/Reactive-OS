@@ -7,6 +7,7 @@ import {
   AiTwotoneHeart,
   AiFillLeftCircle,
   AiFillRightCircle,
+  AiOutlinePause,
   AiFillCaretDown,
 } from "react-icons/ai";
 import { FaSpotify } from "react-icons/fa";
@@ -18,6 +19,7 @@ import dp from "../browser/dp.jpg";
 
 const Spotify = ({ setTasks, tasks }) => {
   const [scrolledDown, setScrolldown] = useState(false);
+  const [playingMix, setPlayingMix] = useState("Daily Mix 1");
 
   const handleScroll = (e) => {
     if (e.target.scrollTop > 0) setScrolldown(true);
@@ -150,7 +152,14 @@ const Spotify = ({ setTasks, tasks }) => {
               {mixes.map((mix) => (
                 <div className="single-item">
                   <img src={mix.img} alt={mix.title} />
-                  <h4>{mix.title}</h4>
+                  <div className="item-right">
+                    <h4>{mix.title}</h4>
+                    <IconContext.Provider value={{
+                      className:"play-pause-icon"
+                    }}>
+                      <AiOutlinePause />
+                    </IconContext.Provider>
+                  </div>
                 </div>
               ))}
             </div>
