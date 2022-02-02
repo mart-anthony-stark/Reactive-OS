@@ -98,18 +98,6 @@
   padding: 5px;
 }
 
-/* Bottom controls */
-.spotify-main .bottom {
-  width: 100%;
-  height: 80px;
-  background: #181818;
-  position: fixed;
-  bottom: 0;
-  transform: translateX(-20px);
-  box-shadow: inset 0 0.8px 0 white;
-  z-index: 6;
-}
-
 /* Main field */
 .spotify-main .feed {
   position: relative;
@@ -236,4 +224,23 @@
 .spotify-main .feed .daily-mix .mixes .single-item img {
   height: 100%;
   width: 90px;
+}
+
+/* Bottom controls */
+.spotify-main .bottom {
+  width: 100%;
+  height: 80px;
+  background: #181818;
+  position: fixed;
+  bottom: 0;
+  box-shadow: inset 0 0.8px 0 white;
+  z-index: 6;
+  width: 100%;
+  height: 80px;
+  background: #181818;
+  position: fixed;
+  bottom: 0;
+  box-shadow: inset 0 0.8px 0 white;
+  z-index: 6;
+  padding: 10px;
 }
