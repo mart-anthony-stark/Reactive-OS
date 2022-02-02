@@ -148,7 +148,10 @@ const Spotify = ({ setTasks, tasks }) => {
             <h1>Good {new Date().getHours < 12 ? "Morning" : "Evening"}</h1>
             <div className="mixes">
               {mixes.map((mix) => (
-                <div className="single-item"></div>
+                <div className="single-item">
+                  <img src={mix.img} alt={mix.title} />
+                  <h4>{mix.title}</h4>
+                </div>
               ))}
             </div>
           </div>
@@ -163,39 +166,27 @@ const Spotify = ({ setTasks, tasks }) => {
 const mixes = [
   {
     title: "Daily Mix 1",
+    img: "/src/img/DailyMix/1.jpg",
   },
   {
     title: "Daily Mix 2",
+    img: "/src/img/DailyMix/2.jpg",
   },
   {
     title: "Daily Mix 3",
+    img: "/src/img/DailyMix/3.jpg",
   },
   {
-    title: "Daily Mix 4",
+    title: "K-Pop Mix",
+    img: "/src/img/DailyMix/kpop.jpg",
   },
   {
-    title: "Daily Mix 5",
+    title: "NCT 127",
+    img: "/src/img/DailyMix/NCT127.jpg",
   },
   {
-    title: "Daily Mix 6",
-  },
-  {
-    title: "Daily Mix 6",
-  },
-  {
-    title: "Daily Mix 6",
-  },
-  {
-    title: "Daily Mix 6",
-  },
-  {
-    title: "Daily Mix 6",
-  },
-  {
-    title: "Daily Mix 6",
-  },
-  {
-    title: "Daily Mix 6",
+    title: "TWICE",
+    img: "/src/img/DailyMix/twice.jpg",
   },
 ];
 
