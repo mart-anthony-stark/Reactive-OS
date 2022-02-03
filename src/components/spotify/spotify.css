@@ -256,3 +256,34 @@
   gap: 5px;
   font-size: 18px;
 }
+.spotify-main .bottom .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.spotify-main .bottom .controls .top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.spotify-main .bottom .controls .top .control-icon {
+  color: #bbbbbb;
+  font-size: 20px;
+  cursor: url("../../cursors/Link Select.cur"), auto;
+}
+.spotify-main .bottom .controls .top .control-icon:hover {
+  color: white;
+}
+.spotify-main .bottom .controls .top .play-icon {
+  background: rgb(209, 209, 209);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.spotify-main .bottom .controls .top .control-icon.play {
+  color: black;
+  font-size: 18px;
+}
