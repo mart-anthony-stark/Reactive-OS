@@ -26,7 +26,11 @@ const Controls = () => {
           <IoIosRepeat />
         </IconContext.Provider>
       </div>
-      <div className="bot"></div>
+      <div className="bot">
+        <span className="time">0:00</span>
+        <div className="time-span"></div>
+        <span className="time">3:07</span>
+      </div>
     </div>
   );
 };
