@@ -303,3 +303,29 @@
   border-radius: 2px;
   background: #868686;
 }
+.spotify-main .bottom .rightControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spotify-main .bottom .rightControls .right-control-icon {
+  font-size: 20px;
+  color: #bbbbbb;
+}
+.spotify-main .bottom .rightControls .volume {
+  position: relative;
+  height: 3px;
+  width: 100px;
+  background: #bbbbbb77;
+  border-radius: 3px;
+}
+.spotify-main .bottom .rightControls .volume::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: #ffffff;
+  border-radius: 3px;
+}
