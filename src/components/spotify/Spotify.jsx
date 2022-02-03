@@ -18,6 +18,7 @@ import { IconContext } from "react-icons/lib";
 import "./spotify.css";
 import { handleDrag } from "../../../helpers";
 import dp from "../browser/dp.jpg";
+import Rightcontrols from "./RightControls";
 
 const Spotify = ({ setTasks, tasks }) => {
   const [scrolledDown, setScrolldown] = useState(false);
@@ -166,6 +167,7 @@ const Spotify = ({ setTasks, tasks }) => {
         <div className="bottom">
           <CurrentSong song={currentSong} />
           <Controls />
+          <Rightcontrols />
         </div>
       </div>
     </div>
