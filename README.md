@@ -1,3 +1,5 @@
+[![Man Hours](https://img.shields.io/endpoint?url=https%3A%2F%2Fmh.jessemillar.com%2Fhours%3Frepo%3Dhttps%3A%2F%2Fgithub.com%2Fmart-anthony-stark%2FReactive-OS)](https://jessemillar.com/r/man-hours)
+
 [React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
 
 [Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
