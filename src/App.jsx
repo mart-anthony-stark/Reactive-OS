@@ -29,10 +29,8 @@ let dataObj = {
 function App() {
   const [start, toggleStart] = useState(false);
   const [powerOption, togglePowerOption] = useState(false);
-  const tasks = useSelector((state) => state.tasks);
+  const { tasks } = useSelector((state) => state.tasks);
   const [weather, setWeather] = useState(dataObj);
-
-  console.log(task);
 
   useEffect(() => {
     getWeatherData();
