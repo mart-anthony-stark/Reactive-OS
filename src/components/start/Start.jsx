@@ -10,8 +10,12 @@ import { FcCommandLine, FcTodoList, FcCalculator } from "react-icons/fc";
 import { TiCodeOutline } from "react-icons/ti";
 import { GiDrum } from "react-icons/gi";
 import { IconContext } from "react-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { addTask } from "../../redux/taskSlice";
 
-export default function Start({ start, toggleStart, setTasks, tasks }) {
+export default function Start({ start, toggleStart }) {
+  const tasks = useSelector((state) => state.tasks.tasks);
+  const dispatch = useDispatch();
   return (
     <div className={`start-menu ${start && "open"}`}>
       <div className="close" onClick={() => toggleStart(false)}>
@@ -24,7 +28,7 @@ export default function Start({ start, toggleStart, setTasks, tasks }) {
         <div
           className="application"
           onDoubleClick={() => {
-            setTasks([...tasks, "console"]);
+            dispatch(addTask("console"));
             toggleStart(false);
           }}
         >
