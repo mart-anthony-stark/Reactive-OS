@@ -6,6 +6,8 @@ import Results from "./Results";
 import Searchbox from "./Searchbox";
 import "./browser.css";
 import { useSelector } from "react-redux";
+import { removeTask } from "../../redux/taskSlice";
+import { useDispatch } from "react-redux";
 
 const resObj = {
   queries: {
@@ -24,6 +26,7 @@ const resObj = {
 };
 
 export default function Browser() {
+  const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks.tasks);
   const [search, setSearch] = useState("");
   const [currentSearch, setCurrentSearch] = useState("");
@@ -85,9 +88,7 @@ export default function Browser() {
         <span>Browser</span>
         <div
           className="close-btn"
-          onClick={() =>
-            setTasks((prev) => prev.filter((p) => p !== "browser"))
-          }
+          onClick={() => dispatch(removeTask("browser"))}
         >
           <AiFillCloseCircle />
         </div>
