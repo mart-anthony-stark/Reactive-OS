@@ -18,6 +18,7 @@ import Folder from "./components/folder/Folder";
 import Twitter from "./components/twitter/Twitter";
 import Shortcuts from "./components/desktop-shortcuts/Shortcuts";
 import Spotify from "./components/spotify/Spotify";
+import { useSelector } from "react-redux";
 
 let dataObj = {
   main: { humidity: "", pressure: "", temp: "" },
@@ -28,8 +29,10 @@ let dataObj = {
 function App() {
   const [start, toggleStart] = useState(false);
   const [powerOption, togglePowerOption] = useState(false);
-  const [tasks, setTasks] = useState([]);
+  const tasks = useSelector((state) => state.tasks);
   const [weather, setWeather] = useState(dataObj);
+
+  console.log(task);
 
   useEffect(() => {
     getWeatherData();
@@ -53,49 +56,22 @@ function App() {
           toggleStart={toggleStart}
           togglePowerOption={togglePowerOption}
         />
-        <Start
-          start={start}
-          toggleStart={toggleStart}
-          setTasks={setTasks}
-          tasks={tasks}
-        />
+        <Start start={start} toggleStart={toggleStart} />
         {/* Desktop Shortcut apps */}
-        <Shortcuts
-          tasks={tasks}
-          toggleStart={toggleStart}
-          setTasks={setTasks}
-        />
+        <Shortcuts toggleStart={toggleStart} />
 
         {/** APPS */}
-        {tasks.includes("console") && (
-          <Console setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("codeeditor") && (
-          <CodeEditor setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("todo") && <Todo setTasks={setTasks} tasks={tasks} />}
-        {tasks.includes("drumpads") && (
-          <Drumpads setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("editor") && (
-          <Editor setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("browser") && (
-          <Browser setTasks={setTasks} tasks={tasks} />
-        )}
+        {tasks.includes("console") && <Console />}
+        {tasks.includes("codeeditor") && <CodeEditor />}
+        {tasks.includes("todo") && <Todo />}
+        {tasks.includes("drumpads") && <Drumpads />}
+        {tasks.includes("editor") && <Editor />}
+        {tasks.includes("browser") && <Browser />}
         {tasks.includes("weather") && <Weather weather={weather} />}
-        {tasks.includes("calculator") && (
-          <Calculator setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("files") && (
-          <Folder setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("twitter") && (
-          <Twitter setTasks={setTasks} tasks={tasks} />
-        )}
-        {tasks.includes("spotify") && (
-          <Spotify setTasks={setTasks} tasks={tasks} />
-        )}
+        {tasks.includes("calculator") && <Calculator />}
+        {tasks.includes("files") && <Folder />}
+        {tasks.includes("twitter") && <Twitter />}
+        {tasks.includes("spotify") && <Spotify />}
         <ClockWidget />
 
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption} />}
@@ -104,8 +80,6 @@ function App() {
         start={start}
         toggleStart={toggleStart}
         weather={weather}
-        tasks={tasks}
-        setTasks={setTasks}
         togglePowerOption={togglePowerOption}
       />
     </main>
