@@ -120,11 +120,11 @@ const bankOne = [
 export default function Drumpads() {
   const dispatch = useDispatch();
   const [currentKeys, setKeys] = useState(bankOne);
-  const app = useRef();
   const tasks = useSelector((state) => state.tasks.tasks);
 
   useEffect(() => {
     const app = document.querySelector(".drumpads");
+    const header = document.querySelector(".drumpads-header");
     function onDrag({ movementX, movementY }) {
       let styles = window.getComputedStyle(app);
       let left = parseInt(styles.left);
@@ -133,17 +133,17 @@ export default function Drumpads() {
       app.style.top = `${top + movementY}px`;
     }
 
-    app.addEventListener("mousedown", () => {
-      app.addEventListener("mousemove", onDrag);
+    header.addEventListener("mousedown", () => {
+      header.addEventListener("mousemove", onDrag);
     });
 
     document.addEventListener("mouseup", () => {
-      app.removeEventListener("mousemove", onDrag);
+      header.removeEventListener("mousemove", onDrag);
     });
 
     return () => {
       document.removeEventListener("mouseup", () => {
-        app.removeEventListener("mousemove", onDrag);
+        header.removeEventListener("mousemove", onDrag);
       });
     };
   }, [currentKeys, tasks]);
@@ -163,7 +163,7 @@ export default function Drumpads() {
       <div className="hero">
         <div className="keys">
           {currentKeys.map((pad) => (
-            <Key key={pad.id} pad={pad} />
+            <Key key={pad.url} pad={pad} />
           ))}
         </div>
         <div className="controls"></div>
