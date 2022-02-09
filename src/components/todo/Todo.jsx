@@ -3,9 +3,13 @@ import Task from "./Task";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./todo.css";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { removeTask } from "../../redux/taskSlice";
 
 export default function Todo({ setTasks }) {
   const { tasks } = useSelector((state) => state.tasks);
+  const dispatch = useDispatch();
+
   const [newTask, setNewTask] = useState("");
   const [todos, setTodos] = useState([{ task: "", date: "" }]);
 
@@ -51,10 +55,7 @@ export default function Todo({ setTasks }) {
     <div className="todo-app" style={{ zIndex: tasks.indexOf("todo") + 1 }}>
       <div className="todo-header">
         <span>TodoList App</span>
-        <div
-          className="close-btn"
-          // onClick={() => setTasks((prev) => prev.filter((p) => p !== "todo"))}
-        >
+        <div className="close-btn" onClick={() => dispatch(removeTask("todo"))}>
           <AiFillCloseCircle />
         </div>
       </div>
