@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
+export const taskSlice = createSlice({
   name: "task",
   initialState: {
     tasks: ["todo"],
@@ -15,4 +15,6 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { addTask, removeTask } = counterSlice.actions;
+export const { addTask, removeTask } = taskSlice.actions;
+
+export default taskSlice.reducer
