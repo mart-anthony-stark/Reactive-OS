@@ -10,15 +10,18 @@ import { FaFileWord, FaSpotify, FaTwitter } from "react-icons/fa";
 import { AiFillFolderOpen, AiFillChrome } from "react-icons/ai";
 
 import { IconContext } from "react-icons";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addTask, removeTask } from "../../redux/taskSlice";
 
 export default function Taskbar({
   start,
   toggleStart,
   weather,
-  setTasks,
-  tasks,
   togglePowerOption,
 }) {
+  const dispatch = useDispatch();
+  const tasks = useSelector((state) => state.tasks.tasks);
   const iconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   return (
     <div className={start ? "taskbar open" : "taskbar"}>
@@ -158,9 +161,8 @@ export default function Taskbar({
         <div
           className="weather"
           onClick={() => {
-            if (tasks.includes("weather"))
-              setTasks((prev) => prev.filter((p) => p != "weather"));
-            if (!tasks.includes("weather")) setTasks([...tasks, "weather"]);
+            if (tasks.includes("weather")) dispatch(removeTask("weather"));
+            else dispatch(addTask("weather"));
           }}
         >
           <h3>{weather.main.temp} °C</h3>
