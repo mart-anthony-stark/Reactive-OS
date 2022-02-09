@@ -74,12 +74,12 @@ function App() {
 
         {powerOption && <PowerOptions togglePowerOption={togglePowerOption} />}
       </div>
-      {/* <Taskbar
+      <Taskbar
         start={start}
         toggleStart={toggleStart}
         weather={weather}
         togglePowerOption={togglePowerOption}
-      /> */}
+      />
     </main>
   );
 }
