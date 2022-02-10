@@ -143,7 +143,7 @@ export default function Start({ start, toggleStart }) {
         <div
           className="application"
           onDoubleClick={() => {
-            setTasks([...tasks, "files"]);
+            dispatch(addTask('files'))
             toggleStart(false);
           }}
         >
