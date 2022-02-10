@@ -85,7 +85,7 @@ const Shortcuts = ({ toggleStart }) => {
       >
         <div
           onDoubleClick={() => {
-            setTasks([...tasks, "twitter"]);
+            dispatch(addTask('twitter'))
             toggleStart(false);
           }}
         >
