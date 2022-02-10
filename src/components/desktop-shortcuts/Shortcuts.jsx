@@ -9,8 +9,11 @@ import {
 import { AiFillChrome } from "react-icons/ai";
 import { FaFileWord, FaTwitter } from "react-icons/fa";
 import "./shortcuts.css";
+import { useDispatch, useSelector } from "react-redux";
 
-const Shortcuts = ({ tasks, toggleStart, setTasks }) => {
+const Shortcuts = ({ toggleStart }) => {
+  const tasks = useSelector((state) => state.tasks.tasks);
+  const dispatch = useDispatch()
   return (
     <div className="desktop-shortcuts">
       <IconContext.Provider value={{ className: "click-btn app-icon" }}>
