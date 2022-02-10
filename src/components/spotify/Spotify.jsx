@@ -66,7 +66,7 @@ const Spotify = () => {
         <div
           className="close-btn"
           onClick={() => {
-            dispatch(removeTask("spotify"));
+            // dispatch(removeTask("spotify"));
           }}
         >
           <AiFillCloseCircle />
