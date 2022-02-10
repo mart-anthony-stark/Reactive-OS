@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { removeTask } from "../../redux/taskSlice";
 import LeftSidebar from "./LeftSidebar";
 import Profile from "./Profile";
 import RightSide from "./RightSide";
@@ -48,7 +49,7 @@ export default function Twitter() {
         <div
           className="close-btn"
           onClick={() => {
-            setTasks((prev) => prev.filter((p) => p !== "twitter"));
+            dispatch(removeTask("twitter"));
           }}
         >
           <AiFillCloseCircle />
