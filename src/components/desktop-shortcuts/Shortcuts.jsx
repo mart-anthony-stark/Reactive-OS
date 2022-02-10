@@ -70,7 +70,7 @@ const Shortcuts = ({ toggleStart }) => {
       >
         <div
           onDoubleClick={() => {
-            setTasks([...tasks, "editor"]);
+            dispatch(addTask('editor'))
             toggleStart(false);
           }}
         >
