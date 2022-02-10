@@ -143,7 +143,7 @@ export default function Start({ start, toggleStart }) {
         <div
           className="application"
           onDoubleClick={() => {
-            dispatch(addTask('files'))
+            dispatch(addTask("files"));
             toggleStart(false);
           }}
         >
@@ -160,7 +160,7 @@ export default function Start({ start, toggleStart }) {
         <div
           className="application"
           onDoubleClick={() => {
-            dispatch(addTask('twitter'))
+            dispatch(addTask("twitter"));
             toggleStart(false);
           }}
         >
@@ -180,7 +180,8 @@ export default function Start({ start, toggleStart }) {
         <div
           className="application"
           onDoubleClick={() => {
-            dispatch(addTask('spotify'))
+            dispatch(addTask("spotify"));
+            // dispatch(addTask("spotify"));
             toggleStart(false);
           }}
         >
