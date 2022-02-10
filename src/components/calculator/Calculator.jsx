@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import { removeTask } from "../../redux/taskSlice";
 import "./style.css";
 
 export default function Calculator() {
@@ -43,9 +44,7 @@ export default function Calculator() {
     >
       <div
         className="close-btn"
-        onClick={() =>
-          setTasks((prev) => prev.filter((p) => p !== "calculator"))
-        }
+        onClick={() => dispatch(removeTask("calculator"))}
       >
         <AiFillCloseCircle />
       </div>
