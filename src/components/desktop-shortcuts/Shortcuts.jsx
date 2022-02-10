@@ -55,7 +55,7 @@ const Shortcuts = ({ toggleStart }) => {
       <IconContext.Provider value={{ className: "click-btn app-icon" }}>
         <div
           onDoubleClick={() => {
-            setTasks([...tasks, "console"]);
+            dispatch(addTask('console'))
             toggleStart(false);
           }}
         >
