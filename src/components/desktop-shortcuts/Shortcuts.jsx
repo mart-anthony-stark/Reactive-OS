@@ -10,17 +10,17 @@ import { AiFillChrome } from "react-icons/ai";
 import { FaFileWord, FaTwitter } from "react-icons/fa";
 import "./shortcuts.css";
 import { useDispatch, useSelector } from "react-redux";
-import {addTasks} from '../../redux/taskSlice'
+import { addTask } from "../../redux/taskSlice";
 
 const Shortcuts = ({ toggleStart }) => {
   const tasks = useSelector((state) => state.tasks.tasks);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <div className="desktop-shortcuts">
       <IconContext.Provider value={{ className: "click-btn app-icon" }}>
         <div
           onDoubleClick={() => {
-            dispatch(addTasks('calculator'))
+            dispatch(addTask("calculator"));
             toggleStart(false);
           }}
         >
