@@ -24,8 +24,8 @@ import { useDispatch } from "react-redux";
 import { removeTask } from "../../redux/taskSlice";
 
 const Spotify = () => {
-  const tasks = useSelector(state=> state.tasks.tasks)
-  const dispatch = useDispatch()
+  const tasks = useSelector((state) => state.tasks.tasks);
+  const dispatch = useDispatch();
   const [scrolledDown, setScrolldown] = useState(false);
   const [playingMix, setPlayingMix] = useState("Daily Mix 1");
   const [currentSong, setCurrentSong] = useState({
@@ -66,7 +66,7 @@ const Spotify = () => {
         <div
           className="close-btn"
           onClick={() => {
-            dispatch(removeTask('spotify'))
+            dispatch(removeTask("spotify"));
           }}
         >
           <AiFillCloseCircle />
