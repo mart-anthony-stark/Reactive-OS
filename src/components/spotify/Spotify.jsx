@@ -19,8 +19,12 @@ import "./spotify.css";
 import { handleDrag } from "../../../helpers";
 import dp from "../browser/dp.jpg";
 import Rightcontrols from "./RightControls";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-const Spotify = ({ setTasks, tasks }) => {
+const Spotify = () => {
+  const tasks = useSelector(state=> state.tasks.tasks)
+  const dispatch = useDispatch()
   const [scrolledDown, setScrolldown] = useState(false);
   const [playingMix, setPlayingMix] = useState("Daily Mix 1");
   const [currentSong, setCurrentSong] = useState({
