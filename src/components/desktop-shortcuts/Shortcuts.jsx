@@ -10,6 +10,7 @@ import { AiFillChrome } from "react-icons/ai";
 import { FaFileWord, FaTwitter } from "react-icons/fa";
 import "./shortcuts.css";
 import { useDispatch, useSelector } from "react-redux";
+import {addTasks} from '../../redux/taskSlice'
 
 const Shortcuts = ({ toggleStart }) => {
   const tasks = useSelector((state) => state.tasks.tasks);
