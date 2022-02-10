@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import {AiFillCloseCircle, AiFillFolderOpen} from 'react-icons/ai'
 import {FaRegHdd, FaImages} from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
+import { removeTask } from '../../redux/taskSlice'
 import './style.css'
 
 export default function Folder(){
@@ -38,7 +39,7 @@ export default function Folder(){
     <div className='folder' style={{zIndex: tasks.indexOf('files')+1}}>
       <div className='folder-header'>
         <span>File Explorer</span>
-        <div className="close-btn" onClick={()=> setTasks((prev)=> prev.filter(p => p !== 'files'))}>
+        <div className="close-btn" onClick={()=> dispatch(removeTask('files'))}>
           <AiFillCloseCircle/>
         </div>
       </div>
