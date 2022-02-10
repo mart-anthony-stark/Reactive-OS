@@ -1,9 +1,12 @@
 import React,{useEffect} from 'react'
 import {AiFillCloseCircle, AiFillFolderOpen} from 'react-icons/ai'
 import {FaRegHdd, FaImages} from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
 import './style.css'
 
-export default function Folder({tasks, setTasks}){
+export default function Folder(){
+  const tasks = useSelector(state=>state.tasks.tasks)
+  const dispatch = useDispatch()
   useEffect(()=>{
     const folderApp = document.querySelector('.folder')
     const folderHeader = document.querySelector('.folder-header')
