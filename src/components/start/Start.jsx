@@ -181,7 +181,6 @@ export default function Start({ start, toggleStart }) {
           className="application"
           onDoubleClick={() => {
             dispatch(addTask("spotify"));
-            // dispatch(addTask("spotify"));
             toggleStart(false);
           }}
         >
