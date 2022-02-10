@@ -21,6 +21,7 @@ import dp from "../browser/dp.jpg";
 import Rightcontrols from "./RightControls";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { removeTask } from "../../redux/taskSlice";
 
 const Spotify = () => {
   const tasks = useSelector(state=> state.tasks.tasks)
@@ -65,7 +66,7 @@ const Spotify = () => {
         <div
           className="close-btn"
           onClick={() => {
-            setTasks((prev) => prev.filter((p) => p !== "spotify"));
+            dispatch(removeTask('spotify'))
           }}
         >
           <AiFillCloseCircle />
