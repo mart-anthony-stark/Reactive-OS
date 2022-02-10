@@ -35,7 +35,7 @@ const Shortcuts = ({ toggleStart }) => {
       >
         <div
           onDoubleClick={() => {
-            setTasks([...tasks, "browser"]);
+            dispatch(addTask('browser'))
             toggleStart(false);
           }}
         >
