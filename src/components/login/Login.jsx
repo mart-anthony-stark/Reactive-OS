@@ -68,14 +68,6 @@ export default function Login({ weather }) {
       <form onSubmit={handleSubmit}>
         <img src={userDP} alt="Mart Anthony User Icon" className="user-icon" />
         <div className="input-cont">
-          <input
-            type="text"
-            placeholder="Username"
-            value={user.username}
-            onChange={(e) =>
-              setUser({ username: e.target.value, password: user.password })
-            }
-          />
         </div>
         <p style={{ color: "red" }}>{err.username}</p>
         <div className="input-cont">
