@@ -1,4 +1,4 @@
-.word-editor{
+.word-editor {
   position: relative;
   z-index: 5;
   max-width: 900px;
@@ -8,16 +8,16 @@
   border: 3px solid black;
   left: 50%;
   top: 0;
-  transform: translateX(-50%);
+  transform: translate(-50%, -40%);
 }
-.codex-editor{
+.codex-editor {
   margin-top: 5px;
   width: 100%;
 }
-.ce-toolbar__settings-btn{
+.ce-toolbar__settings-btn {
   color: rgb(0, 0, 0);
 }
-.tools{
+.tools {
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -25,15 +25,15 @@
   padding: 5px;
   color: white;
 }
-.tools span{
+.tools span {
   padding: 0 5px;
   user-select: none;
 }
-.tools span:hover{
+.tools span:hover {
   background: black;
-  cursor: url('../../cursors/Link Select.cur'), auto;
+  cursor: url("../../cursors/Link Select.cur"), auto;
 }
-.word-editor-header{
+.word-editor-header {
   position: absolute;
   top: 0;
   left: 0;
