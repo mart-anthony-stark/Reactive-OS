@@ -34,6 +34,9 @@
 .input-cont {
   width: 100%;
 }
+.user-login form input {
+  text-align: center;
+}
 .user-login form button {
   width: 200px;
   text-transform: uppercase;
