@@ -1,7 +1,8 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 const Login = lazy(() => import("./components/login/Login"));
 const ContextMenu = lazy(() => import("./components/context/ContextMenu"));
-import Taskbar from "./components/taskbar/Taskbar";
+const Taskbar = lazy(() => import("./components/taskbar/Taskbar"));
+
 import Start from "./components/start/Start";
 import Console from "./components/console/Console";
 import ClockWidget from "./components/clock_widget/ClockWidget";
