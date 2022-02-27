@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Login from "./components/login/Login";
-import ContextMenu from "./components/context/ContextMenu";
+import React, { useState, useEffect, lazy, Suspense } from "react";
+const Login = lazy(() => import("./components/login/Login"));
+const ContextMenu = lazy(() => import("./components/context/ContextMenu"));
 import Taskbar from "./components/taskbar/Taskbar";
 import Start from "./components/start/Start";
 import Console from "./components/console/Console";
@@ -48,38 +48,42 @@ function App() {
   }
   return (
     <main>
-      <Login weather={weather} />
-      <div className="desktop">
-        <ContextMenu
+      <Suspense fallback={<></>}>
+        <Login weather={weather} />
+        <div className="desktop">
+          <ContextMenu
+            toggleStart={toggleStart}
+            togglePowerOption={togglePowerOption}
+          />
+          <Start start={start} toggleStart={toggleStart} />
+          {/* Desktop Shortcut apps */}
+          <Shortcuts toggleStart={toggleStart} />
+
+          {/** APPS */}
+          {tasks.includes("console") && <Console />}
+          {tasks.includes("codeeditor") && <CodeEditor />}
+          {tasks.includes("todo") && <Todo />}
+          {tasks.includes("drumpads") && <Drumpads />}
+          {tasks.includes("editor") && <Editor />}
+          {tasks.includes("browser") && <Browser />}
+          {tasks.includes("weather") && <Weather weather={weather} />}
+          {tasks.includes("calculator") && <Calculator />}
+          {tasks.includes("files") && <Folder />}
+          {tasks.includes("twitter") && <Twitter />}
+          {tasks.includes("spotify") && <Spotify />}
+          <ClockWidget />
+
+          {powerOption && (
+            <PowerOptions togglePowerOption={togglePowerOption} />
+          )}
+        </div>
+        <Taskbar
+          start={start}
           toggleStart={toggleStart}
+          weather={weather}
           togglePowerOption={togglePowerOption}
         />
-        <Start start={start} toggleStart={toggleStart} />
-        {/* Desktop Shortcut apps */}
-        <Shortcuts toggleStart={toggleStart} />
-
-        {/** APPS */}
-        {tasks.includes("console") && <Console />}
-        {tasks.includes("codeeditor") && <CodeEditor />}
-        {tasks.includes("todo") && <Todo />}
-        {tasks.includes("drumpads") && <Drumpads />}
-        {tasks.includes("editor") && <Editor />}
-        {tasks.includes("browser") && <Browser />}
-        {tasks.includes("weather") && <Weather weather={weather} />}
-        {tasks.includes("calculator") && <Calculator />}
-        {tasks.includes("files") && <Folder />}
-        {tasks.includes("twitter") && <Twitter />}
-        {tasks.includes("spotify") && <Spotify />}
-        <ClockWidget />
-
-        {powerOption && <PowerOptions togglePowerOption={togglePowerOption} />}
-      </div>
-      <Taskbar
-        start={start}
-        toggleStart={toggleStart}
-        weather={weather}
-        togglePowerOption={togglePowerOption}
-      />
+      </Suspense>
     </main>
   );
 }
