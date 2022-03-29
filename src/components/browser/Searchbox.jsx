@@ -1,20 +1,30 @@
-import React from 'react'
-import {CgMic} from 'react-icons/cg'
-import {IoMdSearch} from 'react-icons/io'
+import React from "react";
+import { CgMic } from "react-icons/cg";
+import { IoMdSearch } from "react-icons/io";
+import SearchIcon from "./img/Searchbar.svg";
+import BoggleMic from "./img/Boogle Icon.png";
+import InputBox from "./InputBox";
+export default function SearchBox({
+  setCurrentSearch,
+  currentSearch,
+  handleEnter,
+  setSearch,
+}) {
+  function toggleChange(value) {
+    setCurrentSearch(value);
+    setSearch(value);
+  }
 
-
-export default function SearchBox({setCurrentSearch, currentSearch, handleEnter,setSearch}){
-  return(
-    <div className='searchbox-top'>
-      <input type='text' placeholder='Boogle Search' value={currentSearch}
-      onChange={e => {
-        setCurrentSearch(e.target.value)
-        setSearch(e.target.value)
-      }} onKeyDown={handleEnter}/>
-      <div className='icons'>
-        <CgMic/>
-        <IoMdSearch/>
-      </div>
-    </div>
-  )
+  return (
+    <InputBox
+      class={"searchbox-top"}
+      placeholder={"Boggle Search"}
+      currentSearch={currentSearch}
+      toggleChange={(e) => toggleChange(e.target.value)}
+      search={SearchIcon}
+      handleEnter={handleEnter}
+      mic={BoggleMic}
+      micclass={"boggle-mic"}
+    />
+  );
 }

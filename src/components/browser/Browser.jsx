@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import ProfileImg from "./dp.jpg";
+import SearchIcon from "./img/Searchbar.svg";
+import BoggleMic from "./img/Boogle Icon.png";
 import { CgMenuGridO } from "react-icons/cg";
 import Results from "./Results";
 import Searchbox from "./Searchbox";
@@ -8,6 +10,7 @@ import "./browser.css";
 import { useSelector } from "react-redux";
 import { removeTask } from "../../redux/taskSlice";
 import { useDispatch } from "react-redux";
+import InputBox from "./InputBox";
 
 const resObj = {
   queries: {
@@ -74,6 +77,10 @@ export default function Browser() {
     } else {
       console.error("Invalid query. Please enter a value");
     }
+  }
+
+  function toggleChange(value) {
+    setSearch(value);
   }
 
   function handleEnter(e) {
@@ -147,13 +154,18 @@ export default function Browser() {
           <span>l</span>
           <span>e</span>
         </h2>
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={handleEnter}
+
+        <InputBox
+          class={"input-container"}
+          placeholder={"Search"}
+          currentSearch={search}
+          toggleChange={(e) => toggleChange(e.target.value)}
+          handleEnter={handleEnter}
+          search={SearchIcon}
+          mic={BoggleMic}
+          micclass={"boggle-mic"}
         />
+
         <div className="buttons">
           <button className="click-btn" onClick={handleSearch}>
             Boogle Search
