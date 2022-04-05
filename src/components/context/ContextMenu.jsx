@@ -6,14 +6,14 @@ import { RiShutDownLine } from "react-icons/ri";
 import "./context.css";
 
 export default function ContextMenu({ toggleStart, togglePowerOption }) {
-  // React.useEffect(()=>{
-  //   window.addEventListener('contextmenu', handleContext)
-  //   window.addEventListener('click', handleClose)
-  //   return ()=> {
-  //     window.removeEventListener('contextmenu', handleContext)
-  //     window.removeEventListener('click', handleClose)
-  //   }
-  // },[])
+  React.useEffect(() => {
+    window.addEventListener("contextmenu", handleContext);
+    window.addEventListener("click", handleClose);
+    return () => {
+      window.removeEventListener("contextmenu", handleContext);
+      window.removeEventListener("click", handleClose);
+    };
+  }, []);
 
   function handleContext(e) {
     e.preventDefault();
