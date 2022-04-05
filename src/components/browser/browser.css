@@ -218,7 +218,8 @@
   width: 80%;
   height: inherit;
 
-  border-radius: none;
+  border: none;
+  outline: none;
 }
 
 .input-container > img {
