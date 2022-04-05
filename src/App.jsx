@@ -3,21 +3,22 @@ const Login = lazy(() => import("./components/login/Login"));
 import ContextMenu from "./components/context/ContextMenu";
 import Taskbar from "./components/taskbar/Taskbar";
 import Start from "./components/start/Start";
-import Console from "./components/console/Console";
-import ClockWidget from "./components/clock_widget/ClockWidget";
-import CodeEditor from "./components/code_editor/CodeEditor";
-import Todo from "./components/todo/Todo";
-import Drumpads from "./components/drumpads/Drumpads";
-import Editor from "./components/editor/Editor";
-import PowerOptions from "./components/power_opts/PowerOptions";
-import Weather from "./components/weather/Weather";
-import Browser from "./components/browser/Browser";
-import Calculator from "./components/calculator/Calculator";
-import Folder from "./components/folder/Folder";
-import Twitter from "./components/twitter/Twitter";
 import Shortcuts from "./components/desktop-shortcuts/Shortcuts";
-import Spotify from "./components/spotify/Spotify";
+import ClockWidget from "./components/clock_widget/ClockWidget";
 import { useSelector } from "react-redux";
+
+const Spotify = lazy(() => import("./components/spotify/Spotify"));
+const Twitter = lazy(() => import("./components/twitter/Twitter"));
+const Folder = lazy(() => import("./components/folder/Folder"));
+const Browser = lazy(() => import("./components/browser/Browser"));
+const Calculator = lazy(() => import("./components/calculator/Calculator"));
+const Console = lazy(() => import("./components/console/Console"));
+const CodeEditor = lazy(() => import("./components/code_editor/CodeEditor"));
+const Todo = lazy(() => import("./components/todo/Todo"));
+const Drumpads = lazy(() => import("./components/drumpads/Drumpads"));
+const Editor = lazy(() => import("./components/editor/Editor"));
+const Weather = lazy(() => import("./components/weather/Weather"));
+const PowerOptions = lazy(() => import("./components/power_opts/PowerOptions"));
 
 let dataObj = {
   main: { humidity: "", pressure: "", temp: "" },
@@ -59,17 +60,62 @@ function App() {
           <Shortcuts toggleStart={toggleStart} />
 
           {/** APPS */}
-          {tasks.includes("console") && <Console />}
-          {tasks.includes("codeeditor") && <CodeEditor />}
-          {tasks.includes("todo") && <Todo />}
-          {tasks.includes("drumpads") && <Drumpads />}
-          {tasks.includes("editor") && <Editor />}
-          {tasks.includes("browser") && <Browser />}
-          {tasks.includes("weather") && <Weather weather={weather} />}
-          {tasks.includes("calculator") && <Calculator />}
-          {tasks.includes("files") && <Folder />}
-          {tasks.includes("twitter") && <Twitter />}
-          {tasks.includes("spotify") && <Spotify />}
+          {tasks.includes("console") && (
+            <Suspense fallback={<></>}>
+              <Console />
+            </Suspense>
+          )}
+          {tasks.includes("codeeditor") && (
+            <Suspense fallback={<></>}>
+              <CodeEditor />
+            </Suspense>
+          )}
+          {tasks.includes("todo") && (
+            <Suspense fallback={<></>}>
+              <Todo />
+            </Suspense>
+          )}
+          {tasks.includes("drumpads") && (
+            <Suspense fallback={<></>}>
+              <Drumpads />
+            </Suspense>
+          )}
+          {tasks.includes("editor") && (
+            <Suspense fallback={<></>}>
+              <Editor />
+            </Suspense>
+          )}
+          {tasks.includes("browser") && (
+            <Suspense fallback={<></>}>
+              {" "}
+              <Browser />
+            </Suspense>
+          )}
+          {tasks.includes("weather") && (
+            <Suspense fallback={<></>}>
+              <Weather weather={weather} />
+            </Suspense>
+          )}
+          {tasks.includes("calculator") && (
+            <Suspense fallback={<></>}>
+              <Calculator />
+            </Suspense>
+          )}
+          {tasks.includes("files") && (
+            <Suspense fallback={<></>}>
+              <Folder />
+            </Suspense>
+          )}
+          {tasks.includes("twitter") && (
+            <Suspense fallback={<></>}>
+              <Twitter />
+            </Suspense>
+          )}
+          {tasks.includes("spotify") && (
+            <Suspense fallback={<></>}>
+              <Spotify />
+            </Suspense>
+          )}
           <ClockWidget />
 
           {powerOption && (
