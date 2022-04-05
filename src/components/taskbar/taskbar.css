@@ -1,9 +1,9 @@
-.taskbar{
+.taskbar {
   position: fixed;
   width: 100%;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur(20px);
   bottom: 0;
   display: flex;
   align-items: center;
@@ -12,14 +12,14 @@
   padding-bottom: 0;
   z-index: 100;
 }
-.start-btn{
+.start-btn {
   color: rgb(0, 0, 0);
   font-size: 50px;
 }
-.start-btn:hover{
+.start-btn:hover {
   color: rgb(255, 255, 255);
 }
-.right{
+.right {
   display: flex;
   position: absolute;
   right: 10px;
@@ -27,45 +27,46 @@
   align-items: center;
   gap: 10px;
 }
-.battery{
+.battery {
   font-size: 2em;
   color: green;
 }
-.weather{
+.weather {
   position: relative;
-  cursor: url('../../cursors/Link Select.cur'), auto;
+  cursor: url("../../cursors/Link Select.cur"), auto;
 }
-.weather h3{
+.weather h3 {
   position: absolute;
   left: -15px;
   bottom: 5px;
   font-weight: bolder;
   user-select: none;
 }
-.weather img{
+.weather img {
   height: 50px;
 }
-.active-tasks{
+.active-tasks {
   position: absolute;
   left: 25px;
   font-size: 2em;
   display: flex;
-  /* gap: 15px; */
+  gap: 15px;
+  border-radius: 5px;
 }
-.task-grp{
+.task-grp {
   position: relative;
   display: flex;
   margin-right: 15px;
 }
-.active-tasks .task{
+.active-tasks .task {
   box-sizing: unset;
   padding: 5px 5px;
   background: rgb(199, 199, 199);
 }
-.active-tasks .task:hover{
+.active-tasks .task:hover {
   background: rgb(255, 255, 255);
 }
-.active-tasks .task-grp span{
+.active-tasks .task-grp span {
   position: fixed;
   top: -10px;
   background: black;
@@ -76,11 +77,14 @@
   border-radius: 3px;
   visibility: hidden;
 }
-.active-tasks .task-grp:hover span{
+.active-tasks .task-grp:hover span {
   visibility: visible;
 }
-@media (max-width: 500px){
-  .weather{
+@media (max-width: 500px) {
+  .weather {
     transform: translateY(-50px);
   }
+}
+.taskbar .task {
+  border-radius: 5px;
 }
