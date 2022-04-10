@@ -129,14 +129,14 @@ export default function Taskbar({
         )}
         {tasks.includes("spotify") && (
           <div className="task-grp">
-            <span>Twitter</span>
+            <span>Spotify</span>
             <IconContext.Provider
               value={{
                 className: "click-btn task",
                 style: { color: "#216338" },
               }}
             >
-              <div data-app="Calculator">
+              <div>
                 <FaSpotify />
               </div>
             </IconContext.Provider>
