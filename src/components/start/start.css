@@ -6,7 +6,7 @@
   width: 100%;
   top: 50%;
   left: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(25px);
   transform: scale(0) translate(-50%, -300%);
   transform-origin: left;
@@ -15,8 +15,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* justify-content: center; */
   padding: 25px;
+  color: #fff !important;
   user-select: none;
 }
 .start-menu.open {
