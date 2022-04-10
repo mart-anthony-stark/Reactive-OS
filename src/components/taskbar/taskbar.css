@@ -1,7 +1,7 @@
 .taskbar {
   position: fixed;
   width: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   bottom: 0;
@@ -13,11 +13,11 @@
   z-index: 100;
 }
 .start-btn {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 50px;
 }
 .start-btn:hover {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .right {
   display: flex;
@@ -27,9 +27,13 @@
   align-items: center;
   gap: 10px;
 }
+.taskbar .clock {
+  color: #fff;
+}
 .battery {
-  font-size: 2em;
-  color: green;
+  font-size: 1.5em;
+  transform: rotate(90deg);
+  color: #fff !important;
 }
 .weather {
   position: relative;
@@ -41,6 +45,7 @@
   bottom: 5px;
   font-weight: bolder;
   user-select: none;
+  color: orangered;
 }
 .weather img {
   height: 50px;
