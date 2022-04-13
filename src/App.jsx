@@ -6,6 +6,7 @@ import Start from "./components/start/Start";
 import Shortcuts from "./components/desktop-shortcuts/Shortcuts";
 import ClockWidget from "./components/clock_widget/ClockWidget";
 import { useSelector } from "react-redux";
+import Portfolio from "./components/portfolio/Portfolio";
 
 const Spotify = lazy(() => import("./components/spotify/Spotify"));
 const Twitter = lazy(() => import("./components/twitter/Twitter"));
@@ -63,6 +64,11 @@ function App() {
           {tasks.includes("console") && (
             <Suspense fallback={<></>}>
               <Console />
+            </Suspense>
+          )}
+          {tasks.includes("portfolio") && (
+            <Suspense fallback={<></>}>
+              <Portfolio />
             </Suspense>
           )}
           {tasks.includes("codeeditor") && (
