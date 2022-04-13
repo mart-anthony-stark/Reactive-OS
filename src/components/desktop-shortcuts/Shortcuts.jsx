@@ -27,6 +27,15 @@ const Shortcuts = ({ toggleStart }) => {
           <FcCalculator />
         </div>
       </IconContext.Provider>
+      <div
+        className="click-btn app-icon portfolio-icon"
+        onDoubleClick={() => {
+          dispatch(addTask("portfolio"));
+          toggleStart(false);
+        }}
+      >
+        <div className="icon">M</div>
+      </div>
       <IconContext.Provider
         value={{
           className: "click-btn app-icon",
@@ -35,7 +44,7 @@ const Shortcuts = ({ toggleStart }) => {
       >
         <div
           onDoubleClick={() => {
-            dispatch(addTask('browser'))
+            dispatch(addTask("browser"));
             toggleStart(false);
           }}
         >
@@ -45,7 +54,7 @@ const Shortcuts = ({ toggleStart }) => {
       <IconContext.Provider value={{ className: "click-btn app-icon" }}>
         <div
           onDoubleClick={() => {
-            dispatch(addTask('todo'))
+            dispatch(addTask("todo"));
             toggleStart(false);
           }}
         >
@@ -55,7 +64,7 @@ const Shortcuts = ({ toggleStart }) => {
       <IconContext.Provider value={{ className: "click-btn app-icon" }}>
         <div
           onDoubleClick={() => {
-            dispatch(addTask('console'))
+            dispatch(addTask("console"));
             toggleStart(false);
           }}
         >
@@ -70,7 +79,7 @@ const Shortcuts = ({ toggleStart }) => {
       >
         <div
           onDoubleClick={() => {
-            dispatch(addTask('editor'))
+            dispatch(addTask("editor"));
             toggleStart(false);
           }}
         >
@@ -85,7 +94,7 @@ const Shortcuts = ({ toggleStart }) => {
       >
         <div
           onDoubleClick={() => {
-            dispatch(addTask('twitter'))
+            dispatch(addTask("twitter"));
             toggleStart(false);
           }}
         >
