@@ -161,7 +161,8 @@
   color: black;
   width: 80%;
   height: inherit;
-  border-radius: none;
+  border: none;
+  outline: none;
 }
 
 .searchbox-top > .boggle-mic {
