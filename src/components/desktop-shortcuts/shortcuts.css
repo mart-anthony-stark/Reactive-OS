@@ -15,3 +15,20 @@
   background: rgba(255, 255, 255, 0.158);
   border-radius: 5px;
 }
+.desktop-shortcuts .portfolio-icon {
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+
+  height: 60px;
+  width: 60px;
+  text-align: center;
+
+  border-radius: 50%;
+  border: 2px solid rgb(94, 70, 180);
+}
+.desktop-shortcuts .portfolio-icon .icon {
+}
