@@ -1,17 +1,27 @@
 import React from "react";
-
-const commands = {
-  help: `help
-        \nCommands:\n
-        \n[help]: 
-        \n\tHelp
-        \n[quit]:
-        \n \tExits the terminal`,
-  quit: "Are you sure you want to quit? ",
-};
+import { removeTask } from "../../redux/taskSlice";
+import { useDispatch } from "react-redux";
 
 const UseOnEnter = () => {
+  const dispatch = useDispatch();
   const [consoleOutput, updateConsoleOutput] = React.useState([]);
+
+  const commands = {
+    help: () => {
+      return `help
+     \nCommands:\n
+     \n[help]: 
+     \n\tHelp
+     \n[quit]:
+     \n \tExits the terminal`;
+    },
+    quit: () => {
+      dispatch(removeTask("console"));
+    },
+    open: (input) => {
+      return input.split(/\s+/g).shift();
+    },
+  };
 
   const onEnter = (value, key) => {
     if (key === "Enter") {
@@ -19,8 +29,15 @@ const UseOnEnter = () => {
         const objDiv = document.querySelector("#console-main");
         objDiv.scrollTop = objDiv.scrollHeight;
       }, 100);
-      const newConsoleLine =
-        commands[value] || "Command not recognized by the HTML OS";
+
+      let newConsoleLine = `'${
+        value.split(/\s/g)[0]
+      }' is not recognized as internal or external command`;
+
+      if (!!commands[value]) {
+        newConsoleLine = commands[value](value);
+      }
+
       return updateConsoleOutput((consoleOutput) =>
         consoleOutput.concat(newConsoleLine)
       );
