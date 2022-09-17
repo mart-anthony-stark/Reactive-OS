@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { AiFillCopy } from "react-icons/ai";
 import { BiCut, BiPaste, BiRefresh } from "react-icons/bi";
 import { BsDisplay } from "react-icons/bs";
@@ -6,6 +6,7 @@ import { RiShutDownLine } from "react-icons/ri";
 import "./context.css";
 
 export default function ContextMenu({ toggleStart, togglePowerOption }) {
+  const fileChooserRef = useRef();
   React.useEffect(() => {
     window.addEventListener("contextmenu", handleContext);
     window.addEventListener("click", handleClose);
@@ -29,7 +30,14 @@ export default function ContextMenu({ toggleStart, togglePowerOption }) {
 
   return (
     <div className="context-menu">
-      <div className="item">
+      <input
+        style={{ display: "none" }}
+        type="file"
+        accept="jpeg;png;webp"
+        ref={fileChooserRef}
+        onChange={(e) => console.log(e)}
+      />
+      <div className="item" onClick={() => window.location.reload()}>
         <BiRefresh />
         <span>Refresh</span>
       </div>
@@ -45,13 +53,9 @@ export default function ContextMenu({ toggleStart, togglePowerOption }) {
         <BiPaste />
         <span>Paste</span>
       </div>
-      <div className="item">
-        <AiFillCopy />
-        <span>Copy</span>
-      </div>
       <hr />
 
-      <div className="item">
+      <div className="item" onClick={() => fileChooserRef.current.click()}>
         <BsDisplay />
         <span>Personalize</span>
       </div>
