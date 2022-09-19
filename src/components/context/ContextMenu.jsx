@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { AiFillCopy } from "react-icons/ai";
 import { BiCut, BiPaste, BiRefresh } from "react-icons/bi";
 import { BsDisplay } from "react-icons/bs";
@@ -7,6 +7,8 @@ import "./context.css";
 
 export default function ContextMenu({ toggleStart, togglePowerOption }) {
   const fileChooserRef = useRef();
+  const [selectedFile, setSelectedFile] = useState();
+
   React.useEffect(() => {
     window.addEventListener("contextmenu", handleContext);
     window.addEventListener("click", handleClose);
@@ -28,14 +30,25 @@ export default function ContextMenu({ toggleStart, togglePowerOption }) {
     document.querySelector(".context-menu").classList.remove("open");
   }
 
+  const fileBrowseHandler = (e) => {
+    const data = e.target.files[0];
+    let binaryData = [];
+    binaryData.push(data);
+    const objectUrl = window.URL.createObjectURL(
+      new Blob(binaryData, { type: "application/zip" })
+    );
+    document.querySelector("body").style.background = objectUrl;
+    console.log(objectUrl);
+  };
+
   return (
     <div className="context-menu">
       <input
         style={{ display: "none" }}
         type="file"
-        accept="jpeg;png;webp"
+        accept="image/*"
         ref={fileChooserRef}
-        onChange={(e) => console.log(e)}
+        onChange={fileBrowseHandler}
       />
       <div className="item" onClick={() => window.location.reload()}>
         <BiRefresh />
